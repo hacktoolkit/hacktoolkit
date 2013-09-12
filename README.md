@@ -6,8 +6,7 @@ The ONE open source project to rule them all.
 Website: http://hacktoolkit.com
 
 ## What is it?                                                                              
-Hacktoolkit is a collection of bootstrap code that you can use to start your next project, whe\
-ther it's a website or mobile app.
+Hacktoolkit is a collection of bootstrap code that you can use to start your next project, whether it's a website or mobile app.
 
 ## Why Hacktoolkit?
 The best way to get better at programming is to write code yourself, and learn from well-written code by others.
