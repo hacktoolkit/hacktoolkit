@@ -1,39 +1,30 @@
-hacktoolkit - The one open-source project
+hacktoolkit
 ===========
 
-The ONE open source project to rule them all.
+Hacktoolkit is the ONE open source project to rule them all (we try to, at least).
 
-Website: http://hacktoolkit.com
+## Hacktoolkit vs hacktoolkit
 
-## What is it?                                                                              
-Hacktoolkit is a collection of bootstrap code that you can use to start your next project, whether it's a website or mobile app.
+Use Hacktoolkit (capital) when referring to the project.
 
-## Why Hacktoolkit?
-The best way to get better at programming is to write code yourself, and learn from well-written code by others.
+Use hacktoolkit (all lowercase) when referring to the code or the library.
 
-Hackathons are typically 24-48 programming competitions where a lot of programming nerds and geeks get together and build a functioning product from scratch--well, the rules typically are that all of your code and designs have to be done during the hackathon, not before--but using open-source code is an exception.
+## This README
 
-We aim to provide a level playing field for all hackathon attendees so that everyone has access to commonly written code, so that they can focus on creating (designing, developing), rather than reinventing at 24-48 hour hackathons.
+This README is about the hacktoolkit library hosted at: https://github.com/hacktoolkit/hacktoolkit
 
-Here are some things you'll find among the corpus of code at Hacktoolkit:
+For information about the project, see the website: http://hacktoolkit.com
 
-* Bootstrap code for websites and mobile apps
-* Complete working demos and prototypes
-* Implemented design patterns
-* Algorithms and data structures in various languages, from simple to complex
-* Working code that integrates with all of the popular APIs--Android, iOS, Google Play Services, Parse, and more!
+* There will only be one repository, ever, for hacktoolkit.
+* The goal is to be one repository that users can clone and immediately start using, not 47 different repositories.
+* Code is organized into sub-folders, each with their own READMEs.
+* Always read the README files in subdirectories before using the code so that your computer or mobile device doesn't blow up.
 
-Even if you're not using Hacktoolkit to build your hackathon-winning entry, but just working on a project as a hobby for yourself, Hacktoolkit can help you get started.
+## Contributing
 
-## Okay, I'm convinced. How do I get started?
+* Always include a README file in each directory, unless it is a leaf
+* Follow the best practices and coding style guides for that language, platform, or API
+* Use your best judgment and common sense, always.
+* More coming...
 
-* Fork the code and start using it!
-* Issue pull requests for new things to incorporate back into the Hacktoolkit library.
- 
-Formatting requirements TBD (provide a README.md and description of what your code does). I'll add your name to the contributors list!
-
-## Authors, Maintainers, and Contributors
-
-Hacktoolkit is an open source project built and maintained by a community of developers. Anyone can use and contribute to Hacktoolkit, but if you'd like to be a maintainer, please contact Jonathan Tsai (@jontsai).
-
-* Jonathan Tsai (@jontsai), founded Hacktoolkit in September 2013
+If you would like to be a maintainer for Hacktoolkit or hacktoolkit, contact Jonathan Tsai (@jontsai).
