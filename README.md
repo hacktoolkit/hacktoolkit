@@ -5,9 +5,11 @@ Hacktoolkit is the ONE open source project to rule them all (we try to, at least
 
 ## Hacktoolkit vs hacktoolkit
 
-Use Hacktoolkit (capital) when referring to the project.
+Use Hacktoolkit (capital, proper name) when referring to the project or code.
 
-Use hacktoolkit (all lowercase) when referring to the code or the library.
+Use `hacktoolkit` (all lowercase) only when referring to the code, library, or package name.
+
+Java package names, for example, should start with `com.hacktoolkit`
 
 ## This README
 
