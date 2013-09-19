@@ -1,0 +1,119 @@
+Author: Jonathan Tsai <hello@jontsai.com>
+Date: 2011-12-21
+
+Zoosk Software Developer Coding Challenge
+
+
+1a) There is a function that scans an array of characters for the character 'e'
+    and prints out each index. What is the time complexity? Please implement this
+    function in C, C++, PHP, or JavaScript.
+
+The time complexity is linear, O(n)
+
+function find_indexes_of_e(char_r) {
+  for (var i=0; i < char_r.length; ++i) {
+    if (char_r[i] == 'e') {
+      document.write(i);
+    }
+  }
+}
+
+1b) To sort the array of characters, what kind of sort would you use?
+    What is the time complexity of the sort? 
+
+Quick sort. Theta(n log(n))
+
+1c) If you were to rewrite the function from question #1a, but assume it takes
+    a sorted array, what (if anything) would you do differently?
+    What would be the time complexity? (You don't have to implement the function,
+    just describe any differences.)
+
+I would walk down the array until I saw the first 'e', and start printing the indexes and keep walking down until the first character that isn't 'e'.
+
+Still O(n) complexity
+
+2) Implement the function accumulate below in the language of your choice.
+   The code is in PHP but the syntax of this question should translate into any
+   language. You should have enough information from the comments to define this
+   function correctly. You do not need to implement the function calc. 
+
+/** 
+* This interface represents the ability to take 2 integers as input, 
+* perform some arithmetic operation on them, and return a resulting integer 
+*/ 
+interface iBinaryOperator 
+{ 
+/** 
+* This will take int $x and int $y and return an integer value or 
+* throw an exception 
+* 
+* @param int $x 
+* @param int $y 
+* @return int the value of the binary operation of $x and $y 
+* @throws MathException 
+*/ 
+public function calc($x, $y); 
+}
+
+/  ** 
+*  This function should go through the array of operands and run calc on each 
+*   operand IN ORDER, then return the accumulated value. 
+* 
+*  For example the code below would echo the value 10: 
+* 
+*  $op = new Addition(); // class Addition implements iBinaryOperator 
+*  $operands = array(5,2,3); 
+*  echo accumulate($op, $operands); // outputs 10 
+* 
+*  This function should work for ANY size array of operands, and ANY class 
+*  that implements iBinaryOperator 
+* 
+*  @param iBinaryOperator $op 
+*  @param array $operands array of integers of size N, can be empty 
+* 
+*  @return int|string returns an int on successful accumulation, or 
+*  the string 'error' in error conditions 
+*/ 
+function accumulate(iBinaryOperator $op, array $operands) 
+{ 
+// Add C, C++, PHP, or JavaScript code here 
+  $value = NULL;
+  if (sizeof($operands) < 1) {
+    // specifications not clear what happens when array has 0 or 1 elements
+    // assume error on empty and that there are no non-integer arguments
+    $value = 'error'
+  } else {
+    try {
+      $last = $operands[0]
+      for ($i = 1; $i < sizeof($operands); ++$i) {
+        $last = $op->calc($last, $operands[$i]);
+      }
+      $value = $last;
+    } catch (MathException $e) {
+      $value = 'error'
+    }
+  }
+  return $value;
+} 
+
+3) Have you ever developed an application on your own either because you wanted
+   learn a new skill or just because it would be cool to have application like it?
+   If yes, share details with us.
+
+I build applications on my own often, and I love to solve programming challenges
+of all kinds--especially the Facebook puzzles.
+
+One particularly cool application that I built was a plugin for a Linux media
+player. It's an HTTP server that serves a webpage and also talks to the media
+player to start/stop/pause/play/change songs/view playlist. I made the UI snazzy
+enough with some JavaScript and AJAX, and added some shell scripts to remotely
+control my PC (wakeonlan, startup applications). The end result is that I can
+change my music from anywhere in the house with a web-enabled device, or even turn
+on the music before I get home and set it to something that I'm in the mood for.
+
+Available on my GitHub: https://github.com/jontsai/Exaile-HTTP-Server
+
+
+4) When are you available to start a new position?
+
+Immediately

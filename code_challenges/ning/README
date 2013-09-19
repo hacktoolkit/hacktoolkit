@@ -1,0 +1,40 @@
+Jonathan Tsai <hello@jontsai.com>
+2009.04.21
+Ning Challenge Question
+
+Please create a web page for us that has one form on it. That form will have one
+textarea named 'comment' and a table that will show the current comments. It
+will also have a 'Submit' button that needs to use AJAX to POST the comment to
+the server. The server will respond with the updated list of comments in XML. An
+example of this data is available at http://codequiz.ning.com/comments.xml. The
+AJAX code on the page should read the returned XML and add each comment to the
+comments table. It should format dates to the local time and remove any
+Javascript pseudo URLs for safety reasons.
+
+The code you send back to us should be a combination of HTML and
+Javascript. Server side code is not required. You can use any JS framework you
+like (or none at all).
+--------------------------------------------------------------------------------
+
+Files:
+
+* README - This README file
+* addComment.php - Dummy file that just returns comments.xml body
+* ajax.js - My own Ajax stubs
+* comments.html - The main file
+* comments.js - The JavaScript used by comments.html
+* comments.xml - Original comments file from http://codequiz.ning.com/comments.xml
+* comments2.xml - Comments wrapped in CDATA, without it is malformed
+* saXMLUtils.js - XML to JSON library From terracoder.com
+
+--------------------------------------------------------------------------------
+
+Explanation of Solution:
+
+I had to modify the original comments.xml because it is malformed and cannot be
+converted to JSON properly; it would try to convert the text to additional tags.
+
+Usually, one would expect comment text to be enclosed in CDATA.
+
+No server side code is written to actually update comments.xml because it is
+assumed that the comments.xml file is generated from a SQL table instead.

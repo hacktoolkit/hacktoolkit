@@ -1,0 +1,18 @@
+Author: Jonathan Tsai <hello@jontsai.com>
+Date: 2009.04
+
+These files were prepared for the Chegg Programming Challenge.
+
+This set of files should have been distributed in one package. They are:
+
+- 01_last_100_search.php (command-line)
+- 03_basic_web_app_mvc.php (browser)
+- 04_amazon_product_extract_data.php (command-line)
+- 05_mysql_employee_salary.txt (text)
+- BasePageTemplate.class.php (an include for #3)
+- common.php (an include for #1)
+- largefile.txt (test file for #1)
+- README (this file)
+
+1. To run, drop this into a web-directory (like ~user/public_html) and go to the URL in a web browser.
+2. Otherwise, the program is meant to be run from command-line. Type "php filename" to see the usage and required arguments

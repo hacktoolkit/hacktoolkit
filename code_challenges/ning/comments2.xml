@@ -1,0 +1,24 @@
+<comments>
+<comment><time>2009/04/02 17:22:03</time><user>jack</user><![CDATA[This is a <b>great</b> site.
+
+I really like coming here.
+]]>
+</comment>
+<comment><time>2009/04/02 17:23:03</time><user>bob</user><![CDATA[Really, I mean it.
+
+But if you like this you will also like <a href="http://cnn.com">CNN</a>.
+]]>
+</comment>
+<comment><time>2009/04/02 17:24:03</time><user>sam</user><![CDATA[Yeah, I love it too.
+
+But what I really like to <a href="javascript:void alert('malicious code here');">read is this</a>.
+]]>
+</comment>
+<comment><time>2009/04/21 18:17:52</time><user>jontsai</user><![CDATA[Blah blah
+blah.
+
+<script>alert("malicious javascript test code");</script>
+Muahhahaha!
+]]>
+</comment>
+</comments>

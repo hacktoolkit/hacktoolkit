@@ -1,0 +1,481 @@
+/*
+HTTP Host: static.ak.fbcdn.net
+Generated: June 1st 2010 9:13:28 AM PDT
+Machine: 10.16.139.105
+Locale: nu_ll
+Path: css/798z3ipzsbk0scc4.pkg.css
+*/
+
+.canvas_iframe_util{overflow:hidden;width:646px;height:800px}
+.frame_wide .canvas_iframe_util{width:760px}
+.frame_wide #fb_sell_profile{overflow:hidden;max-height:100px}
+.fbframe .canvas_rel_positioning{position:relative;overflow:hidden;zoom:1}
+#pagefooter .app_copyright{color:#777;padding:0 8px 0 0;float:none;width:auto}
+#pagefooter .app_copyright .brand{background-image:url(/rsrc.php/z4XGZ/hash/7abvozy3.gif);background-position:center left;background-repeat:no-repeat;padding:5px 10px 6px 22px}
+#pagefooter .app_copyright .brand .page_built_by{padding-right:5px}
+#pagefooter .app_copyright .footer_report_link{padding-left:6px;padding-right:4px}
+#pagefooter .app_copyright .ip{position:absolute}
+#fbDockChatBuddylistNub{width:201px}
+#fbDockChatBuddylistNub .fbNubFlyout{width:202px}
+#fbDockChatBuddylistNub .icon{float:left;background:url(/rsrc.php/zA4IG/hash/cny9pytx.png) -631px -101px no-repeat;width:16px;margin:3px 4px 0 0}
+#fbDockChat.offline #fbDockChatBuddylistNub .icon{background-position:-647px -101px}
+#fbDockChatBuddylistNub .label .buddy_count_num{color:#777}
+#fbDockChatBuddylistNub .label .buddy_count_num strong{color:#333}
+.fbChatBuddylist .subheader,
+.fbChatBuddylist .hide_idle_marker,
+.fbChatBuddylist .suppress,
+.fbChatBuddylist .hide_empty_item,
+.fbChatBuddylist .list_drop_zone,
+.fbChatBuddylist .other_friends_list .friend_list_container .list_drop_zone,
+.fbChatBuddylist .hide_friend_list,
+.fbChatBuddylist .hover.drag_over .friendlist_name .edit_link,
+#fbDockChatBuddylist.reorder_fl .fbChatBuddylistTypeahead,
+.fbChatBuddylist .hover.other_friends_list .friendlist_name .edit_link,
+#fbDockChatBuddylist.reorder_fl .list_select .suppress,
+#fbDockChatBuddylist.reorder_fl .switch,
+.fbChatBuddylistPanel span.offline,
+.fbChatBuddylist .offline .list_drop_zone,
+.fbChatBuddylist .drag_over .friend_list_container .droppable_placeholder,
+.fbChatBuddylistContent .titletip,
+.error .fbChatBuddylistContent,
+.fbChatBuddylistError{display:none}
+.chat_buddylist_typeahead{position:relative;*position:static}
+.chat_buddylist_typeahead input{background:url(/rsrc.php/zA4IG/hash/cny9pytx.png) no-repeat left 5px;border-color:#93a2c1;border-width:1px 0 0 0;padding:4px 4px 4px 21px;width:175px}
+.chat_buddylist_typeahead .clear_input{position:absolute;top:50%;right:4px;width:17px;height:17px;margin-top:-9px;background:url(/rsrc.php/zBWWQ/hash/4wrf1np6.gif) no-repeat;cursor:pointer}
+.chat_buddylist_typeahead .clear_input:hover{background-position:0 -33px}
+.fbChatBuddylist a.friend em{background-color:#dce1e8;font-style:normal;font-weight:bold}
+.fbChatBuddylist a.selected em,
+.fbChatBuddylistContent a:hover em{background-color:#5670a6}
+.fbChatBuddylist .friendlist_name{background-color:#fff;color:#888;float:left;padding:0 5px 0 6px}
+.fbChatBuddylist span.title a,
+.fbChatBuddylist span.title a:hover{font-size:11px;background:#fff;color:#888;text-decoration:none}
+.fbChatBuddylist .friendlist_name .edit_link{display:none;font-size:9px;line-height:9px}
+.fbChatBuddylist .hover .friendlist_name .edit_link{display:-moz-inline-box;display:inline-block;padding:0 5px}
+.fbChatBuddylist a.friend{background:url(/rsrc.php/z2IHN/hash/c8hrcja7.png) no-repeat right 8px;border-top:1px solid #fff;border-bottom:1px solid #fff;clear:left;padding:1px 15px 1px 10px}
+.fbChatBuddylist .compact a.friend{background-position:right 6px}
+.fbChatBuddylist a.friend span{float:left;width:130px;line-height:22px}
+.fbChatBuddylist .compact a.friend span{line-height:18px}
+.fbChatBuddylist a.friend:hover,
+.fbChatBuddylist a.selected,
+.fbChatBuddylist a.drag{background-color:#6d84b4 !important;background-position:right -52px;border-top:1px solid #3b5998;border-bottom:1px solid #3b5998;color:#fff;text-decoration:none}
+.fbChatBuddylist .compact a.friend:hover,
+.fbChatBuddylist .compact a.selected,
+.fbChatBuddylist .compact a.drag{background-position:right -54px}
+.fbChatBuddylist .drag_active a.friend:hover{background-color:#fff !important;color:#3b5998}
+.fbChatBuddylist .drag_active a.friend.drag{background-color:#3b5998 !important;color:#fff}
+.fbChatBuddylist a.idle{background-position:right -112px}
+.fbChatBuddylist .compact a.idle{background-position:right -114px}
+.fbChatBuddylist a.idle:hover,
+.fbChatBuddylist a.selected.idle,
+.fbChatBuddylist a.drag.idle{background-position:right -172px}
+.fbChatBuddylist .compact a.idle:hover,
+.fbChatBuddylist .compact a.selected.idle,
+.fbChatBuddylist .compact a.drag.idle{background-position:right -174px}
+.fbChatBuddylist a.friend img{float:left;margin-right:5px}
+.fbChatBuddylist .friend_list_container{clear:both;padding:2px 0 0 0}
+.fbChatBuddylist .friend_list{background:#fff url(/rsrc.php/zD9WR/hash/6e47avqg.gif) 0 10px repeat-x;padding:4px 0 0}
+.fbChatBuddylist .show_empty_list{display:block !important}
+.ie6 .fbChatBuddylist .friend_list{z-index:-1}
+.reorder_fl span.title a,
+.reorder_fl span.title a:hover{background:transparent}
+#fbDockChatBuddylist.reorder_fl .friendlist_name span.title{background:url(/rsrc.php/z15OG/hash/nkbggqs8.gif) 4px 0 no-repeat;display:block;float:left;padding:0 20px}
+#fbDockChatBuddylist.reorder_fl .friend_list{background:none;margin:0 5px;overflow:hidden}
+.ie6 #fbDockChatBuddylist.reorder_fl .friend_list,
+.ie7 #fbDockChatBuddylist.reorder_fl .friend_list{overflow:auto}
+#fbDockChatBuddylist.reorder_fl .friend_list div.friendlist_name{background:#ededed;border-top:1px solid #d0d0d0;clear:left;color:#000;cursor:move;margin:3px 0;padding:5px 0;width:94%}
+#fbDockChatBuddylist.reorder_fl .friend_list div.friendlist_name span.title a{cursor:move}
+#fbDockChatBuddylist #reorder_fl_alert{background:#fff9d7;border-bottom:1px solid #e2c822;padding:4px 6px;text-align:center}
+#fbDockChatBuddylist #reorder_fl_alert span{display:block;text-align:left}
+#fbDockChatBuddylist #reorder_fl_alert input{margin:4px auto 0 auto}
+#fbDockChatBuddylist #error_fl_alert{background:#fff9d7;border-bottom:1px solid #e2c822;padding:4px 6px;text-align:center}
+#fbDockChatBuddylist #error_fl_alert span{display:block;text-align:left}
+#fbDockChatBuddylist #error_fl_alert input{margin:4px auto 0 auto}
+.fbDock .available .show_available,
+.fbDock .unavailable .show_unavailable,
+.fbDock .idle .show_idle,
+.fbDock .availability_loading .show_loading,
+.fbDock .chat_setting_loading .show_loading,
+.fbDock .hide_loading{display:block}
+.fbDock .available .show_unavailable,
+.fbDock .available .show_idle,
+.fbDock .idle .show_unavailable,
+.fbDock .unavailable .show_available,
+.fbDock .unavailable .show_idle,
+.fbDock .idle .show_available,
+.fbDock .available .availability_loading .hide_loading,
+.fbDock .unavailable .availability_loading .hide_loading,
+.fbDock .show_loading,
+.fbDock .chat_setting_loading .hide_loading{display:none}
+.fbChatBuddylistPanel{background:#ededed;border-bottom:1px solid #808080}
+.fbChatBuddylistPanel .lists,
+.fbChatBuddylistPanel .settings{border-right:1px solid #999;position:relative;z-index:11}
+.fbChatBuddylistPanel .flyout{background:#fff;border:1px solid #777;padding:6px 0;position:absolute;right:-1px;top:20px;width:186px;z-index:10}
+.fbChatBuddylistPanel .flyout_reversed{bottom:19px;top:auto}
+.fbChatBuddylistPanel .fbChatBuddylistPanel_settings_flyout{padding:4px 0 6px 0}
+.fbChatBuddylistPanel .flyout .text,
+.fbChatBuddylistPanel .flyout .new_list span{color:#888;cursor:default;font-weight:bold}
+.fbChatBuddylistPanel .flyout .text{padding:0 0 1px 8px}
+.fbChatBuddylistPanel a.panel_item{display:block;background:#eee url(/rsrc.php/zCCSI/hash/7am1obcj.png) repeat-x 0 0;padding:2px 1px 0 1px}
+.fbChatBuddylistPanel a.panel_item:hover{background-color:#fff;text-decoration:none}
+.fbChatBuddylistPanel .flyout_open a.panel_item{background-color:#6d84b4;background-image:none}
+.fbChatBuddylistPanel a.panel_item span{color:#333;display:block;line-height:11px;font-weight:bold;padding:2px 7px 5px 0}
+.fbChatBuddylistPanel .flyout_open a.panel_item span{color:#fff}
+.fbChatBuddylistPanel .flyout_open a.panel_item:hover span{border-top:0}
+.Locale_ca_ES .fbChatBuddylistPanel a.panel_item span,
+.Locale_da_DK .fbChatBuddylistPanel a.panel_item span,
+.Locale_es_LA .fbChatBuddylistPanel a.panel_item span,
+.Locale_es_ES .fbChatBuddylistPanel a.panel_item span,
+.Locale_ru_RU .fbChatBuddylistPanel a.panel_item span,
+.Locale_sk_SK .fbChatBuddylistPanel a.panel_item span,
+.Locale_sl_SI .fbChatBuddylistPanel a.panel_item span,
+.Locale_vi_VN .fbChatBuddylistPanel a.panel_item span,
+.Locale_tr_TR .fbChatBuddylistPanel a.panel_item span,
+.Locale_el_GR .fbChatBuddylistPanel a.panel_item span,
+.Locale_bg_BG .fbChatBuddylistPanel a.panel_item span,
+.Locale_mk_MK .fbChatBuddylistPanel a.panel_item span,
+.Locale_sr_RS .fbChatBuddylistPanel a.panel_item span{font-size:10px}
+.Locale_cy_GB .fbChatBuddylistPanel a.panel_item span,
+.Locale_hu_HU .fbChatBuddylistPanel a.panel_item span{font-size:9px}
+.Locale_tl_PH .fbChatBuddylistPanel a.panel_item span{font-size:9px;font-weight:normal;padding:1px 1px 5px 2px}
+.fbChatBuddylistPanel a.panel_item span .panel_icon{background:url(/rsrc.php/zA4IG/hash/cny9pytx.png) no-repeat;float:left;height:8px;margin:2px 3px 0 5px;overflow:hidden;width:8px}
+.fbChatBuddylistPanel #buddy_list_panel_settings_control .panel_icon{background-position:-623px -101px}
+.fbChatBuddylistPanel #buddy_list_panel_lists_control .panel_icon{background-position:-615px -101px}
+.fbChatBuddylistPanel #buddy_list_panel_settings_control.flyout_open .panel_icon{background-position:-623px -109px}
+.fbChatBuddylistPanel #buddy_list_panel_lists_control.flyout_open .panel_icon{background-position:-615px -109px}
+.Locale_tl_PH .fbChatBuddylistPanel a.panel_item span .panel_icon{display:none}
+.fbChatBuddylistPanel .flyout_open{border:1px solid #3b5998;border-bottom:0;margin:-1px 0 0 -1px}
+.fbChatBuddylistPanel .flyout .new_list{margin:5px 0 0 8px}
+.fbChatBuddylistPanel .flyout .new_list input{margin-top:5px;width:162px}
+.fbChatBuddylistPanel .chat_setting{padding:0 0 6px 4px}
+.fbChatBuddylistPanel .chat_setting .input_box{float:left;width:16px;height:16px}
+.fbChatBuddylistPanel .chat_setting label{float:left;padding:2px 2px 0 6px;font-weight:normal;color:#000;width:118px;cursor:default}
+.fbChatBuddylistPanel .options_actions{margin:0;padding:0 0 2px 0}
+.fbChatBuddylistPanel .flyout a{color:#333;display:block;border-bottom:1px solid #fff}
+.fbChatBuddylistPanel .flyout a:hover{color:#fff;background-color:#6d84b4;background-position-y:-56px;border-top:1px solid #3b5998;border-bottom:1px solid #3b5998;margin:-1px 0 0;text-decoration:none}
+.fbChatBuddylistPanel .flyout .menu_divider{background-color:#ddd;border:0;color:#ccc;height:1px;margin:0 8px 4px 8px;padding:0}
+.fbChatBuddylistPanel .options_actions a span{display:block;padding:2px 8px 3px 26px}
+.fbChatBuddylistPanel .flyout a .menu_icon{background-image:url(/rsrc.php/zA4IG/hash/cny9pytx.png);background-repeat:no-repeat;display:block;height:8px;float:left;margin:5px 0 0 11px;overflow:hidden;width:8px}
+.ie6 .fbChatBuddylistPanel .flyout a .menu_icon,
+.ie6 .fbChatBuddylistPanel .flyout a.list_reorder_control .menu_icon{margin:5px 0 0 5px}
+.ie6 .fbChatBuddylistPanel .flyout a:hover{background:#333}
+.fbChatBuddylistPanel .flyout a.go_offline_control .menu_icon{background-position:-589px -101px}
+.fbChatBuddylistPanel .flyout a.list_reorder_control .menu_icon{background-position:-597px -101px;height:9px;margin-left:10px;width:10px}
+.fbChatBuddylistPanel .flyout a.list_popout_control .menu_icon{background-position:-607px -101px}
+.fbChatBuddylistPanel .flyout a:hover.go_offline_control .menu_icon{background-position:-589px -108px}
+.fbChatBuddylistPanel .flyout a:hover.list_reorder_control .menu_icon{background-position:-597px -110px}
+.fbChatBuddylistPanel .flyout a:hover.list_popout_control .menu_icon{background-position:-607px -109px}
+.fbChatBuddylist .switch{background:#fff;display:block;padding:3px 6px;float:right;position:relative}
+.fbChatBuddylist .switch a{background-color:#fff;background-image:url(/rsrc.php/zA4IG/hash/cny9pytx.png);background-repeat:no-repeat;background-position:-663px -101px;cursor:pointer;display:block;height:8px;width:17px;padding:0;text-decoration:none}
+.fbChatBuddylist .switch a:hover{background-position:-663px -109px;background-color:#fff}
+.fbChatBuddylist .switch a:active{background-position:-680px -101px}
+.fbChatBuddylist .offline .switch a{background-position:-680px -109px}
+.fbChatBuddylist .offline .switch a:hover{background-position:-697px -101px}
+.fbChatBuddylist .offline .switch a:active{background-position:-697px -109px}
+.fbChatBuddylist .drag{left:0 !important;right:0;z-index:1}
+.fbChatBuddylist .drag span{background-image:none}
+.fbChatBuddylist .show_empty_list .list_drop_zone{display:none !important}
+.fbChatBuddylist .empty_friend_list .list_drop_zone{background:url(/rsrc.php/z7BYL/hash/owa7t3h0.gif) top left no-repeat;display:block;margin:3px 6px;padding:3px 0 0 0;width:174px}
+.fbChatBuddylist .scroll .empty_friend_list .list_drop_zone{margin:3px 6px}
+.ie6 .fbChatBuddylist .empty_friend_list .list_drop_zone{margin:3px 5px}
+.fbChatBuddylist .empty_friend_list .list_drop_zone .list_drop_zone_inner{background:url(/rsrc.php/z7BYL/hash/owa7t3h0.gif) bottom left no-repeat;color:#999;display:block;margin-top:8px;padding:0 10px 10px 10px;text-align:center}
+.fbChatBuddylist .drag_over .friend_list_container .list_drop_zone{background-position:-196px 0}
+.fbChatBuddylist .drag_over .friend_list_container .list_drop_zone .list_drop_zone_inner{background-position:-196px bottom;padding:15px 10px 26px 10px;color:#fff}
+.fbChatBuddylistContent .hover .switch a:hover .titletip{display:block}
+.fbChatBuddylistContent .titletip{background:url(/rsrc.php/zOSV4/hash/d9fmazqs.gif) no-repeat right 5px;top:-3px;bottom:auto;right:26px;padding-right:5px;padding-bottom:4px;position:absolute;z-index:20}
+.fbChatBuddylistContent .titletip a{color:#fff;text-decoration:underline}
+.fbChatBuddylistContent .titletip strong{background:#282828;color:#fff;display:block;font-weight:normal;padding:3px 8px;text-align:center;white-space:nowrap;*margin:0}
+.fbChatBuddylistContent .accessibility_tip{position:absolute;top:-999px;filter:alpha(opacity=0);opacity:0;width:0;height:0;overflow:hidden}
+.error .fbChatBuddylistError{display:block}
+.fbChatBuddylist .fbChatBuddylistError,
+.fbChatBuddylist .info_text{background-color:#fff;color:#666;padding:6px 8px}
+html>body #fbDockChatBuddylist ul li.subheader{*margin-top:-6px}
+html>body #fbDockChatBuddylist .compact ul li{*margin-top:-2px}
+.fbDock .available .show_available,
+.fbDock .unavailable .show_unavailable,
+.fbDock .idle .show_idle,
+.fbDock .availability_loading .show_loading,
+.fbDock .chat_setting_loading .show_loading,
+.fbDock .hide_loading{display:block}
+.fbDock .available .show_unavailable,
+.fbDock .available .show_idle,
+.fbDock .idle .show_unavailable,
+.fbDock .unavailable .show_available,
+.fbDock .unavailable .show_idle,
+.fbDock .idle .show_available,
+.fbDock .available .availability_loading .hide_loading,
+.fbDock .unavailable .availability_loading .hide_loading,
+.fbDock .show_loading,
+.fbDock .chat_setting_loading .hide_loading{display:none}
+.show_on_presence_error,
+.show_on_popped_out,
+.presence_error .hide_on_presence_error,
+.popped_out .hide_on_popped_out{display:none}
+.presence_error .show_on_presence_error,
+.popped_out .show_on_popped_out{display:block}
+#fbDockChatTabs .fbNubFlyout{width:228px}
+#fbDockChatTabSlider .arrow{background:url(/rsrc.php/zA4IG/hash/cny9pytx.png) -820px -75px no-repeat;width:4px;height:8px;margin:4px 2px 0 0;float:left}
+#fbDockChatTabSlider .previous .arrow{background-position:-826px -75px}
+#fbDockChatTabSlider .next.disabled .arrow{background-position:-820px -66px}
+#fbDockChatTabSlider .previous.disabled .arrow{background-position:-826px -66px}
+#fbDockChatTabSlider .disabled a.fbNubButton:hover{background-color:#d8d8d8}
+#fbDockChatTabSlider .numTabs{margin:1px 5px;float:left}
+#fbDockChatTabSlider .disabled .numTabs{color:#999}
+#fbDockChatTabs{position:static}
+#fbDockChatTabs .fbChatTab.highlight.disabled,
+#fbDockChatTabs .fbChatTab.highlight{color:#fff;margin:0;border-color:#3b5998;background-image:url(/rsrc.php/zA4IG/hash/cny9pytx.png);background-position:0 -134px;background-repeat:repeat-x}
+#fbDockChatTabs .tab_hit_area{position:relative;overflow:hidden;float:left;width:110px;cursor:pointer;padding:2px 4px 6px 6px}
+#fbDockChatTabSlider .numMessages,
+#fbDockChatTabSlider .tab_count{position:absolute;top:-8px;right:12px;padding-top:1px;font-weight:bold;text-align:center;width:18px;height:16px;font-size:9px;color:#fff;background-image:url(/rsrc.php/zA4IG/hash/cny9pytx.png);background-position:-801px -66px;background-repeat:no-repeat}
+#fbDockChatTabSlider .next .tab_count{right:6px}
+#fbDockChatTabSlider .previous .numMessages{right:2px}
+#fbDockChatTabs .fbNubButton .tab_name .tab_availability{width:7px;height:7px;background:url(/rsrc.php/zA4IG/hash/cny9pytx.png) no-repeat -715px -101px;margin:0 0 1px 4px}
+#fbDockChatTabs .idle .fbNubButton .tab_name .tab_availability{background-position:-715px -108px}
+#fbDockChatTabs .fbChatTab.highlight .fbNubButton.hover .tab_name .tab_availability,
+#fbDockChatTabs .fbChatTab.highlight .fbNubButton .tab_name .tab_availability{background-position:-733px -101px}
+#fbDockChatTabs .fbChatTab.highlight.typing .fbNubButton .tab_name .tab_availability,
+#fbDockChatTabs .typing .fbNubButton .tab_name .tab_availability{background-position:-722px -101px;height:11px;width:11px;margin:0 0 0 4px}
+#fbDockChatTabs .fbChatTab.disabled .fbNubButton .tab_name .tab_availability,
+#fbDockChatTabs .fbChatTab.disabled .fbNubButton.hover .tab_name .tab_availability{background-position:-590px -102px}
+#fbDockChatTabs .disabled .fbNubButton.hover .tab_name span,
+#fbDockChatTabs .fbNubButton.hover .tab_name span{text-decoration:underline}
+#fbDockChatTabs .fbChatTab.highlight.disabled{color:#c3cddf}
+#fbDockChatTabs .fbChatTab.disabled.focused{color:#555;background-color:#fff}
+#fbDockChatTabs .fbChatTab.focused{color:#111;border-color:#333;border-bottom:1px solid #333;margin-top:0;background:#fff}
+#fbDockChatTabs .fbChatTab.focused .tab_hit_area{margin-top:0;padding-top:3px;padding-bottom:5px}
+#fbDockChatTabs .chat_header{background:#526ea6;border:1px solid #254588;border-bottom:1px solid #526ea6;cursor:pointer}
+#fbDockChatTabs .chat_header{cursor:auto}
+#fbDockChatTabs .chat_header_name{float:left;margin-left:46px;padding:0}
+#fbDockChatTabs .chat_header_name a{color:#fff;font-weight:bold;padding:0}
+#fbDockChatTabs .chat_header .header_buttons{float:right;width:32px;margin-top:2px;margin-right:2px;cursor:pointer}
+#fbDockChatTabs .chat_header .header_buttons .minimize{float:right;display:block;height:15px;width:15px;background:url(/rsrc.php/zA4IG/hash/cny9pytx.png) no-repeat -711px -58px}
+#fbDockChatTabs .chat_header .header_buttons .minimize:hover,
+#fbDockChatTabs .chat_header:hover .header_buttons .minimize{background-position:-728px -58px}
+#fbDockChatTabs .chat_header.suppress_hover:hover .header_buttons .minimize{background-position:-711px -58px}
+#fbDockChatTabs .chat_header .header_buttons .close{float:right;display:block;height:15px;width:15px;background:url(/rsrc.php/zA4IG/hash/cny9pytx.png) no-repeat -843px -63px}
+#fbDockChatTabs .chat_header .header_buttons .close:hover{background-position:-855px -63px}
+#fbDockChatTabs .chat_info{padding:2px 0 2px 55px;background:#eee;min-height:28px;width:171px}
+#fbDockChatTabs img.chat_info_pic{position:absolute;top:11px;left:13px;width:45px;height:45px;padding:0 1px 1px 0;background:url(/rsrc.php/zA4IG/hash/cny9pytx.png) no-repeat -480px -166px}
+#fbDockChatTabs .fbNubFlyoutBody{overflow:auto;overflow-x:hidden;color:#000;cursor:default;position:relative}
+#fbDockChatTabs .toolbox{background-color:#fff}
+#fbDockChatTabs .chat_actions{color:#3b5998;font-size:9px;padding:2px 5px;border-bottom:1px solid #ccc}
+#fbDockChatTabs .chat_actions .divider{margin:0 2px}
+#fbDockChatTabs .chat_actions .action,
+#fbDockChatTabs .chat_actions .action_wrapper{white-space:nowrap}
+#fbDockChatTabs .chat_actions .action_wrapper:hover{cursor:pointer}
+#fbDockChatTabs .chat_actions .action_wrapper:hover .action{text-decoration:underline}
+#fbDockChatTabs .chat_actions .action_wrapper img{margin-right:4px;vertical-align:middle}
+#fbDockChatTabs .chat_actions .action:hover{cursor:pointer;text-decoration:underline}
+#fbDockChatTabs .disabled .fbNubFlyoutBody{background:#f7f7f7}
+#fbDockChatTabs .fbNubFlyoutBodyContent{padding-bottom:3px}
+#fbDockChatTabs .fbNubFlyoutBody h5{font-size:11px;margin:2px 0 0 0;padding:3px 6px 1px;border-top:1px solid #eee}
+#fbDockChatTabs .fbNubFlyoutBody h5.self{color:#777}
+#fbDockChatTabs .fbNubFlyoutBody h5.other a{cursor:pointer}
+#fbDockChatTabs .fbNubFlyout .time_stamp{color:#999;float:right;font-size:9px;font-weight:normal;padding:1px 0}
+#fbDockChatTabs .fbNubFlyoutBody p{color:#000;padding:2px 3px;margin:0 4px;line-height:14px}
+#fbDockChatTabs .fbNubFlyoutBody .cyphertext{color:#999;font-size:9px;line-height:11px}
+#fbDockChatTabs .fbNubFlyoutBody .msg_warning{background-color:#fff9d7}
+#fbDockChatTabs .fbNubFlyoutBody .chat_notice,
+#fbDockChatTabs .fbNubFlyoutBody .visibility_change{color:#999;margin:0;padding:3px 6px 2px}
+#fbDockChatTabs .fbNubFlyout .date_divider{margin-top:10px;font-size:9px;font-weight:bold;color:#777;padding-left:6px}
+#fbDockChatTabs .fbNubFlyout .date_divider.first{margin-top:2px}
+#fbDockChatTabs .chat_input_div{padding:0;border-top:1px solid #93a2c1}
+#fbDockChatTabs .chat_shadow_input,
+#fbDockChatTabs .chat_input{border:0;padding:4px 4px 4px 24px;margin:0}
+#fbDockChatTabs .disabled .chat_input{background-color:#e4e4e4;color:#888}
+#fbDockChatTabs .chat_shadow_input{position:absolute;visibility:hidden;height:0;width:196px}
+#fbDockChatTabs .chat_input{overflow:auto;resize:none}
+#fbDockChatTabs .chat_input_icon{background:url(/rsrc.php/zA4IG/hash/cny9pytx.png) no-repeat -2px -170px;left:4px;height:16px;position:absolute;top:4px;width:16px}
+#fbDockChatTabs .tab_content{position:relative;padding:1px 0 0}
+#fbDockChatTabs .highlight.disabled,
+#fbDockChatTabs .highlight{margin:0;height:27px}
+#fbDockChatTabs .highlight a.fbNubButton,
+#fbDockChatTabs .highlight.disabled a.fbNubButton{background:#5872A7 url(/rsrc.php/zA4IG/hash/cny9pytx.png) 0 -135px repeat-x;border-color:#283b8a;color:#fff}
+#fbDockChatTabs .highlight a.fbNubButton:hover,
+#fbDockChatTabs .highlight.disabled a.fbNubButton:hover{background-image:none}
+#fbDockChatTabSlider .disabled a.fbNubButton{background-color:#d8d8d8;color:#555}
+#fbDockChatTabs .highlight.disabled{color:#c3cddf}
+#fbDockChatTabs .openToggler.disabled a.fbNubButton{background-color:#d8d8d8;color:#555}
+#fbDockChatTabs .fbNubButton .close{position:absolute;right:0;top:50%;margin-top:-7px}
+#fbDockChatTabs .chat_info_pic_link{position:absolute;top:-17px;left:5px;background:url(/rsrc.php/zA4IG/hash/cny9pytx.png) no-repeat -480px -166px;width:auto;height:auto}
+#fbDockChatTabs .chat_info_pic_link img{display:block;width:45px;height:45px}
+.fbNub{top:-1px}
+.fbNub,
+.fbNubGroup{float:left;position:relative}
+.fbNubButton{border-color:#999;border-style:solid;border-width:1px 0 0 1px;color:#333;display:block;height:16px;font-weight:bold;padding:4px 5px;position:relative;z-index:10}
+.fbNubButton:hover{background:#fff;border-top-color:#b5b5b5;text-decoration:none}
+.openToggler .fbNubButton{background:#fff;border-color:#777;border-right-width:1px;border-top-width:0;margin-right:-1px;padding:5px}
+.openToggler .fbNubButton .rule{border-top:1px solid #ccc;margin-top:-5px;padding-top:4px;position:relative}
+.fbNubFlyout{display:none;background-color:#fff;border-bottom:1px solid #777;bottom:25px;position:absolute}
+.lNubContainer .fbNubFlyout,
+.rNubContainer .fbNub .swapDirection{left:0;right:auto}
+.rNubContainer .fbNubFlyout,
+.lNubContainer .fbNub .swapDirection{left:auto;right:-1px}
+.openToggler .fbNubFlyout{display:block}
+.fbNubFlyoutTitlebar{background-color:#6d84b4;border:1px solid #254588;color:#fff;cursor:pointer;font-size:11px;font-weight:bold;padding:3px 3px 3px 8px;position:relative}
+.fbNubFlyoutTitlebar .uiLinkButton input{color:#adbed8}
+.fbNubFlyoutTitlebar .minimize{float:right;height:14px;padding:0 3px;width:9px}
+.fbNubFlyoutTitlebar .minimize input{background-color:#adbed8;display:block;height:2px;overflow:hidden;position:relative;top:8px;width:9px}
+.fbNubFlyoutTitlebar .minimize:hover input,
+.fbNubFlyoutTitlebar .minimize input:focus,
+.fbNubFlyoutTitlebar .minimize input:active,
+.fbNubFlyout .titlebarHover .minimize input{background-color:#fff}
+.fbNubFlyoutTitlebar .close{float:right;background-image:url(/rsrc.php/z6GM7/hash/byqp3nn5.gif)}
+.fbNubFlyoutTitlebar .close:hover{background-color:transparent;background-position:left -10px}
+.fbNubFlyoutHeader,
+.fbNubFlyoutBody,
+.fbNubFlyoutFooter{border-color:#777;border-style:solid;border-width:0 1px;position:relative}
+.fbNubFlyoutBody{overflow:auto}
+.menuOpened .fbNubFlyoutTitlebar{background-color:#f2f2f2;border-color:#777;color:#333}
+.menuOpened .fbNubFlyoutTitlebar .minimize input{background-color:#777}
+.menuOpened .fbNubFlyoutTitlebar .minimize:hover input,
+.menuOpened .fbNubFlyoutTitlebar .minimize input:focus,
+.menuOpened .fbNubFlyoutTitlebar .minimize input:active,
+.menuOpened .titlebarHover .minimize input{background-color:#333}
+.fbNub .UIImageBlock_Content{float:left;width:auto}
+.fbNub .fbNubButton .spritemap_icons{display:block}
+a.fbNubButton:active .uiTooltipWrap,
+.openToggler .fbNubButton:hover .uiTooltipWrap{display:none}
+.fbDockWrapper{bottom:0;direction:ltr;height:25px;left:0;position:fixed;right:0;z-index:99}
+.fbDockWrapperTop{bottom:auto;top:0}
+.fbDockWrapperLeft{right:auto}
+.fbDockWrapperRight{left:auto}
+.fbDock{margin:0 15px}
+.fbDock .lNubContainer{float:left}
+.fbDock .rNubContainer{float:right}
+.fbDock,
+.fbDockWrapperLeft .lNubContainer,
+.fbDockWrapperRight .rNubContainer{background:#f4f4f4 url(/rsrc.php/zCCSI/hash/7am1obcj.png) 0 0 repeat-x;border-color:#999;border-style:solid;border-width:1px 1px 0 0}
+.fbDockWrapperLeft .fbDock,
+.fbDockWrapperRight .fbDock{background:none;border:0 none}
+#jewelCase{left:97px;position:absolute;bottom:0;_bottom:-1px;width:84px}
+#jewelCase .jewel{border:1px solid #3b5998;border-bottom:0;float:left;height:31px;margin:13px -1px 0 0;position:relative;width:24px}
+#jewelCase .openToggler{border-color:#333;height:30px;margin-top:14px;z-index:2}
+.jewelCount{background-color:#00376a;top:-2px;color:#fff;display:none;font-size:9px;font-weight:bold;padding-bottom:1px;position:absolute;right:-2px;z-index:3;-webkit-border-radius:2px;-moz-border-radius:2px}
+.ff2 .jewelCount{-moz-border-radius:2px 4px 4px 1px}
+.jewelCount span{background-color:#f03d25;border:1px solid #dd3822;border-top:0;display:block;padding:1px 2px 0 1px;-webkit-border-radius:2px;-moz-border-radius:2px}
+.ff3 .jewelCount span{padding-right:1px}
+.ff2 .jewelCount span{-moz-border-radius:2px 4px 4px 1px}
+.jewelNew .jewelCount{display:block}
+.jewelToggler{background:no-repeat url(/rsrc.php/z7VU4/hash/66ad7upf.png);display:inline-block;height:31px;position:absolute;text-decoration:none;width:24px}
+.jewelToggler:active,
+.jewelToggler:focus,
+.jewelToggler:hover{outline:none;background-color:#4b67a1;text-decoration:none}
+.openToggler .jewelToggler{background-color:#fff !important;z-index:3}
+#jewelMail{background-position:-24px -73px}
+#jewelMail:hover,
+#jewelMail:focus,
+#jewelMail:active{background-position:-51px -73px}
+.jewelNew #jewelMail{background-position:-78px -73px}
+.openToggler #jewelMail{background-position:-105px -74px !important}
+#jewelRequest{background-position:-24px -105px}
+#jewelRequest:hover,
+#jewelRequest:focus,
+#jewelRequest:active{background-position:-51px -105px}
+#jewelRequestsContent .jewelRequest .jewelRequestContent{padding-top:5px}
+#jewelRequestsContent .uiTextTitle{font-size:11px}
+#jewelRequestsContent .requestLabel{line-height:12px}
+.jewelNew #jewelRequest{background-position:-78px -105px}
+.openToggler #jewelRequest{background-position:-105px -106px !important}
+#jewelAlert{background-position:-24px -137px}
+#jewelAlert:hover,
+#jewelAlert:focus,
+#jewelAlert:active{background-position:-51px -137px}
+.jewelNew #jewelAlert{background-position:-78px -137px}
+.openToggler #jewelAlert{background-position:-105px -138px !important}
+#jewelCase .jewelBox{background-color:#fff;border:1px solid #333;border-bottom:2px solid #293e6a;display:none;left:-1px;overflow:hidden;position:absolute;top:29px;width:330px;z-index:2}
+#jewelCase .openToggler .jewelBox{display:block}
+#jewelCase li,
+#jewelCase .empty{padding:4px 8px}
+.jewelBox ul{padding:4px 0}
+#jewelCase .jewelHeader{margin:7px 8px 0}
+#jewelCase .jewelHeader a{position:relative;top:2px}
+#jewelCase .jewelItemNew{background:#eff1f7}
+#jewelCase .jewelItemResponded{background:#fff9d7}
+#jewelCase .jewelLoading{display:block;margin:5px auto}
+.jewelBox .profileImage{height:50px;width:50px}
+.jewelBox .messageRowExternalPic .profileImage{background-color:#e6e6e6;height:16px;width:16px;padding:17px}
+.jewelBox .metadata{padding-top:3px}
+#jewelBoxRequest .async_saving{position:relative}
+#jewelBoxRequest .async_saving .loadingIndicator{background:url(/rsrc.php/zBS5C/hash/7hwy7at6.gif) no-repeat 0 0;height:11px;left:50%;margin:-5px 0 0 -6px;position:absolute;top:50%;width:16px}
+#jewelBoxRequest .async_saving .uiButton{visibility:hidden}
+#jewelBoxMail li{padding:0}
+#jewelBoxMail li a{display:block;overflow:hidden;padding:4px 6px;text-overflow:ellipsis;white-space:nowrap}
+#jewelBoxMail .content{display:block;_overflow:hidden;_text-overflow:ellipsis;width:auto;_width:220px}
+#jewelBoxMail .author{color:#3b5998;font-weight:bold;padding-top:2px}
+#jewelBoxMail .preview{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#jewelBoxMail .subject{color:#333}
+#jewelBoxMail .time{color:#9d9d9d;font-size:9px}
+#jewelCase .jewelFooter a{background-color:#f7f7f7;border-top:1px solid #e0e0e0;display:block;font-weight:bold;padding:8px;text-align:center}
+#jewelCase .jewelFooter a:hover,
+#jewelCase .jewelFooter a:active,
+#jewelCase .jewelFooter a:focus{background-color:#6d84b4;border-top:1px solid #3b5998;color:#fff;outline:none;text-decoration:none}
+#jewelCase .jewelFooter .seeMoreCount{display:none;font-weight:bold;padding:2px 0 0}
+#requestsWrapper .jewelFooter .seeMoreCount,
+#jewelCase .jewelUnread .jewelFooter .seeMoreCount{display:block}
+#jewelBoxMail.jewelHighlightItem li a:hover,
+#jewelBoxMail.jewelHighlightItem li a:active,
+#jewelBoxMail.jewelHighlightItem li a:focus,
+#jewelBoxAlert.jewelHighlightItem li.selected{background-color:#6d84b4 !important;border-bottom:1px solid #3b5998;border-top:1px solid #3b5998;outline:none;padding-top:3px;padding-bottom:3px;text-decoration:none}
+#jewelBoxAlert.jewelHighlightItem #presence_notifications_loading.selected{background-color:#fff !important;border:none;cursor:auto;padding:4px 8px}
+#jewelCase .jewelFooter a:hover span,
+#jewelCase .jewelFooter a:active span,
+#jewelCase .jewelFooter a:focus span,
+#jewelCase .jewelHighlightItem a:hover .uiTextSubtitle,
+#jewelCase .jewelHighlightItem a:active .uiTextSubtitle,
+#jewelCase .jewelHighlightItem a:focus .uiTextSubtitle,
+#jewelCase .jewelHighlightItem li.selected a,
+#jewelCase .jewelHighlightItem li.selected,
+#jewelCase .jewelHighlightItem li.selected .timestamp{color:#fff}
+#jewelCase .jewelHighlightItem li{cursor:pointer}
+#jewelBoxAlert .staticAppIcon{background-position:right;height:16px;width:16px}
+#jewelBoxAlert .selected .staticAppIcon{background-position:left}
+.spritemap_9i236f{background-image:url(/rsrc.php/z4Q6J/hash/666ou5qk.png);_background-image:url(/rsrc.php/zDZL9/hash/e2ygmmm7.gif);background-repeat:no-repeat;display:inline-block;height:16px;width:16px}
+.sx_c2b7bf{background-position:-16px -1px}
+.selected .sx_c2b7bf{background-position:-0px -1px}
+.sx_1ea223{background-position:-16px -18px}
+.selected .sx_1ea223{background-position:-0px -18px}
+.sx_6ab1e0{background-position:-16px -35px}
+.selected .sx_6ab1e0{background-position:-0px -35px}
+.sx_2754ce{width:12px;height:8px;background-position:-0px -69px}
+.sx_d87dd0{background-position:-16px -52px}
+.selected .sx_d87dd0{background-position:-0px -52px}
+.uiTextareaNoResize{resize:none}
+.objectListItem{padding-bottom:8px;padding-top:8px}
+.passive .objectListItem{color:#808080}
+.objectListItem .auxiliary{text-align:right}
+.uiTypeahead .search ul{padding-bottom:0}
+.uiTypeahead .search li{_height:50px;min-height:50px;padding:2px 30px 2px 63px}
+.uiTypeahead .search img{display:block;height:50px;left:6px;position:absolute;width:50px;background-color:#eceff5}
+.uiTypeahead .search .text{color:#3b5998;font-weight:bold}
+.uiTypeahead .search .category{font-size:11px;padding-top:0}
+.uiTypeahead .search .categoryContents{position:relative}
+.uiTypeahead .search .subtext{font-size:9px;padding-top:2px}
+.uiTypeahead .search .seeMoreTitle{color:#3b5998;font-size:11px;font-weight:bold;padding-bottom:0;padding-right:7px;position:relative}
+.uiTypeahead .search .seeMoreResultsCount{color:#999;font-size:9px;font-weight:normal}
+.uiTypeahead .search .seeMoreArrow,
+.uiTypeahead .search .category .externalArrow{background:transparent url(/rsrc.php/zA4IG/hash/cny9pytx.png) 0 -413px;height:7px;display:block;_display:none;position:absolute;top:4px;width:4px}
+.uiTypeahead .search .seeMoreArrow{right:0}
+.uiTypeahead .search .category .externalArrow{right:-7px}
+.uiTypeahead .search .selected .seeMoreArrow{background-position:0 -420px}
+.uiTypeahead{border:solid #bdc7d8;border-width:1px 0;cursor:default;position:relative}
+.uiTypeahead .wrap{border:solid #bdc7d8;border-width:0 1px;overflow:hidden}
+.uiTypeahead .textInput{border:0;outline:0;width:100%}
+.uiTypeahead .selected .textInput{background:#e2e8f6}
+.uiTypeaheadFocused,
+.uiTypeaheadFocused .uiTypeahead{z-index:1}
+.uiTypeahead .uiSearchInput button{top:2px}
+.uiTypeahead .results{background:#fff;border-top:1px solid #333;border-bottom:2px solid #3b5998;display:block;left:0;position:absolute;top:100%;width:100%}
+.uiTypeahead ul{border:1px solid #333;border-width:0 1px;overflow:hidden;padding:2px 0}
+.uiTypeahead li{margin:0;background-color:#fff;border-top:1px solid #fff;border-bottom:1px solid #fff;color:#333;cursor:pointer;display:block;_height:1px;min-height:1px;padding:0 6px;position:relative}
+.uiTypeahead li.selected{background-color:#6d84b4;border-top:1px solid #3b5998;border-bottom:1px solid #3b5998}
+.uiTypeahead .icon{display:block;float:left;padding-right:4px}
+.uiTypeahead .text{display:block;font-weight:normal;font-size:11px;padding:2px 0}
+.uiTypeahead .subtext{color:#999;display:block}
+.uiTypeahead .category{color:#666;display:block}
+.uiTypeahead .results .selected *{color:#fff !important}
+.uiTypeahead strong{color:#3b5998;background-color:#d8dfea}
+.uiTypeahead .selected strong{background-color:#5670a6}
+.uiTypeahead .results li.calltoaction{background:#f7f7f7;border-top:1px solid #ddd;border-bottom:1px solid #f7f7f7;display:block;_height:1px;min-height:1px;padding:5px 5px 9px 5px;text-align:center;margin-top:2px}
+.uiTypeahead .results .calltoaction.selected{background:#6d84b4;border-bottom:1px solid #6d84b4;border-top-color:#3b5998}
+
+#bootloader_css_798z3ipzsbk0scc4_pkg_css { height: 42px; }

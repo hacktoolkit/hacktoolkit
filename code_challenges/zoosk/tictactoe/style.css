@@ -1,0 +1,83 @@
+#container {
+    margin: 300px auto 0px;
+    width: 500px;
+    height: 500px;
+    border: 5px solid #000;
+}
+
+#ttt_board {
+    width: 304px;
+    height: 304px;
+    margin: 30px auto;
+}
+
+.ttt-row {
+    width: 304px;
+    height: 100px;
+    border-top: 1px solid #000;
+}
+
+.ttt-cell {
+    width: 100px;
+    height: 100px;
+    float: left;
+    border-left: 1px solid #000;
+}
+
+.filled-o {
+    background-image: url('img/ttt_o.png');
+}
+
+.filled-x {
+    background-image: url('img/ttt_x.png');
+}
+
+.ttt-cell:hover {
+    background-color: #ccc;
+}
+
+.ttt-lastrow {
+    border-bottom: 1px solid #000;
+}
+
+.ttt-lastcol {
+    border-right: 1px solid #000;
+}
+
+#board_header, #board_footer {
+    width: 250px;
+    height: 30px;
+    margin: 20px auto;
+}
+
+.game-text {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+/* Scoreboard */
+
+#scoreboard {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    margin-top: 100px;
+    margin-right: 100px;
+    width: 250px;
+    height: 150px;
+    padding: 10px;
+    border: 5px solid #000;
+}
+
+#scoreboard_title {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#scoreboard_labels {
+    float: left;
+    font-weight: bold;
+}
+
+#scoreboard_values {
+}

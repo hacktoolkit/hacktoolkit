@@ -1,0 +1,24 @@
+11
+A 1
+B
+B 1
+D
+C 1
+B
+D 1
+B
+E 2
+A
+C
+F 1
+C
+G 1
+A
+H 1
+D
+I 1
+K
+J 1
+K
+K 1
+B

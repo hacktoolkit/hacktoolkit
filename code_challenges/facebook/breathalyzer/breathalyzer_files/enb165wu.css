@@ -1,0 +1,204 @@
+/*
+HTTP Host: b.static.ak.fbcdn.net
+Generated: June 7th 2010 11:49:45 AM PDT
+Machine: 10.16.139.103
+Locale: nu_ll
+Path: css/3v2xv1vhmmwwsk4w.pkg.css
+*/
+
+.sidebar{padding-right:176px;overflow:hidden;background:#fff url(/rsrc.php/z43O5/hash/4gnmxnl7.gif) repeat-y top right}
+.sidebar.other_side{padding-left:176px;padding-right:0;background:#fff url(/rsrc.php/zBLNJ/hash/5m86itcs.gif) repeat-y top left}
+.sidebar .content_frame{float:left;width:100%;margin-right:-176px;padding-right:176px}
+.sidebar .content_frame.other_side{float:right;margin-left:-176px;margin-right:0;padding-left:176px;border-right:none}
+.sidebar .sidebar_frame{float:left;width:176px;margin-right:-176px}
+.sidebar .sidebar_frame.other_side{float:right;margin-left:-176px;margin-right:0}
+.sidebar .sidebar_frame .panel{padding:10px 10px 10px 11px}
+.UIIntentionalStreamSearch .highlight,
+.UIIntentionalStreamSearch .inserted{color:#000;font-weight:bold;margin:0 0 0 0;padding:0 2px 1px 2px}
+.UILiveLink_BottomBorder{border-bottom:1px solid #eee;margin-bottom:6px;padding-bottom:6px}
+.UILiveLink h2{font-size:11px}
+.UILiveLinkBig h2{font-size:13px}
+.UILiveLink_Description,
+.UILiveLink_PoweredBy{color:#666}
+.UILiveLink_PoweredBy{font-size:9px;margin-top:6px;padding-top:6px;padding-right:6px;text-align:right}
+.UILiveLink_Link{display:block}
+.UIResultSection{padding-bottom:30px}
+.UIResultSection_Title{border-bottom:1px solid #eee;padding-bottom:5px;padding-top:2px;font-size:13px}
+.UIResultSection_HasSelectFilter .UIResultSection_Title{padding-bottom:3px;padding-top:0}
+.UIResultSection_TitleLeft{float:left}
+.UIResultSection_RightHeader{float:right;color:#666;font-weight:normal;font-size:11px;line-height:17px}
+.UIResultSection_HasSelectFilter .UIResultSection_RightHeader{line-height:21px}
+.UIResultSection_Title .img{margin-bottom:-3px;margin-right:5px}
+.UIResultSection_Content{padding-top:7px}
+.UIResultSection_Bottom{border-top:1px solid #eee;padding:5px 2px 0 0;margin:6px 0 0}
+.UIResultSection_MoreLink{text-align:right;font-weight:bold;float:right}
+.UIResultSection_BottomText{color:#999;float:left;text-align:left}
+.UIResultSection_Arrow{margin-left:3px;margin-bottom:-1px}
+.UIResultSet_MoreLink{display:block;padding-top:4px}
+.UIResultSet{padding:0 6px}
+.UIResultSet_SuppressBasePadding{padding:0}
+.UISearchFilterBar{padding-bottom:7px}
+.UISearchFilterBar_Content{padding:4px 7px 5px}
+.UISearchFilterBar_Content .inputtext{margin-right:6px;width:100px}
+.Locale_en_US .UISearchFilterBar_Content .inputtext{width:131px;_width:100px}
+.UISearchFilterBar_Content select{margin-right:6px;*margin-top:2px;height:22px}
+.UISearchFilterBar_Content .refine_button{vertical-align:top}
+.UISearchFilterBar_Label{font-weight:bold;color:#333;padding-right:6px;*position:relative;*top:-5px}
+.UISearchInput input.UISearchInput_Text{font-size:13px;font-weight:bold;height:16px;padding:3px 3px 4px;width:200px}
+.UISearchInput .searchButton{margin-left:-1px;vertical-align:top}
+.UISearchNullState{width:375px;margin:25px auto 40px auto}
+.UISearchNullState_Well{overflow:hidden}
+.UISearchNullState_Title{font-weight:normal;color:#444;padding-bottom:1px}
+.UISearchNullState_Subtitle{color:#999;font-weight:normal}
+.UISearchNullState_ImageBlock{margin:0 auto 0;padding-left:40px;padding-right:20px}
+.UISearchNullState_HR{background:#ccc;height:1px;margin-top:10px}
+.ie6 .UISearchNullState_HR{line-height:0;overflow:hidden}
+.UISearchNullState_Content{padding-top:13px;padding-left:62px;padding-right:20px;margin:0 auto}
+.UISearchNullState_FullContentWidth{padding-left:0;margin:0;margin-left:-33px}
+.UISearchNullState_FullContentWidth table.formtable td.label{width:83px;text-align:right}
+.UISearchNullState_FullContentWidth table.formtable td.label small{font-weight:normal}
+.UISearchNullState_GrayText{color:#666;padding-bottom:5px}
+.UISearchSummaryBar{padding-top:7px}
+.UISearchSummaryBar_Pager{padding:4px 6px}
+.UISearchSummaryBar_Pager .UIPager{float:right}
+.UISpellCheck{font-size:13px;margin-bottom:12px}
+.UISpellCheck_Label{color:#999}
+.search .home_no_stories{background:none}
+.search .ResultCount{border-bottom:1px solid #ccc;color:#808080;margin-top:10px;padding-bottom:4px}
+.search .search_input_box{padding-bottom:20px}
+.search .search_input_box .search_spell_check{padding-top:18px}
+.SearchPage_EmailSearchContainer{padding:20px 6px}
+.SearchPage_EmailSearchLeft{width:250px;padding-right:20px;padding-bottom:10px;padding-top:10px;border-right:1px solid #e7e7e7;color:#777;font-size:13px;float:left}
+.SearchPage_EmailSearchTitle{padding-bottom:3px;font-weight:bold;color:#333}
+.SearchPage_EmailSearchRight{padding-top:15px;float:right;text-align:right;width:300px}
+.SearchPage_EmailSearchRight .UISearchInput .UISearchInput_Text{font-weight:normal}
+.SearchPage_BingLogo{margin-left:10px;vertical-align:middle}
+.SearchPage_BingResults .UIResultSection_Title{font-size:11px}
+.SearchPage_BingIframe{width:100%;height:1600px}
+.spritemap_oe6ve9{background-image:url(/rsrc.php/z3U7E/hash/4mxxpxl7.png);_background-image:url(/rsrc.php/zCQW2/hash/awfmbizi.gif);background-repeat:no-repeat;display:inline-block;height:16px;width:16px}
+.sx_a8d26a{background-position:-16px -1px}
+.selected .sx_a8d26a{background-position:-0px -1px}
+.sx_4ce186{background-position:-16px -18px}
+.selected .sx_4ce186{background-position:-0px -18px}
+.sx_b2e944{background-position:-16px -35px}
+.selected .sx_b2e944{background-position:-0px -35px}
+.sx_89d88f{background-position:-16px -52px}
+.selected .sx_89d88f{background-position:-0px -52px}
+.sx_69f75e{background-position:-16px -69px}
+.selected .sx_69f75e{background-position:-0px -69px}
+.sx_8457dc{background-position:-16px -86px}
+.selected .sx_8457dc{background-position:-0px -86px}
+.sx_0919f3{width:5px;height:9px;background-position:-0px -120px}
+.sx_48272a{background-position:-16px -103px}
+.selected .sx_48272a{background-position:-0px -103px}
+.UIObjectListing{border-bottom:1px solid #eee;min-height:50px;padding:2px 0}
+.UIObjectListing_Pic{float:left;width:50px;height:50px;position:relative;overflow:hidden}
+.UIObjectListing_PicPadding .UIObjectListing_Pic{padding-left:5px}
+.UIObjectListing_MetaData{float:left;padding-left:10px;padding-top:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#FriendsPage_Container .UIObjectListing_MetaData{width:300px}
+#FriendsPage_Container .UIObjectListing_RightContent{width:230px}
+.UIObjectListing_MetaDataSecondary{overflow:hidden;text-overflow:ellipsis}
+.UIObjectListing_Title{font-size:13px;font-weight:bold}
+.UIObjectListing_TitleNormal .UIObjectListing_Title{font-weight:normal}
+.UIObjectListing_Subtext{color:#666}
+.UIObjectListing_Padding{padding-right:5px}
+.UIObjectListing_RightContent{float:right}
+.ff2 .UIObjectListing_RightContent{float:none}
+.UIObjectListing_ActionContainer{float:right;white-space:nowrap;padding-top:13px;padding-right:19px}
+.UIObjectListing_HasRemoveControl .UIObjectListing_ActionContainer{padding-right:8px;border-right:1px solid #e7e7e7;height:27px;padding-top:4px;margin-top:10px}
+.UIObjectListing_RemoveContainer{float:right;padding-right:19px;padding-top:16px;padding-left:8px}
+.UIObjectListing_RemoveLink{background:transparent url(/rsrc.php/z3NUO/hash/5up5g102.gif) no-repeat top left;text-indent:-8192px;width:18px;height:18px;display:block}
+.UIObjectListing_RemoveLink:hover{text-decoration:none;background-position:top right}
+.tooltip_lock{margin-left:4px}
+.tooltip{position:absolute;z-index:4;overflow:hidden;display:none}
+.tooltip_right_center{background:transparent url(/rsrc.php/zDX0M/hash/5ot5kxah.gif) 0 center no-repeat;padding-left:4px}
+.tooltip_top_center{background:transparent url(/rsrc.php/zDEWE/hash/2vrzx50l.gif) bottom center no-repeat;padding-bottom:4px}
+.tooltip_bottom_center{background:transparent url(/rsrc.php/z713H/hash/b8c5la4e.gif) top center no-repeat;padding-top:4px}
+.tooltip_left_center{background:transparent url(/rsrc.php/z972M/hash/5xk50m1d.gif) right center no-repeat;padding-right:4px}
+.tooltip_inner{margin:0;padding:4px 8px;font-size:11px;color:#fff;background-color:#282828;overflow:hidden;max-width:215px}
+.UIFilterList_ListTitle{font-weight:bold;padding:0 0 4px 2px}
+.UIFilterList_BottomMargin{padding-bottom:20px}
+.UIFilterList_Footer,
+.UIFilterList_EditLink{border-top:1px solid #d6d9de;display:none;font-size:9px;font-weight:bold;padding:4px 6px 4px 5px;position:relative}
+.UIFilterList_Create{float:right}
+.UIFilterList_Plus, .UIMutableFilterList_Arrow{background:transparent url(/rsrc.php/z9WEN/hash/6w95fo9x.gif) no-repeat;display:inline-block;height:10px;margin:0 3px 0 0;padding-left:7px}
+.UIFilterList_Plus{background-position:-232px -87px}
+.UIFilterList_BlankState{border-top:1px solid #ddd;color:#666;display:none;line-height:16px;padding:5px 3px}
+.UIFilterList_HasBlankState .UIFilterList_BlankState{display:block}
+.UIFilterList_List{display:block;margin:0;padding:0}
+.UIFilterList_HasBlankState .UIFilterList_List{display:none}
+.UIFilterList_Item{display:block;height:26px;margin:0;overflow:hidden;position:relative}
+.UIFilterList_Icon{background-position:top right;background-repeat:no-repeat;display:block;height:16px;width:16px}
+.selected .UIFilterList_Icon{background-position:top left}
+.UIFilterList_EditIcon{display:none}
+.UIFilterList .selected{background-color:#6d84b4;border:1px solid #3b5998;height:24px;padding-left:1px}
+.selected .UIFilterList_EditIcon{background:transparent url(/rsrc.php/zALOO/hash/aw6u5ib5.gif) no-repeat 0 -70px;cursor:pointer;display:block;height:16px;left:auto;position:absolute;right:4px;top:4px;width:16px;z-index:1}
+.selected .UIFilterList_EditIcon:hover{background-position:0 -54px}
+.UIFilterList_ItemLink{border-top:1px solid #d6d9de;color:#333;display:block;height:19px;overflow:hidden;padding:5px 0 1px 5px;text-overflow:ellipsis}
+.UIFilterList_Item .UIFilterList_TitleWithoutIcon{padding-top:6px}
+.UIFilterList_Item .UIFilterList_Title{font-weight:normal;white-space:nowrap}
+.UIFilterList_Item .UIFilterList_ItemLink:hover{background-color:#eceef4;text-decoration:none}
+.selected .UIFilterList_ItemLink:hover{background-color:transparent}
+.selected .UIFilterList_ItemLink{border-top:0 none;padding-left:3px;padding-top:4px}
+.selected .UIFilterList_TitleWithoutIcon{padding-top:5px}
+.selected .UIFilterList_Title{color:#fff}
+.selected .UIFilterList_HasEditIcon{padding-right:19px}
+.selected .UIFilterList_LoadingIndicator{background:transparent url(/rsrc.php/z13JD/hash/16vt4yge.gif) top left no-repeat;display:none;height:11px;position:absolute;right:10px;top:7px;width:16px;z-index:2}
+.UIFilterList_Loading .selected .UIFilterList_LoadingIndicator{display:block}
+.UIFilterList_Loading .selected .UIFilterList_EditIcon{display:none}
+.UIFilterList_Loading .selected{padding-right:31px}
+.safari3 .UIFilterList_Loading .selected .UIFilterList_ItemLink{padding-right:25px}
+.UIFilterList_Button{padding-left:3px;padding-top:5px}
+.UIFilterList_CreateLink{display:block;padding-bottom:5px;padding-top:3px}
+.UIFilterList_DragHandle{background:url(/rsrc.php/zALOO/hash/aw6u5ib5.gif) no-repeat -16px -70px;cursor:move;display:none;height:16px;position:absolute;right:5px;top:7px;width:16px;z-index:1}
+.selected .UIFilterList_DragHandle{background-position:-16px -56px}
+.UIFilterList_EditMode .UIFilterList_DragHandle,
+.UIFilterList_EditLink,
+.UIFilterList_EditMode .UIFilterList_Footer{display:block}
+.UIFilterList_Loading .selected .UIFilterList_DragHandle,
+.UIFilterList_EditMode .UIFilterList_EditLink{display:none}
+.UIFilterList_NoBorder{border:none}
+.UIFilterList_EditMode .UIFilterList_ItemLink{padding-right:25px}
+.UIFilterList_EditMode .UIFilterList_Title{display:block;overflow:hidden;text-overflow:ellipsis}
+.UIFilterList_ShowHiddenSection .UIMutableFilterList_HiddenSection{display:block}
+.UIMutableFilterList_HiddenSection,
+.UIFilterList_ShowHiddenSection .UIFilterList_EditLink{display:none}
+.UIMutableFilterList_Separator{border-top:1px solid #b3b3b3;height:1px}
+.UIFullListing_Table{border:0;padding:0;margin:0;width:100%}
+.UIFullListing_InfoTable{border:0;padding:0;margin:0}
+.UIFullListing_BottomBorder{padding-bottom:6px;margin-bottom:6px;border-bottom:1px solid #eee}
+.UIFullListing td,
+.UIFullListing tr{margin:0;padding:0;border:0}
+.UIFullListing td{vertical-align:top}
+.UIFullListing_Pic{width:100px}
+.UIFullListing_Pic img{display:block}
+.UIFullListing .UIFullListing_InfoLabel{width:75px;padding:0 10px;color:#808080}
+.UIFullListing .UIFullListing_InfoValue{width:auto;padding-right:10px}
+.UIFullListing .UIFullListing_FirstInfoValue{font-weight:bold;font-size:13px}
+.UIFullListing .UIFullListing_Actions{width:130px;padding-bottom:20px}
+.UITabStructure_Container{margin:0;padding:3px 0}
+.UITabStructure_BottomBorder{border-bottom:1px solid #898989}
+.UITabStructure_Left{padding-left:10px;float:left}
+.UITabStructure_Right{padding-right:10px;float:right}
+.UITabStructure_FullBleed{padding:0}
+.UITabStructure_Tabs{text-align:center}
+.UITabStructure_Tabs li{display:inline;padding:2px 0 3px;background:#f1f1f1 url(/rsrc.php/z3HLG/hash/4x24xq7f.gif) top left repeat-x;font-size:13px}
+.UITabStructure_Tabs li a{border:1px solid #898989;border-left:0;color:#333;font-weight:bold;padding:2px 8px 3px 9px}
+.UITabStructure_Tabs li a:focus{outline:0}
+.UITabStructure_Tabs li.UITabStructure_TabFirst a{border:1px solid #898989}
+.UITabStructure_Tabs li a.UITabStructure_TabSelected{margin-left:-1px;background:#6d84b4;border:1px solid #3b5998;border-left:1px solid #5973a9;border-right:1px solid #5973a9;color:#fff}
+.UITabStructure_Tabs li.UITabStructure_TabLast a.UITabStructure_TabSelected{margin-left:-1px;border-left:1px solid #5973a9;border-right:1px solid #36538f}
+.UITabStructure_Tabs li.UITabStructure_TabFirst a.UITabStructure_TabSelected{margin:0;border-left:1px solid #36538f;border-right:1px solid #5973a9}
+.UITabStructure_Tabs li.UITabStructure_TabFirst.UITabStructure_TabLast a.UITabStructure_TabSelected{border:1px solid #36538f}
+.UITabStructure_Tabs li a.UITabStructure_TabSelected:hover{text-decoration:none}
+.UITabStructure_Tabs li a.UITabStructure_TabDisabled{color:#999;cursor:default}
+.UITabStructure_Tabs li a.UITabStructure_TabDisabled:hover{text-decoration:none}
+.UIToolbarWell_Content{overflow:hidden;padding:0 6px}
+.UIToolbarWell_MainContent{height:23px;padding:6px 0}
+.UIToolbarWell_Left{text-align:left;float:left}
+.UIToolbarWell_Right{float:right;text-align:right}
+.UIToolbarWell_Left .UIToolbarWell_Button .uiButton{margin-right:6px}
+.UIToolbarWell_SecondaryContent{border-top:1px solid #d7d7d7;padding:5px 0}
+.UIWell{background:#f2f2f2;border-top:1px solid #ccc;zoom:1}
+
+#bootloader_css_3v2xv1vhmmwwsk4w_pkg_css { height: 42px; }

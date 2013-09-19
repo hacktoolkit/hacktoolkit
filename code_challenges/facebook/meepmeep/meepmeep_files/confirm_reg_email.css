@@ -1,0 +1,28 @@
+/*    HTTP Host:  static.ak.fbcdn.net                                          */
+/*    Generated:  April 7th 2009 2:55:01 PM PDT                                */
+/*      Machine:  10.16.140.109                                                */
+/*       Source:  Global Cache                                                 */
+/*     Location:  css/confirm_reg_email.css h:eg7j6w9x                         */
+/*       Locale:  en_US                                                        */
+/*         Path:  css/confirm_reg_email.css                                    */
+
+
+#confirm_body{padding:5px;}
+#confirm_body #confirm_progress{text-align:center;}
+#confirm_body #confirm_status{background:#FFF9D7 none repeat scroll 0 0;border:1px solid #E2C822;margin:0 0 10px;padding:10px;}
+#confirm_body #confirm_error{background:#FFEBE8 none repeat scroll 0 0;border:1px solid #DD3C10;margin:0 0 10px;padding:10px;}
+#confirm_body #error,
+#confirm_body #status{margin:10px 0px;}
+#confirm_body .editor{margin:10px;}
+#confirm_body .instructions{font-weight:bold;padding-bottom:5px;}
+#confirm_body .instruction_details{padding-top:5px;}
+#confirm_body #code,
+#confirm_body #email{width:175px;margin:2px 0px;}
+#confirm_body #confirm{margin-top:3px;}
+#confirm_body #confirm_form{margin:5px auto 0px;width:250px;}
+#confirm_email_banner{background:#FFF9D7 none repeat scroll 0 0;border-bottom:1px solid #E2C822;height:23px;padding-top:7px;text-align:center;}
+#confirm_email_banner .confirm_banner_text{background:transparent url(/images/icons/email.gif) no-repeat scroll left center;font-weight:bold;padding-left:20px;}
+#confirm_email_banner .resend{float:right;font-weight:bold;padding-right:10px;}
+
+
+#bootloader_css_confirm_reg_email_css { height: 42px; }

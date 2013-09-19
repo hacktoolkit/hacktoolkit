@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en-us"><head>
+
+
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>Facebook Jobs Puzzle—usrbincrash Revisited - Kanwei Li</title>
+	<meta name="author" content="Kanwei Li">
+	<link rel="meta" type="application/rdf+xml" title="FOAF" href="http://kanwei.com/foaf.rdf">
+	<link rel="alternate" type="application/rss+xml" title="The Kanwei Decrees..." href="http://feeds2.feedburner.com/kanwei">
+
+	<link rel="stylesheet" href="kanwei-usrbincrash-revisited_files/syntax.css" type="text/css">
+	<link rel="stylesheet" href="kanwei-usrbincrash-revisited_files/screen.css" type="text/css" media="screen">
+</head><body>
+
+	<div class="site">
+		<div class="title">
+			<a href="http://kanwei.com/">Kanwei Li</a>
+			<a class="extra" href="http://kanwei.com/">Blog</a>
+			<a class="extra" href="http://kanwei.com/resume.html">Resume</a>
+			<a class="extra" href="http://kanwei.com/projects/">Projects/Work</a>
+			<a class="extra" href="http://kanwei.com/research/">Research</a>
+			<a class="extra" href="http://kanwei.com/contact.html">Contact</a>
+		</div>
+
+		
+<h1>Facebook Jobs Puzzle—usrbincrash Revisited</h1>
+<p class="date">22 Mar 2009</p>
+
+<div id="post">
+<p>This is a followup to my <a href="http://kanwei.com/code/2009/02/17/facebook-usrbincrash.html">old solution.</a></p>
+
+<p>So, I apparently have readers! Thank you for writing and contacting
+me on numerous occasions. I enjoy discussing and discovering
+algorithms, so keep them coming.</p>
+
+<p>Many of you have pointed out that my greedy solution doesn't work, and you're completely right. Here's an example I was sent:</p>
+
+<pre>    1250
+    LJS93K       1300       10500
+    A            1200       6000
+    J38ZZ9       700        4750
+    B            550        3300
+    HJ394L       200        3250
+    O1IE82       75         10250
+
+    Following your algorithm, it seems to instantly eliminate a necessary
+    ingredient for the optimum solution, which to me is one J38ZZ9 and one "B", totaling $8050.
+</pre>
+
+
+<p>For some reason, I couldn't figure out the recurrence relationship
+for dynamic programming by myself until one of you showed it to me.
+Thanks, now it's MINE!!!</p>
+
+<p>Anyways, I re-implemented it and like this one better, since it's
+optimal, although it does take O(nW) time instead of like, O(n) for my
+old one. I also implemented the easy GCD optimization and use a
+different pruning algorithm that works in all cases (while the old one
+deleted possible candidates, it worked with the greedy algorithm).</p>
+
+<p>The following solution in Ruby passed the Facebook puzzle robot:</p>
+
+<div class="highlight"><pre><span class="c1">#!/usr/bin/ruby</span>
+<span class="c1"># Usr Bin Crash puzzle</span>
+<span class="c1"># Kanwei Li, 2009</span>
+
+<span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+  <span class="k">while</span> <span class="n">a</span> <span class="o">!=</span> <span class="n">b</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span>
+      <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">-</span><span class="n">b</span>
+    <span class="k">else</span>
+      <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">-</span><span class="n">a</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+  <span class="n">a</span>
+<span class="k">end</span>
+
+<span class="c1"># Make sure input file exists and read from it</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="no">ARGV</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span>
+<span class="k">unless</span> <span class="n">filename</span> <span class="o">&amp;&amp;</span> <span class="no">File</span><span class="o">.</span><span class="n">exist?</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"error: must specify a valid input file"</span>
+  <span class="nb">exit</span>
+<span class="k">end</span>
+<span class="n">input</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+<span class="vg">$items</span> <span class="o">=</span> <span class="o">[]</span> <span class="c1"># Store array of items as a global so we don't have to pass it around</span>
+
+<span class="k">def</span> <span class="nf">optimize</span><span class="p">(</span><span class="n">total_weight</span><span class="p">)</span>
+  <span class="n">table</span> <span class="o">=</span> <span class="o">[]</span>
+    
+  <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">total_weight</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">cur_weight</span><span class="o">|</span>
+    <span class="n">best</span> <span class="o">=</span> <span class="kp">nil</span>
+    <span class="vg">$items</span><span class="o">.</span><span class="n">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">item</span><span class="p">,</span> <span class="n">i</span><span class="o">|</span>
+      <span class="n">c</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">cost</span>
+      <span class="n">item_weight</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">weight</span>
+      <span class="k">if</span> <span class="n">item_weight</span> <span class="o">&lt;=</span> <span class="n">cur_weight</span>
+        <span class="n">c</span> <span class="o">+=</span> <span class="n">table</span><span class="o">[</span><span class="n">cur_weight</span> <span class="o">-</span> <span class="n">item_weight</span><span class="o">]</span>
+      <span class="k">end</span>
+      <span class="n">best</span> <span class="o">=</span> <span class="n">c</span> <span class="k">if</span> <span class="n">best</span><span class="o">.</span><span class="n">nil?</span> <span class="o">||</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">best</span>
+    <span class="k">end</span>
+    <span class="n">table</span><span class="o">[</span><span class="n">cur_weight</span><span class="o">]</span> <span class="o">=</span> <span class="n">best</span>
+  <span class="k">end</span>
+  
+  <span class="n">table</span><span class="o">[</span><span class="n">total_weight</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span>
+<span class="k">end</span>
+
+<span class="n">total_weight</span> <span class="o">=</span> <span class="n">input</span><span class="o">.</span><span class="n">gets</span><span class="o">.</span><span class="n">to_i</span>
+
+<span class="c1"># Populate items array</span>
+<span class="no">Item</span> <span class="o">=</span> <span class="no">Struct</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">:weight</span><span class="p">,</span> <span class="ss">:cost</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">line</span> <span class="o">=</span> <span class="n">input</span><span class="o">.</span><span class="n">gets</span> <span class="k">do</span>
+  <span class="k">break</span> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">empty?</span>
+  <span class="n">item</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">cost</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sr">/\s+/</span><span class="p">)</span>
+  <span class="vg">$items</span> <span class="o">&lt;&lt;</span> <span class="no">Item</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">weight</span><span class="o">.</span><span class="n">to_i</span><span class="p">,</span> <span class="n">cost</span><span class="o">.</span><span class="n">to_i</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="c1"># $items.sort! { |a, b| b.weight &lt;=&gt; a.weight }</span>
+<span class="vg">$items</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">b</span><span class="o">|</span>
+  <span class="vg">$items</span><span class="o">.</span><span class="n">delete_if</span> <span class="p">{</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="n">i</span><span class="o">.</span><span class="n">weight</span> <span class="o">&lt;</span> <span class="n">b</span><span class="o">.</span><span class="n">weight</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">to_f</span> <span class="o">/</span> <span class="n">b</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span> <span class="o">*</span> <span class="n">i</span><span class="o">.</span><span class="n">cost</span> <span class="o">&gt;</span> <span class="n">b</span><span class="o">.</span><span class="n">cost</span> <span class="p">}</span>
+<span class="k">end</span>
+
+<span class="n">overall_gcd</span> <span class="o">=</span> <span class="n">gcd</span><span class="p">(</span><span class="vg">$items</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="n">weight</span><span class="p">,</span> <span class="n">total_weight</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="vg">$items</span><span class="o">.</span><span class="n">size</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="n">overall_gcd</span> <span class="o">=</span> <span class="n">gcd</span><span class="p">(</span><span class="n">overall_gcd</span><span class="p">,</span> <span class="vg">$items</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="n">weight</span><span class="p">)</span> <span class="p">}</span>
+
+<span class="vg">$items</span><span class="o">.</span><span class="n">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="n">i</span><span class="o">.</span><span class="n">weight</span> <span class="o">/=</span> <span class="n">overall_gcd</span> <span class="p">}</span>
+<span class="n">total_weight</span> <span class="o">/=</span> <span class="n">overall_gcd</span>
+
+<span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">optimize</span><span class="p">(</span><span class="n">total_weight</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+</pre></div>
+
+
+</div>
+
+<div id="related">
+  <h2>Related Posts</h2>
+  <ul class="posts">
+    
+      <li>
+				<span>05 Jan 2009</span> » <a href="http://kanwei.com/2009/01/05/lindy-focus-notes.html">Lindy Focus 2008 Notes</a>
+			</li>
+    
+      <li>
+				<span>22 Apr 2008</span> » <a href="http://kanwei.com/2008/04/22/accepted-to-google-summer-of-code.html">Accepted to the 2008 Google Summer of Code</a>
+			</li>
+    
+      <li>
+				<span>01 Mar 2007</span> » <a href="http://kanwei.com/2007/03/01/one-person-reads-this.html">One person reads this blog, and statistically, it's not you</a>
+			</li>
+    
+  </ul>
+</div>
+
+		<div class="footer">
+			<p>
+				Kanwei Li<br>
+				Emory University Graduate Student (M.S. Computer Science)<br>
+				Emory College Alum<br>
+				<a href="mailto:kanwei@gmail.com">kanwei@gmail.com</a>
+			</p>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script><script src="kanwei-usrbincrash-revisited_files/ga.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	try {
+		var pageTracker = _gat._getTracker("UA-305031-6");
+		pageTracker._trackPageview();
+		} catch(err) {}</script>
+	</body></html>

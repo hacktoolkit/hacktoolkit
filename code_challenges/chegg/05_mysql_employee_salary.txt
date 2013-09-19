@@ -1,0 +1,18 @@
+Response to Challenge Question 5
+hello@jontsai.com
+
+Given the following MySQL table schema, write a query to return the employee
+with the 7th highest salary.
+ 
+CREATE TABLE `employee_salary` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(255) NOT NULL,
+  `salary` decimal(10,2) NOT NULL,
+  PRIMARY KEY  (`id`),
+  KEY `IDX_salary` (`salary`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1
+
+SELECT *
+FROM employee_salary e
+ORDER BY e.salary DESC
+LIMIT 1 OFFSET 6

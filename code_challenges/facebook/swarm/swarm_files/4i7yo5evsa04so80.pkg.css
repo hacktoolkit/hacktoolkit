@@ -1,0 +1,57 @@
+/*    HTTP Host:  static.ak.fbcdn.net                                          */
+/*    Generated:  March 30th 2009 5:00:01 PM PDT                               */
+/*      Machine:  10.16.139.105                                                */
+/*       Source:  Global Cache                                                 */
+/*     Location:  css/4i7yo5evsa04so80.pkg.css h:1b8pbhf6                      */
+/*       Locale:  en_US                                                        */
+/*         Path:  css/4i7yo5evsa04so80.pkg.css                                 */
+
+
+.UIMediaButton_Container{display:block;color:#777;text-decoration:none;}
+.UIMediaButton_Container .UIMediaButton_top_row{height:100%;}
+.UIMediaButton_Container .UIMediaButton_tl{height:11px;width:10px;background:url(/images/new_media_button.png) no-repeat left top;}
+.UIMediaButton_Container .UIMediaButton_tr{height:11px;width:10px;background:url(/images/new_media_button.png) no-repeat top right;}
+.UIMediaButton_Container .UIMediaButton_bl{background:url(/images/new_media_button.png) no-repeat bottom left;}
+.UIMediaButton_Container .UIMediaButton_br{background:url(/images/new_media_button.png) no-repeat bottom right;}
+.UIMediaButton_Container .UIMediaButton_bottom{background:url(/images/new_media_button.png) transparent -7px bottom;}
+.UIMediaButton_Container .UIMediaButton_content{background:url(/images/new_media_button.png) no-repeat -7px 0px;vertical-align:bottom;}
+.UIMediaButton_Container .UIMediaButton_corner{height:11px;overflow:hidden;width:10px;}
+.UIMediaButton_Container .UIMediaButton_tr_crop{margin-left:-590px;}
+.UIMediaButton_Container .UIMediaButton_bl_crop{margin-top:-189px;}
+.UIMediaButton_Container .UIMediaButton_br_crop{margin-left:-590px;margin-top:-189px;}
+.UIMediaButton_Container .UIMediaButton_lower_row{height:9px
+}
+.UIMediaButton_Container a{color:#333;font-size:11px;font-weight:bold;display:block;padding:3px 2px 4px 12px;text-shadow:white 0px 1px 1px;float:left;}
+.UIMediaButton_Container:hover{text-decoration:underline;}
+.UIMediaButton_Container:active .UIMediaButton_content,
+.UIMediaButton_Container:active .UIMediaButton_bottom,
+.UIMediaButton_Container:active .UIMediaButton_tl,
+.UIMediaButton_Container:active .UIMediaButton_tr,
+.UIMediaButton_Container:active .UIMediaButton_bl,
+.UIMediaButton_Container:active .UIMediaButton_br{background-image:url(/images/new_media_button_active.gif);}
+.UIMediaButton_Container .UIMediaButton_piped{border-right:1px solid #AAAAAA;margin-right:7px;margin-top:-1px;padding:3px 9px 4px 12px;}
+.UIMediaButton_Container .UIMediaButton_nohref{cursor:pointer;position:relative;top:-3px;}
+#UIMediaButton_plus{background:url(/images/buttons/toolbar_button_plus.gif) no-repeat left 5px;color:#333;font-size:11px;font-weight:bold;display:block;text-shadow:white 0px 1px 1px;}
+#UIMediaButton_record{background:url(/images/buttons/toolbar_button_record.gif) no-repeat left 5px;color:#333;font-size:11px;font-weight:bold;display:block;text-shadow:white 0px 1px 1px;}
+
+
+.UITabStructure_Container{margin:0px;padding:3px 0;}
+.UITabStructure_BottomBorder{border-bottom:1px solid #898989;}
+.UITabStructure_Left{padding-left:10px;float:left;}
+.UITabStructure_Right{padding-right:10px;float:right;}
+.UITabStructure_FullBleed{padding:0px;}
+.UITabStructure_Tabs{margin:0;padding:0;list-style:none;text-align:center;display:inline;}
+.UITabStructure_Tabs li{display:inline;padding:2px 0px 3px;background:#f1f1f1 url(/images/components/toggle_tab_gloss.gif) top left repeat-x;font-size:13px;}
+.UITabStructure_Tabs li a{border:1px solid #898989;border-left:0;color:#333;font-weight:bold;padding:2px 8px 3px 9px;}
+.UITabStructure_Tabs li a:focus{outline:0px;}
+.UITabStructure_Tabs li.UITabStructure_TabFirst a{border:1px solid #898989;}
+.UITabStructure_Tabs li a.UITabStructure_TabSelected{margin-left:-1px;background:#6d84b4;border:1px solid #3b5998;border-left:1px solid #5973a9;border-right:1px solid #5973a9;color:#fff;}
+.UITabStructure_Tabs li.UITabStructure_TabLast a.UITabStructure_TabSelected{margin-left:-1px;border-left:1px solid #5973a9;border-right:1px solid #36538f;}
+.UITabStructure_Tabs li.UITabStructure_TabFirst a.UITabStructure_TabSelected{margin:0;border-left:1px solid #36538f;border-right:1px solid #5973a9;}
+.UITabStructure_Tabs li.UITabStructure_TabFirst.UITabStructure_TabLast a.UITabStructure_TabSelected{border:1px solid #36538f;}
+.UITabStructure_Tabs li a.UITabStructure_TabSelected:hover{text-decoration:none;}
+.UITabStructure_Tabs li a.UITabStructure_TabDisabled{color:#999;cursor:default;}
+.UITabStructure_Tabs li a.UITabStructure_TabDisabled:hover{text-decoration:none;}
+
+
+#bootloader_css_4i7yo5evsa04so80_pkg_css { height: 42px; }

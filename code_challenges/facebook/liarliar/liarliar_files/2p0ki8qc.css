@@ -1,0 +1,65 @@
+/*
+HTTP Host: static.ak.fbcdn.net
+Generated: May 21st 2010 6:29:22 PM PDT
+Machine: 10.16.140.104
+Locale: nu_ll
+Path: css/nonproduct.css
+*/
+
+.policy .platpolicy{padding:20px 0 0 10px;width:560px}
+.policy .platpolicy .last_updated{margin-bottom:20px}
+body.dev_site_page .platpolicy,
+body.dev_site_page .platpolicy p{margin:5px 0;font-size:11px;line-height:14px}
+body.dev_site_page .platpolicy ol{margin-left:0}
+body.dev_site_page .platpolicy li{margin-top:10px;font-size:11px;line-height:14px}
+body.dev_site_page .platpolicy ul{margin-top:7px}
+body.dev_site_page .platpolicy ul li{font-weight:normal;margin-top:5px}
+.platpolicy .body_content{display:none}
+.platpolicy .shown .body_content{display:block}
+.platpolicy .shown a.point_header{color:#333}
+.platpolicy .shown a:hover.point_header{text-decoration:none}
+.policy .title_header,
+.policy .bar{padding-left:0}
+.policy .title_header h2{border-bottom:none;color:#333;margin-top:0;font-size:14px;padding-bottom:5px}
+.policy h2,
+.dev_site_page .policy h2{border-bottom:1px solid #d8dfea;color:#333;font-size:14px;padding-bottom:5px}
+.policy h3{border-bottom:1px dotted #d8dfea;color:#3b5998;font-size:12px;font-weight:bold;padding-bottom:5px;margin-bottom:5px}
+.policy h4,{color:#333;font-size:11px;font-weight:bold;margin:0 0 5px 0;padding:0 0 5px 0}
+.policy h2{margin-top:20px}
+.policy dl{padding-left:0}
+.policy dt{font-size:12px;font-weight:bold;margin:0 0 3px}
+.policy dd{margin:0 0 10px 10px}
+.policy ol{padding-left:25px}
+.policy ol,
+.policy ul.square_bullets{font-weight:bold}
+.policy ol ol,
+.policy p,
+.policy span{font-weight:normal}
+.policy ol li{line-height:15px;margin-top:14px}
+.policy ul.square_bullets li{line-height:15px;margin-top:10px}
+.policy p{line-height:15px}
+.policy .privacy_settings_callout{background:#fff8cc;border-bottom:1px solid #ffe700;color:#333;padding:10px 10px 10px 20px}
+.policy .privacy_settings_callout img.callout_icon{float:left;margin:-1px 5px 0 0}
+.jobs .wrapper h2{border-bottom:1px solid #d8dfea;color:#333;font-size:14px;padding-bottom:5px}
+.jobs .wrapper h3{border-bottom:1px solid #d8dfea;color:#333;font-size:12px;font-weight:bold;padding-bottom:3px;margin-bottom:5px}
+.jobs .wrapper ul.list{margin:0 0 15px}
+.jobs .wrapper ul.list li{margin:0 0 3px}
+.jobs .wrapper h4{border-bottom:1px solid #d8dfea;color:#333;font-size:12px;font-weight:bold;margin:0;padding:0;padding-bottom:5px;margin-bottom:5px}
+.jobs #content{padding:0 0 0 0}
+.jobs .wrapper{padding:5px 50px 15px 35px;line-height:1.5em}
+.jobs .quotewrapper{width:684px;margin:0 auto;line-height:1.5em}
+.jobs .gray{padding-top:20px;border-top:1px solid #ccc;background:#f7f7f7}
+.jobs .open_dept{cursor:pointer;background-image:url(/rsrc.php/zTG5P/hash/2kkl8sjl.gif);background-repeat:no-repeat}
+.jobs .shut_dept{cursor:pointer;background-image:url(/rsrc.php/z6J1X/hash/46yzilxz.gif);background-repeat:no-repeat}
+.policy .ad_guidelines ol, .policy .ad_guidelines ul{margin-left:1em;padding-left:1em}
+.policy .ad_guidelines ol .title{list-style-type:decimal}
+.policy .ad_guidelines ol .subtitle{list-style-type:lower-alpha}
+.policy .ad_guidelines ol .subsubtitle{list-style-type:lower-roman}
+.policy .ad_guidelines ol li{margin-top:.1em}
+.policy .ad_guidelines ol p{margin-bottom:.5em}
+.policy .ad_guidelines ol .title{margin-top:1.5em}
+.policy .ad_guidelines p{clear:both}
+.policy .ad_guidelines{color:#000}
+.policy .ad_guidelines .interstitial_text{font-weight:bold;padding-top:.3em}
+
+#bootloader_css_nonproduct_css { height: 42px; }

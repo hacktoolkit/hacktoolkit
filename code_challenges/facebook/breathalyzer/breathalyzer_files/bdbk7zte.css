@@ -1,0 +1,24 @@
+/*
+HTTP Host: static.ak.fbcdn.net
+Generated: June 7th 2010 11:48:57 AM PDT
+Machine: 10.16.139.107
+Locale: nu_ll
+Path: css/ui/xhp/typeahead/renderers/SearchTypeaheadRenderer.css
+*/
+
+.uiTypeaheadView .search ul{padding-bottom:0}
+.uiTypeaheadView .search li{_height:50px;min-height:50px;padding:2px 30px 2px 63px}
+.uiTypeaheadView .search img{display:block;height:50px;left:6px;position:absolute;width:50px;background-color:#eceff5}
+.uiTypeaheadView .search .text{color:#3b5998;font-weight:bold}
+.uiTypeaheadView .search .category{font-size:11px;padding-top:0}
+.uiTypeaheadView .search .categoryContents{position:relative}
+.uiTypeaheadView .search .subtext{font-size:9px;padding-top:2px}
+.uiTypeaheadView .search .seeMoreTitle{color:#3b5998;font-size:11px;font-weight:bold;padding-bottom:0;padding-right:7px;position:relative}
+.uiTypeaheadView .search .seeMoreResultsCount{color:#999;font-size:9px;font-weight:normal}
+.uiTypeaheadView .search .seeMoreArrow,
+.uiTypeaheadView .search .category .externalArrow{background:transparent url(/rsrc.php/zA4IG/hash/cny9pytx.png) 0 -413px;height:7px;display:block;_display:none;position:absolute;top:4px;width:4px}
+.uiTypeaheadView .search .seeMoreArrow{right:0}
+.uiTypeaheadView .search .category .externalArrow{right:-7px}
+.uiTypeaheadView .search .selected .seeMoreArrow{background-position:0 -420px}
+
+#bootloader_css_ui_xhp_typeahead_renderers_SearchTypeaheadRenderer_css { height: 42px; }

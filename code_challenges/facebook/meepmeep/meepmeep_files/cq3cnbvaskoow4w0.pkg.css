@@ -1,0 +1,93 @@
+/*    HTTP Host:  b.static.ak.fbcdn.net                                        */
+/*    Generated:  March 31st 2009 9:59:31 AM PDT                               */
+/*      Machine:  10.16.139.101                                                */
+/*       Source:  Global Cache                                                 */
+/*     Location:  css/cq3cnbvaskoow4w0.pkg.css h:8d8gr905                      */
+/*       Locale:  en_US                                                        */
+/*         Path:  css/cq3cnbvaskoow4w0.pkg.css                                 */
+
+
+.info ul{list-style:none;margin:0;padding:0;}
+.info ul.unconfirmed{color:gray;}
+#linkeditor{position:absolute;width:540px;padding:10px 0px;background:#c6d0e1;background:rgba(198,208,225,0.68);}
+#linkeditor.embedded{position:relative;margin:0px auto;}
+#linkeditor .border{margin:0px 10px;padding:10px 0px;background:white;border:solid 1px #3B5998;}
+#linkeditor h4{margin-left:12px;margin-bottom:0px;width:488px;padding:0px 0px 2px;border-bottom:solid 1px #D8DFEA;}
+#linkeditor.embedded h4{padding:5px 0px 2px;margin:0px 0px 0px 12px;font-size:13px;}
+#linkeditor .column{margin:0px;padding:5px 0px 5px 10px;width:240px;float:left;}
+#linkeditor .buttons{clear:both;padding:5px 10px 0px;text-align:right;}
+#linkeditor .buttons input{margin:0px 0px 0px 5px;}
+#linkeditor .options{width:200px;margin:2px 0px 5px 15px;padding:5px 10px;background:#f7f7f7;border:solid 1px #D8DFEA;border-bottom:solid 1px #3B5998;}
+#linkeditor .options .index{border-top:solid 1px #ccc;margin-top:5px;padding-top:5px;}
+#linkeditor .options .first{display:block;border:none;margin:0px;padding:0px;}
+#linkeditor small{margin-left:3px;color:gray;}
+#linkeditor label{font-weight:normal;color:black;}
+#linkeditor label:hover{cursor:default;}
+#linkeditor textarea{display:block;margin:0;text-align:left;width:190px;}
+#linkeditor .inputtext{width:190px;}
+
+
+.profile_status img{margin:0px;padding:0px;float:left;}
+.profile_status #status_body{padding:0px;margin:0px 0px 0px 5px;}
+.profile_status #status_body #status_content{color:#000;}
+.profile_status #status_meta{color:gray;display:block;font-size:9px;line-height:11px;padding-top:2px;}
+#status_editor{margin-left:5px;position:relative;}
+#status_editor .field{padding:0px 0px 5px;}
+#status_editor .clear_link{float:left;font-size:9px;padding:5px 4px 4px 6px;}
+input#edit_status_text{float:left;display:block;border-top:1px solid #777;border-left:1px solid #777;border-bottom:1px solid #777;border-right:0;height:17px;width:248px;margin:0px;padding:3px 2px 0px;}
+.profile input#edit_status_text{width:120px;}
+#edit_status_toggle{display:block;float:left;margin:0px;padding:3px 0px 0px;height:17px;width:14px;color:#3B5998;border-top:1px solid #777;border-right:1px solid #777;border-bottom:1px solid #777;border-left:none;background:#D8DFEA url(/images/status_off.gif) no-repeat 3px 9px;text-align:center;}
+#edit_status_toggle:hover{text-decoration:none;}
+#edit_status_select_wrapper{position:relative;}
+#edit_status_select{display:none;position:absolute;z-index:2;width:238px;border-left:1px solid #777;border-right:1px solid #777;border-bottom:1px solid #777;}
+#edit_status_select a{display:block;overflow:hidden;width:232px;background:#fff;color:#000;border:none;border-top:1px solid #eee;padding:3px;margin:0px;margin-top:-1px;}
+#edit_status_select a:hover{text-decoration:none;color:#fff;background:#3B5998;}
+.status_composer{overflow:hidden;padding:6px 8px 5px 7px;}
+.status_composer td{padding:0;}
+.status_composer td.show_placeholder{width:100%;}
+.placeholder_off td.show_placeholder{width:auto;}
+.placeholder_off div.hide_placeholder,
+div.show_placeholder{display:block;}
+.placeholder_off div.show_placeholder,
+div.hide_placeholder{display:none;}
+.status_composer table,
+.status_composer table td.statustext{width:100%;}
+.status_composer table tr,
+.status_composer table td{vertical-align:middle;}
+.status_composer .status_field{border:1px solid #BDC7D8;background:white;padding:0;position:relative;height:19px;}
+.status_composer .status_name{border-right:none;padding:3px 0 1px 6px;white-space:nowrap;}
+.ie6 .status_composer .status_name{padding:4px 0 2px 6px;}
+.status_composer .status_box{border-left:none;margin-right:6px;padding:2px 0;}
+.status_composer .status_placeholder{margin-right:6px;padding:2px 0;}
+.status_composer .input_wrapper{padding:0 6px 0 0;margin:1px 0;overflow:hidden;}
+.status_composer .status_field input,
+.status_composer .status_field span{font-size:15px;padding:0;}
+.status_composer .status_name span{color:#777;white-space:nowrap;}
+.status_composer .status_placeholder input{padding-left:4px;}
+.status_composer .status_field input{width:100%;margin:0 2px 0 0;border:none;}
+.ie6 .status_composer .status_button{float:right;}
+.home_status_editor.disabled .status_button input{background-color:white;border-bottom:1px solid #999999;border-right:1px solid #999999;color:#666666;}
+.home_status_editor.disabled input.inputtext,
+.home_status_editor.disabled .status_field,
+.home_status_editor.disabled textarea{background:#ddd;}
+.location .status_field .location_add_button{position:absolute;right:6px;top:4px;}
+.location_composer_shown .status_field .location_add_button{display:none;}
+.location .status_field .input_wraper{margin-right:22px;}
+.location .status_field .location_add_button span.location_icon{background:transparent url(/images/location_icon.png) no-repeat scroll right center;display:block;height:16px;width:16px;}
+.location div.location_composer{background-color:#F0F2F7;border-right:1px solid #BDC7D8;border-bottom:1px solid #BDC7D8;color:#3C3D3E;display:none;line-height:19px;margin-right:6px;padding-left:6px;overflow:hidden;}
+.location_composer_shown .location div.location_composer{display:block;}
+.location div.location_composer div.location_selector{background:transparent url(/images/location_icon.png) no-repeat scroll left center;}
+.location_composer_shown .location .status_field{border-bottom:1px solid #E5E5E5;}
+.location div.location_composer .location_selector{float:left;padding:3px 6px 2px 28px;}
+.location div.location_composer .location_close{float:right;padding-right:6px;padding-top:3px;}
+.location div.location_composer .location_close a{color:#B1BDD6;font-weight:bold;font-size:13px;}
+.location div.location_composer .location_close a:hover{text-decoration:none;}
+div.location_flyout{margin-left:-7px;margin-top:-1px;width:267px;}
+div.location_flyout .flyout_menu_header .flyout_menu_mask{border:none;}
+div.location_flyout .flyout_menu_header .flyout_menu_title{padding:6px 0px 0px 10px;background-color:#EEEEEE;color:#333333;font-weight:bold;}
+div.location_flyout .menu_content{border-top:none;padding:0px 6px 6px 6px;width:228px;}
+div.location_flyout .menu_content .location_select{margin-bottom:4px;margin-left:6px;}
+div.location_flyout .menu_content .inputtext{border:1px solid #465A83;width:220px;}
+
+
+#bootloader_css_cq3cnbvaskoow4w0_pkg_css { height: 42px; }

@@ -1,0 +1,21 @@
+/*    HTTP Host:  b.static.ak.fbcdn.net                                        */
+/*    Generated:  February 11th 2010 6:57:11 PM PST                            */
+/*      Machine:  10.16.140.101                                                */
+/*       Source:  Backing Store                                                */
+/*     Location:  css/profile/boxes/notes_box.css h:32c47pxc                   */
+/*       Locale:  nu_ll                                                        */
+/*         Path:  css/profile/boxes/notes_box.css                              */
+
+#notes{word-wrap:break-word}
+.notes_titles .added{border-bottom:solid 1px #ffe222;background:#fff8cc;margin:0 10px 10px -6px;padding:6px 6px 3px 6px}
+.notes_titles li{margin-left:0;padding:0 0 6px 0}
+.ie6 .notes_titles li{zoom:1}
+.notes_titles li.imported{background:url(/rsrc.php/z4ZVD/hash/9opk33m7.gif) no-repeat left 1px;padding:0 0 6px 22px}
+.notes_titles li.mobile{background:url(/rsrc.php/zBKOF/hash/f374i2gc.gif) no-repeat left top;padding:0 0 6px 22px;margin-left:3px}
+.notes_titles li.written{background:url(/rsrc.php/z7NSY/hash/ajh5dbgz.gif) no-repeat left 1px;padding:0 0 6px 22px}
+.notes_titles li a{display:block;padding:0 0 1px 0}
+.notes_titles small{color:#333;font-weight:normal;display:block;font-size:9px}
+.notes_titles small span{color:#808080}
+.notes_titles small a{display:inline;font-weight:normal}
+
+#bootloader_css_profile_boxes_notes_box_css { height: 42px; }

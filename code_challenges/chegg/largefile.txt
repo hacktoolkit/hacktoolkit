@@ -1,0 +1,1163 @@
+<?php
+  // Response to Challenge Question 1
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+  //
+  // Code to demonstrate an efficient way to search the last 100 lines of a file containing roughly ten million lines for a sample string. This should function without having to process each line of the file (and without making use of the “tail” command or any external system commands). Any of the following languages can be used: PHP
+  //
+
+require("common.php");
+
+define("MAX_LINE_LENGTH", 1024);
+define("NUM_LINES", 100);
+
+function main($argv) {
+    $processed = process_args($argv);
+    $files = $processed["files"];
+    $other = $processed["other"];
+
+    // For demo purpose, just search the first file,
+    // and first item in $other as the search term
+    $filename = array_pop($files);
+    $search_term = array_pop($other);
+    if ($filename && $search_term) {
+        smart_search($filename, $search_term);
+    } else {
+        echo "Missing file or search term\n";
+    }
+}
+
+function smart_search($filename, $search_term) {
+    // Assumptions:
+    // each line is the approximately the same length
+    // the max length of each line is 1024 bytes
+    $filesize = filesize($filename)
+    $file = fopen($filename, "r");
+
+    // int fseek ( resource $handle , int $offset [, int $whence ] )
+    fseek($file, max(0, $filesize - (MAX_LINE_LENGTH * NUM_LINES)));
+    $lines = array();
+    while (!feof($file)) {
+        $line = fgets($file);
+        $lines[] = $line;
+    }
+
+    // keep only last 100 lines
+    if (sizeof($lines) > 100) {
+        array_splice($lines, -100, 100);
+    }
+
+}
+
+main($argv);
+
+?>
+<?php
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+
+function process_args($argv) {
+    // returns an array of filenames and other arguments
+    // skip the first arg
+    array_splice($argv, 0, 1);
+    $files = array();
+    $other = array();
+    foreach ($argv as $arg) {
+        if (file_exists($arg)) {
+            $files[] = $arg;
+        } else {
+            $other[] = $arg;
+        }
+    }
+    return array("files" => $files,
+                 "other" => $other);
+}
+
+function safe_open($filename) {
+}
+
+?>
+<?php
+
+echo min(0, 15)."\n";
+
+?><?php
+  // Response to Challenge Question 1
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+  //
+  // Code to demonstrate an efficient way to search the last 100 lines of a file containing roughly ten million lines for a sample string. This should function without having to process each line of the file (and without making use of the “tail” command or any external system commands). Any of the following languages can be used: PHP
+  //
+
+require("common.php");
+
+define("MAX_LINE_LENGTH", 1024);
+define("NUM_LINES", 100);
+
+function main($argv) {
+    $processed = process_args($argv);
+    $files = $processed["files"];
+    $other = $processed["other"];
+
+    // For demo purpose, just search the first file,
+    // and first item in $other as the search term
+    $filename = array_pop($files);
+    $search_term = array_pop($other);
+    if ($filename && $search_term) {
+        smart_search($filename, $search_term);
+    } else {
+        echo "Missing file or search term\n";
+    }
+}
+
+function smart_search($filename, $search_term) {
+    // Assumptions:
+    // each line is the approximately the same length
+    // the max length of each line is 1024 bytes
+    $filesize = filesize($filename)
+    $file = fopen($filename, "r");
+
+    // int fseek ( resource $handle , int $offset [, int $whence ] )
+    fseek($file, max(0, $filesize - (MAX_LINE_LENGTH * NUM_LINES)));
+    $lines = array();
+    while (!feof($file)) {
+        $line = fgets($file);
+        $lines[] = $line;
+    }
+
+    // keep only last 100 lines
+    if (sizeof($lines) > 100) {
+        array_splice($lines, -100, 100);
+    }
+
+}
+
+main($argv);
+
+?>
+<?php
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+
+function process_args($argv) {
+    // returns an array of filenames and other arguments
+    // skip the first arg
+    array_splice($argv, 0, 1);
+    $files = array();
+    $other = array();
+    foreach ($argv as $arg) {
+        if (file_exists($arg)) {
+            $files[] = $arg;
+        } else {
+            $other[] = $arg;
+        }
+    }
+    return array("files" => $files,
+                 "other" => $other);
+}
+
+function safe_open($filename) {
+}
+
+?>
+<?php
+
+echo min(0, 15)."\n";
+
+?><?php
+  // Response to Challenge Question 1
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+  //
+  // Code to demonstrate an efficient way to search the last 100 lines of a file containing roughly ten million lines for a sample string. This should function without having to process each line of the file (and without making use of the “tail” command or any external system commands). Any of the following languages can be used: PHP
+  //
+
+require("common.php");
+
+define("MAX_LINE_LENGTH", 1024);
+define("NUM_LINES", 100);
+
+function main($argv) {
+    $processed = process_args($argv);
+    $files = $processed["files"];
+    $other = $processed["other"];
+
+    // For demo purpose, just search the first file,
+    // and first item in $other as the search term
+    $filename = array_pop($files);
+    $search_term = array_pop($other);
+    if ($filename && $search_term) {
+        smart_search($filename, $search_term);
+    } else {
+        echo "Missing file or search term\n";
+    }
+}
+
+function smart_search($filename, $search_term) {
+    // Assumptions:
+    // each line is the approximately the same length
+    // the max length of each line is 1024 bytes
+    $filesize = filesize($filename)
+    $file = fopen($filename, "r");
+
+    // int fseek ( resource $handle , int $offset [, int $whence ] )
+    fseek($file, max(0, $filesize - (MAX_LINE_LENGTH * NUM_LINES)));
+    $lines = array();
+    while (!feof($file)) {
+        $line = fgets($file);
+        $lines[] = $line;
+    }
+
+    // keep only last 100 lines
+    if (sizeof($lines) > 100) {
+        array_splice($lines, -100, 100);
+    }
+
+}
+
+main($argv);
+
+?>
+<?php
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+
+function process_args($argv) {
+    // returns an array of filenames and other arguments
+    // skip the first arg
+    array_splice($argv, 0, 1);
+    $files = array();
+    $other = array();
+    foreach ($argv as $arg) {
+        if (file_exists($arg)) {
+            $files[] = $arg;
+        } else {
+            $other[] = $arg;
+        }
+    }
+    return array("files" => $files,
+                 "other" => $other);
+}
+
+function safe_open($filename) {
+}
+
+?>
+<?php
+
+echo min(0, 15)."\n";
+
+?><?php
+  // Response to Challenge Question 1
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+  //
+  // Code to demonstrate an efficient way to search the last 100 lines of a file containing roughly ten million lines for a sample string. This should function without having to process each line of the file (and without making use of the “tail” command or any external system commands). Any of the following languages can be used: PHP
+  //
+
+require("common.php");
+
+define("MAX_LINE_LENGTH", 1024);
+define("NUM_LINES", 100);
+
+function main($argv) {
+    $processed = process_args($argv);
+    $files = $processed["files"];
+    $other = $processed["other"];
+
+    // For demo purpose, just search the first file,
+    // and first item in $other as the search term
+    $filename = array_pop($files);
+    $search_term = array_pop($other);
+    if ($filename && $search_term) {
+        smart_search($filename, $search_term);
+    } else {
+        echo "Missing file or search term\n";
+    }
+}
+
+function smart_search($filename, $search_term) {
+    // Assumptions:
+    // each line is the approximately the same length
+    // the max length of each line is 1024 bytes
+    $filesize = filesize($filename)
+    $file = fopen($filename, "r");
+
+    // int fseek ( resource $handle , int $offset [, int $whence ] )
+    fseek($file, max(0, $filesize - (MAX_LINE_LENGTH * NUM_LINES)));
+    $lines = array();
+    while (!feof($file)) {
+        $line = fgets($file);
+        $lines[] = $line;
+    }
+
+    // keep only last 100 lines
+    if (sizeof($lines) > 100) {
+        array_splice($lines, -100, 100);
+    }
+
+}
+
+main($argv);
+
+?>
+<?php
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+
+function process_args($argv) {
+    // returns an array of filenames and other arguments
+    // skip the first arg
+    array_splice($argv, 0, 1);
+    $files = array();
+    $other = array();
+    foreach ($argv as $arg) {
+        if (file_exists($arg)) {
+            $files[] = $arg;
+        } else {
+            $other[] = $arg;
+        }
+    }
+    return array("files" => $files,
+                 "other" => $other);
+}
+
+function safe_open($filename) {
+}
+
+?>
+<?php
+
+echo min(0, 15)."\n";
+
+?><?php
+  // Response to Challenge Question 1
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+  //
+  // Code to demonstrate an efficient way to search the last 100 lines of a file containing roughly ten million lines for a sample string. This should function without having to process each line of the file (and without making use of the “tail” command or any external system commands). Any of the following languages can be used: PHP
+  //
+
+require("common.php");
+
+define("MAX_LINE_LENGTH", 1024);
+define("NUM_LINES", 100);
+
+function main($argv) {
+    $processed = process_args($argv);
+    $files = $processed["files"];
+    $other = $processed["other"];
+
+    // For demo purpose, just search the first file,
+    // and first item in $other as the search term
+    $filename = array_pop($files);
+    $search_term = array_pop($other);
+    if ($filename && $search_term) {
+        smart_search($filename, $search_term);
+    } else {
+        echo "Missing file or search term\n";
+    }
+}
+
+function smart_search($filename, $search_term) {
+    // Assumptions:
+    // each line is the approximately the same length
+    // the max length of each line is 1024 bytes
+    $filesize = filesize($filename)
+    $file = fopen($filename, "r");
+
+    // int fseek ( resource $handle , int $offset [, int $whence ] )
+    fseek($file, max(0, $filesize - (MAX_LINE_LENGTH * NUM_LINES)));
+    $lines = array();
+    while (!feof($file)) {
+        $line = fgets($file);
+        $lines[] = $line;
+    }
+
+    // keep only last 100 lines
+    if (sizeof($lines) > 100) {
+        array_splice($lines, -100, 100);
+    }
+
+}
+
+main($argv);
+
+?>
+<?php
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+
+function process_args($argv) {
+    // returns an array of filenames and other arguments
+    // skip the first arg
+    array_splice($argv, 0, 1);
+    $files = array();
+    $other = array();
+    foreach ($argv as $arg) {
+        if (file_exists($arg)) {
+            $files[] = $arg;
+        } else {
+            $other[] = $arg;
+        }
+    }
+    return array("files" => $files,
+                 "other" => $other);
+}
+
+function safe_open($filename) {
+}
+
+?>
+<?php
+
+echo min(0, 15)."\n";
+
+?><?php
+  // Response to Challenge Question 1
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+  //
+  // Code to demonstrate an efficient way to search the last 100 lines of a file containing roughly ten million lines for a sample string. This should function without having to process each line of the file (and without making use of the “tail” command or any external system commands). Any of the following languages can be used: PHP
+  //
+
+require("common.php");
+
+define("MAX_LINE_LENGTH", 1024);
+define("NUM_LINES", 100);
+
+function main($argv) {
+    $processed = process_args($argv);
+    $files = $processed["files"];
+    $other = $processed["other"];
+
+    // For demo purpose, just search the first file,
+    // and first item in $other as the search term
+    $filename = array_pop($files);
+    $search_term = array_pop($other);
+    if ($filename && $search_term) {
+        smart_search($filename, $search_term);
+    } else {
+        echo "Missing file or search term\n";
+    }
+}
+
+function smart_search($filename, $search_term) {
+    // Assumptions:
+    // each line is the approximately the same length
+    // the max length of each line is 1024 bytes
+    $filesize = filesize($filename)
+    $file = fopen($filename, "r");
+
+    // int fseek ( resource $handle , int $offset [, int $whence ] )
+    fseek($file, max(0, $filesize - (MAX_LINE_LENGTH * NUM_LINES)));
+    $lines = array();
+    while (!feof($file)) {
+        $line = fgets($file);
+        $lines[] = $line;
+    }
+
+    // keep only last 100 lines
+    if (sizeof($lines) > 100) {
+        array_splice($lines, -100, 100);
+    }
+
+}
+
+main($argv);
+
+?>
+<?php
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+
+function process_args($argv) {
+    // returns an array of filenames and other arguments
+    // skip the first arg
+    array_splice($argv, 0, 1);
+    $files = array();
+    $other = array();
+    foreach ($argv as $arg) {
+        if (file_exists($arg)) {
+            $files[] = $arg;
+        } else {
+            $other[] = $arg;
+        }
+    }
+    return array("files" => $files,
+                 "other" => $other);
+}
+
+function safe_open($filename) {
+}
+
+?>
+<?php
+
+echo min(0, 15)."\n";
+
+?><?php
+  // Response to Challenge Question 1
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+  //
+  // Code to demonstrate an efficient way to search the last 100 lines of a file containing roughly ten million lines for a sample string. This should function without having to process each line of the file (and without making use of the “tail” command or any external system commands). Any of the following languages can be used: PHP
+  //
+
+require("common.php");
+
+define("MAX_LINE_LENGTH", 1024);
+define("NUM_LINES", 100);
+
+function main($argv) {
+    $processed = process_args($argv);
+    $files = $processed["files"];
+    $other = $processed["other"];
+
+    // For demo purpose, just search the first file,
+    // and first item in $other as the search term
+    $filename = array_pop($files);
+    $search_term = array_pop($other);
+    if ($filename && $search_term) {
+        smart_search($filename, $search_term);
+    } else {
+        echo "Missing file or search term\n";
+    }
+}
+
+function smart_search($filename, $search_term) {
+    // Assumptions:
+    // each line is the approximately the same length
+    // the max length of each line is 1024 bytes
+    $filesize = filesize($filename)
+    $file = fopen($filename, "r");
+
+    // int fseek ( resource $handle , int $offset [, int $whence ] )
+    fseek($file, max(0, $filesize - (MAX_LINE_LENGTH * NUM_LINES)));
+    $lines = array();
+    while (!feof($file)) {
+        $line = fgets($file);
+        $lines[] = $line;
+    }
+
+    // keep only last 100 lines
+    if (sizeof($lines) > 100) {
+        array_splice($lines, -100, 100);
+    }
+
+}
+
+main($argv);
+
+?>
+<?php
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+
+function process_args($argv) {
+    // returns an array of filenames and other arguments
+    // skip the first arg
+    array_splice($argv, 0, 1);
+    $files = array();
+    $other = array();
+    foreach ($argv as $arg) {
+        if (file_exists($arg)) {
+            $files[] = $arg;
+        } else {
+            $other[] = $arg;
+        }
+    }
+    return array("files" => $files,
+                 "other" => $other);
+}
+
+function safe_open($filename) {
+}
+
+?>
+<?php
+
+echo min(0, 15)."\n";
+
+?><?php
+  // Response to Challenge Question 1
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+  //
+  // Code to demonstrate an efficient way to search the last 100 lines of a file containing roughly ten million lines for a sample string. This should function without having to process each line of the file (and without making use of the “tail” command or any external system commands). Any of the following languages can be used: PHP
+  //
+
+require("common.php");
+
+define("MAX_LINE_LENGTH", 1024);
+define("NUM_LINES", 100);
+
+function main($argv) {
+    $processed = process_args($argv);
+    $files = $processed["files"];
+    $other = $processed["other"];
+
+    // For demo purpose, just search the first file,
+    // and first item in $other as the search term
+    $filename = array_pop($files);
+    $search_term = array_pop($other);
+    if ($filename && $search_term) {
+        smart_search($filename, $search_term);
+    } else {
+        echo "Missing file or search term\n";
+    }
+}
+
+function smart_search($filename, $search_term) {
+    // Assumptions:
+    // each line is the approximately the same length
+    // the max length of each line is 1024 bytes
+    $filesize = filesize($filename)
+    $file = fopen($filename, "r");
+
+    // int fseek ( resource $handle , int $offset [, int $whence ] )
+    fseek($file, max(0, $filesize - (MAX_LINE_LENGTH * NUM_LINES)));
+    $lines = array();
+    while (!feof($file)) {
+        $line = fgets($file);
+        $lines[] = $line;
+    }
+
+    // keep only last 100 lines
+    if (sizeof($lines) > 100) {
+        array_splice($lines, -100, 100);
+    }
+
+}
+
+main($argv);
+
+?>
+<?php
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+
+function process_args($argv) {
+    // returns an array of filenames and other arguments
+    // skip the first arg
+    array_splice($argv, 0, 1);
+    $files = array();
+    $other = array();
+    foreach ($argv as $arg) {
+        if (file_exists($arg)) {
+            $files[] = $arg;
+        } else {
+            $other[] = $arg;
+        }
+    }
+    return array("files" => $files,
+                 "other" => $other);
+}
+
+function safe_open($filename) {
+}
+
+?>
+<?php
+
+echo min(0, 15)."\n";
+
+?><?php
+  // Response to Challenge Question 1
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+  //
+  // Code to demonstrate an efficient way to search the last 100 lines of a file containing roughly ten million lines for a sample string. This should function without having to process each line of the file (and without making use of the “tail” command or any external system commands). Any of the following languages can be used: PHP
+  //
+
+require("common.php");
+
+define("MAX_LINE_LENGTH", 1024);
+define("NUM_LINES", 100);
+
+function main($argv) {
+    $processed = process_args($argv);
+    $files = $processed["files"];
+    $other = $processed["other"];
+
+    // For demo purpose, just search the first file,
+    // and first item in $other as the search term
+    $filename = array_pop($files);
+    $search_term = array_pop($other);
+    if ($filename && $search_term) {
+        smart_search($filename, $search_term);
+    } else {
+        echo "Missing file or search term\n";
+    }
+}
+
+function smart_search($filename, $search_term) {
+    // Assumptions:
+    // each line is the approximately the same length
+    // the max length of each line is 1024 bytes
+    $filesize = filesize($filename)
+    $file = fopen($filename, "r");
+
+    // int fseek ( resource $handle , int $offset [, int $whence ] )
+    fseek($file, max(0, $filesize - (MAX_LINE_LENGTH * NUM_LINES)));
+    $lines = array();
+    while (!feof($file)) {
+        $line = fgets($file);
+        $lines[] = $line;
+    }
+
+    // keep only last 100 lines
+    if (sizeof($lines) > 100) {
+        array_splice($lines, -100, 100);
+    }
+
+}
+
+main($argv);
+
+?>
+<?php
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+
+function process_args($argv) {
+    // returns an array of filenames and other arguments
+    // skip the first arg
+    array_splice($argv, 0, 1);
+    $files = array();
+    $other = array();
+    foreach ($argv as $arg) {
+        if (file_exists($arg)) {
+            $files[] = $arg;
+        } else {
+            $other[] = $arg;
+        }
+    }
+    return array("files" => $files,
+                 "other" => $other);
+}
+
+function safe_open($filename) {
+}
+
+?>
+<?php
+
+echo min(0, 15)."\n";
+
+?><?php
+  // Response to Challenge Question 1
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+  //
+  // Code to demonstrate an efficient way to search the last 100 lines of a file containing roughly ten million lines for a sample string. This should function without having to process each line of the file (and without making use of the “tail” command or any external system commands). Any of the following languages can be used: PHP
+  //
+
+require("common.php");
+
+define("MAX_LINE_LENGTH", 1024);
+define("NUM_LINES", 100);
+
+function main($argv) {
+    $processed = process_args($argv);
+    $files = $processed["files"];
+    $other = $processed["other"];
+
+    // For demo purpose, just search the first file,
+    // and first item in $other as the search term
+    $filename = array_pop($files);
+    $search_term = array_pop($other);
+    if ($filename && $search_term) {
+        smart_search($filename, $search_term);
+    } else {
+        echo "Missing file or search term\n";
+    }
+}
+
+function smart_search($filename, $search_term) {
+    // Assumptions:
+    // each line is the approximately the same length
+    // the max length of each line is 1024 bytes
+    $filesize = filesize($filename)
+    $file = fopen($filename, "r");
+
+    // int fseek ( resource $handle , int $offset [, int $whence ] )
+    fseek($file, max(0, $filesize - (MAX_LINE_LENGTH * NUM_LINES)));
+    $lines = array();
+    while (!feof($file)) {
+        $line = fgets($file);
+        $lines[] = $line;
+    }
+
+    // keep only last 100 lines
+    if (sizeof($lines) > 100) {
+        array_splice($lines, -100, 100);
+    }
+
+}
+
+main($argv);
+
+?>
+<?php
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+
+function process_args($argv) {
+    // returns an array of filenames and other arguments
+    // skip the first arg
+    array_splice($argv, 0, 1);
+    $files = array();
+    $other = array();
+    foreach ($argv as $arg) {
+        if (file_exists($arg)) {
+            $files[] = $arg;
+        } else {
+            $other[] = $arg;
+        }
+    }
+    return array("files" => $files,
+                 "other" => $other);
+}
+
+function safe_open($filename) {
+}
+
+?>
+<?php
+
+echo min(0, 15)."\n";
+
+?><?php
+  // Response to Challenge Question 1
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+  //
+  // Code to demonstrate an efficient way to search the last 100 lines of a file containing roughly ten million lines for a sample string. This should function without having to process each line of the file (and without making use of the “tail” command or any external system commands). Any of the following languages can be used: PHP
+  //
+
+require("common.php");
+
+define("MAX_LINE_LENGTH", 1024);
+define("NUM_LINES", 100);
+
+function main($argv) {
+    $processed = process_args($argv);
+    $files = $processed["files"];
+    $other = $processed["other"];
+
+    // For demo purpose, just search the first file,
+    // and first item in $other as the search term
+    $filename = array_pop($files);
+    $search_term = array_pop($other);
+    if ($filename && $search_term) {
+        smart_search($filename, $search_term);
+    } else {
+        echo "Missing file or search term\n";
+    }
+}
+
+function smart_search($filename, $search_term) {
+    // Assumptions:
+    // each line is the approximately the same length
+    // the max length of each line is 1024 bytes
+    $filesize = filesize($filename)
+    $file = fopen($filename, "r");
+
+    // int fseek ( resource $handle , int $offset [, int $whence ] )
+    fseek($file, max(0, $filesize - (MAX_LINE_LENGTH * NUM_LINES)));
+    $lines = array();
+    while (!feof($file)) {
+        $line = fgets($file);
+        $lines[] = $line;
+    }
+
+    // keep only last 100 lines
+    if (sizeof($lines) > 100) {
+        array_splice($lines, -100, 100);
+    }
+
+}
+
+main($argv);
+
+?>
+<?php
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+
+function process_args($argv) {
+    // returns an array of filenames and other arguments
+    // skip the first arg
+    array_splice($argv, 0, 1);
+    $files = array();
+    $other = array();
+    foreach ($argv as $arg) {
+        if (file_exists($arg)) {
+            $files[] = $arg;
+        } else {
+            $other[] = $arg;
+        }
+    }
+    return array("files" => $files,
+                 "other" => $other);
+}
+
+function safe_open($filename) {
+}
+
+?>
+<?php
+
+echo min(0, 15)."\n";
+
+?><?php
+  // Response to Challenge Question 1
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+  //
+  // Code to demonstrate an efficient way to search the last 100 lines of a file containing roughly ten million lines for a sample string. This should function without having to process each line of the file (and without making use of the “tail” command or any external system commands). Any of the following languages can be used: PHP
+  //
+
+require("common.php");
+
+define("MAX_LINE_LENGTH", 1024);
+define("NUM_LINES", 100);
+
+function main($argv) {
+    $processed = process_args($argv);
+    $files = $processed["files"];
+    $other = $processed["other"];
+
+    // For demo purpose, just search the first file,
+    // and first item in $other as the search term
+    $filename = array_pop($files);
+    $search_term = array_pop($other);
+    if ($filename && $search_term) {
+        smart_search($filename, $search_term);
+    } else {
+        echo "Missing file or search term\n";
+    }
+}
+
+function smart_search($filename, $search_term) {
+    // Assumptions:
+    // each line is the approximately the same length
+    // the max length of each line is 1024 bytes
+    $filesize = filesize($filename)
+    $file = fopen($filename, "r");
+
+    // int fseek ( resource $handle , int $offset [, int $whence ] )
+    fseek($file, max(0, $filesize - (MAX_LINE_LENGTH * NUM_LINES)));
+    $lines = array();
+    while (!feof($file)) {
+        $line = fgets($file);
+        $lines[] = $line;
+    }
+
+    // keep only last 100 lines
+    if (sizeof($lines) > 100) {
+        array_splice($lines, -100, 100);
+    }
+
+}
+
+main($argv);
+
+?>
+<?php
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+
+function process_args($argv) {
+    // returns an array of filenames and other arguments
+    // skip the first arg
+    array_splice($argv, 0, 1);
+    $files = array();
+    $other = array();
+    foreach ($argv as $arg) {
+        if (file_exists($arg)) {
+            $files[] = $arg;
+        } else {
+            $other[] = $arg;
+        }
+    }
+    return array("files" => $files,
+                 "other" => $other);
+}
+
+function safe_open($filename) {
+}
+
+?>
+<?php
+
+echo min(0, 15)."\n";
+
+?><?php
+  // Response to Challenge Question 1
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+  //
+  // Code to demonstrate an efficient way to search the last 100 lines of a file containing roughly ten million lines for a sample string. This should function without having to process each line of the file (and without making use of the “tail” command or any external system commands). Any of the following languages can be used: PHP
+  //
+
+require("common.php");
+
+define("MAX_LINE_LENGTH", 1024);
+define("NUM_LINES", 100);
+
+function main($argv) {
+    $processed = process_args($argv);
+    $files = $processed["files"];
+    $other = $processed["other"];
+
+    // For demo purpose, just search the first file,
+    // and first item in $other as the search term
+    $filename = array_pop($files);
+    $search_term = array_pop($other);
+    if ($filename && $search_term) {
+        smart_search($filename, $search_term);
+    } else {
+        echo "Missing file or search term\n";
+    }
+}
+
+function smart_search($filename, $search_term) {
+    // Assumptions:
+    // each line is the approximately the same length
+    // the max length of each line is 1024 bytes
+    $filesize = filesize($filename)
+    $file = fopen($filename, "r");
+
+    // int fseek ( resource $handle , int $offset [, int $whence ] )
+    fseek($file, max(0, $filesize - (MAX_LINE_LENGTH * NUM_LINES)));
+    $lines = array();
+    while (!feof($file)) {
+        $line = fgets($file);
+        $lines[] = $line;
+    }
+
+    // keep only last 100 lines
+    if (sizeof($lines) > 100) {
+        array_splice($lines, -100, 100);
+    }
+
+}
+
+main($argv);
+
+?>
+<?php
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+
+function process_args($argv) {
+    // returns an array of filenames and other arguments
+    // skip the first arg
+    array_splice($argv, 0, 1);
+    $files = array();
+    $other = array();
+    foreach ($argv as $arg) {
+        if (file_exists($arg)) {
+            $files[] = $arg;
+        } else {
+            $other[] = $arg;
+        }
+    }
+    return array("files" => $files,
+                 "other" => $other);
+}
+
+function safe_open($filename) {
+}
+
+?>
+<?php
+
+echo min(0, 15)."\n";
+
+?><?php
+  // Response to Challenge Question 1
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+  //
+  // Code to demonstrate an efficient way to search the last 100 lines of a file containing roughly ten million lines for a sample string. This should function without having to process each line of the file (and without making use of the “tail” command or any external system commands). Any of the following languages can be used: PHP
+  //
+
+require("common.php");
+
+define("MAX_LINE_LENGTH", 1024);
+define("NUM_LINES", 100);
+
+function main($argv) {
+    $processed = process_args($argv);
+    $files = $processed["files"];
+    $other = $processed["other"];
+
+    // For demo purpose, just search the first file,
+    // and first item in $other as the search term
+    $filename = array_pop($files);
+    $search_term = array_pop($other);
+    if ($filename && $search_term) {
+        smart_search($filename, $search_term);
+    } else {
+        echo "Missing file or search term\n";
+    }
+}
+
+function smart_search($filename, $search_term) {
+    // Assumptions:
+    // each line is the approximately the same length
+    // the max length of each line is 1024 bytes
+    $filesize = filesize($filename)
+    $file = fopen($filename, "r");
+
+    // int fseek ( resource $handle , int $offset [, int $whence ] )
+    fseek($file, max(0, $filesize - (MAX_LINE_LENGTH * NUM_LINES)));
+    $lines = array();
+    while (!feof($file)) {
+        $line = fgets($file);
+        $lines[] = $line;
+    }
+
+    // keep only last 100 lines
+    if (sizeof($lines) > 100) {
+        array_splice($lines, -100, 100);
+    }
+
+}
+
+main($argv);
+
+?>
+<?php
+  // author: hello@jontsai.com
+  // date: 2009.04.11
+
+function process_args($argv) {
+    // returns an array of filenames and other arguments
+    // skip the first arg
+    array_splice($argv, 0, 1);
+    $files = array();
+    $other = array();
+    foreach ($argv as $arg) {
+        if (file_exists($arg)) {
+            $files[] = $arg;
+        } else {
+            $other[] = $arg;
+        }
+    }
+    return array("files" => $files,
+                 "other" => $other);
+}
+
+function safe_open($filename) {
+}
+
+?>
+<?php
+
+echo min(0, 15)."\n";
+
+?>

@@ -1,0 +1,48 @@
+/*    HTTP Host:  b.static.ak.fbcdn.net                                        */
+/*    Generated:  April 21st 2009 10:05:13 AM PDT                              */
+/*      Machine:  10.16.140.109                                                */
+/*       Source:  Local Cache                                                  */
+/*     Location:  rsrc:6jjvsd94:en_US:/html/css/presence/applications.css      */
+/*       Locale:  en_US                                                        */
+/*         Path:  css/presence/applications.css                                */
+
+
+#presence #icon_garden{float:left;padding:0;width:158px;}
+#presence #presence_applications_icon_garden{border-left:1px solid #B5B5B5;}
+#presence_bar #presence_applications_icon_garden div.icon_garden_elem{float:left;position:relative;top:1px;}
+#presence #presence_applications_icon_garden .icon_garden_elem a{padding:4px 5px 5px;height:16px;display:block;width:16px;}
+#presence #presence_applications_icon_garden .icon_garden_elem.hover{background:#fff;}
+.ie6 #presence #bookmarkable_app{width:90px;white-space:nowrap;}
+#presence #presence_applications_bookmark_app{border-right:none;width:auto;padding:4px 4px 0 4px;}
+.ie6 #presence #presence_applications_bookmark_app{margin-bottom:-4px;}
+#presence #presence_applications_bookmark_app a:hover{text-decoration:none;}
+#presence #presence_applications_bookmark_app img{opacity:.5;filter:alpha(opacity=50);}
+#presence #presence_applications_bookmark_app .bookmark_app_plus{background:url(/images/presence/green_plus.gif) left top no-repeat;display:block;margin-top:8px;position:absolute;width:16px;height:16px;z-index:1;}
+#presence #presence_applications_bookmark_app .bookmark_text{color:#333;vertical-align:top;padding-left:4px;}
+#presence #presence_applications_bookmark_app a:hover .bookmark_text{text-decoration:underline;}
+.bookmark_top_container{margin-bottom:-42px;}
+.bookmark_top_container .UIRoundedBox_Container{padding-left:17px;width:163px;max-height:48px;}
+.bookmark_top a{padding:6px 10px 5px 10px;display:block;overflow:hidden;position:relative;zoom:1;}
+.bookmark_top a:hover{text-decoration:none;}
+.bookmark_top img{opacity:.5;filter:alpha(opacity=50);float:left;}
+.bookmark_top .bookmark_app_plus{background:url(/images/presence/green_plus.gif) left top no-repeat;display:block;top:14px;left:10px;position:absolute;width:16px;height:16px;z-index:1;}
+.bookmark_top .bookmark_text{vertical-align:top;padding-left:5px;float:left;width:115px;}
+.bookmark_top a:hover .bookmark_text{text-decoration:underline;}
+#presence_bar .application_menu_header{background-color:#EEEEEE;padding:3px 0 4px 6px;}
+#presence_bar .application_menu_header{overflow:hidden;}
+#presence_bar .application_menu_header span.left{float:left;}
+#presence_bar .application_menu_header span.right{float:right;padding-right:6px;}
+#presence_bar #presence_applications_content{padding:5px;}
+#presence_bar #presence_applications_content ul{list-style-type:none;padding:0px;margin:0px;}
+#presence_bar #presence_applications_content li{line-height:16px;list-style-type:none;padding:1px 0;overflow:hidden;zoom:1;}
+#presence_bar #presence_applications_content .app_menu_undo_remove_bookmark{display:none;height:16px;padding:2px 0 2px 5px;background-color:#FFF9D7;}
+#presence_bar #presence_applications_content .app_menu_undo_remove_bookmark_link{float:right;}
+#presence_bar #presence_applications_content li div.item{float:left;height:16px;width:16px;overflow:hidden;padding:2px 5px;}
+#presence_bar #presence_applications_content li div img{float:left;}
+#presence_bar div.application_menu_divider{border-bottom:1px solid #E9E9E9;margin:3px 2px 4px;color:#808080;}
+#presence #presence_applications_tab{border-right:1px solid #b5b5b5;padding-left:4px;width:87px;}
+#presence #presence_applications_tab .favi_apps{float:left;margin:0 4px 0 0;}
+#presence .wideapp #presence_applications_tab{width:111px;}
+#presence_bar div.application_menu_logoless_item{padding:0 0 5px 10px;}
+
+#bootloader_css_presence_applications_css { height: 42px; }

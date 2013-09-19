@@ -1,0 +1,72 @@
+=======================================================================
+Let's pretend you are one of our customers in Familiar
+Faces (http://www.lumosity.com/brain-games/memory-games/familiar-faces).
+You've unlocked all the levels of Familiar Faces and now can go to any
+restaurant of your choosing.  You are hungry and looking for the most
+affordable place to buy your meal.
+
+For each meal, you will be provided a CSV file of restaurant menus. The
+file's format is:
+
+for lines that define a price for a single item:
+restaurant ID, price, item name
+
+for lines that define the price for a combo meal (there can be any
+number of items in a combo meal)
+restaurant ID, price, item 1 name, item 2 name, ...
+
+All restaurant IDs are integers, all item names are lower case
+letters and underscores, and the price is a decimal number.
+
+
+Write a Ruby class that accepts the restaurant menus and outputs
+the restaurant and total cost of the meal the user should go to, based
+on the most affordable option. It is ok to purchase extra items, as
+long as the total cost is minimized.
+
+Here are some sample menu lists, example inputs, and the expected result:
+
+1) menus1.csv
+------------
+1, 4.00, ham_sandwich
+1, 8.00, burrito
+2, 5.00, ham_sandwich
+2, 6.50, burrito
+
+input
+> program menus1.csv ham_sandwich burrito
+
+expected output
+=> 2, 11.5
+---------------------------
+
+
+
+2) menus2.csv
+------------
+3, 4.00, blt_sandwich
+3, 8.00, chicken_wings
+4, 5.00, chicken_wings
+4, 2.50, coffee
+
+input
+> program menus2.csv blt_sandwich coffee
+
+expected output
+=> nil  (as there is no single restaurant that satisfies your desires)
+---------------------------
+
+
+3) menus3.csv
+------------
+5, 4.00, fish_sandwich
+5, 8.00, milkshake
+6, 5.00, milkshake
+6, 6.00, fish_sandwich, blue_berry_muffin, chocolate_milk
+
+input
+> program menus3.csv milkshake fish_sandwich
+
+expected output
+=> 6, 11.0
+---------------------------

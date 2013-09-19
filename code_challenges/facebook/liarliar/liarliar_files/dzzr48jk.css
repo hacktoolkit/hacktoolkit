@@ -1,0 +1,288 @@
+/*
+HTTP Host: static.ak.fbcdn.net
+Generated: June 1st 2010 9:13:25 AM PDT
+Machine: 10.16.140.106
+Locale: nu_ll
+Path: css/3nx06xuqsmiog48k.pkg.css
+*/
+
+a.UIEmuFrame_x{display:block;float:right;font-size:0;height:13px;margin:1px 2px 0 7px;width:11px;background:transparent url(/rsrc.php/zA4IG/hash/cny9pytx.png) no-repeat -869px -65px}
+a.UIEmuFrame_x:hover{background-color:#3b5998;background-position:-857px -65px;text-decoration:none}
+.UIEmuHPLikeFrame_userLikes .UIEmuHPLikeFrame_likeSpan{display:none}
+.UIEmuHPLikeFrame_userLikes .UIEmuHPLikeFrame_sentence{display:none}
+.UIEmuHPLikeFrame_unlikeSpan{display:none}
+.UIEmuHPLikeFrame_postSentence{display:none}
+.UIEmuHPLikeFrame_userLikes .UIEmuHPLikeFrame_unlikeSpan{display:inline}
+.UIEmuHPLikeFrame_userLikes .UIEmuHPLikeFrame_postSentence{display:inline}
+.UIEMUHPFrame_creative:hover .ad_title{text-decoration:underline}
+.UIEMUHPFrame_creative .UIEMUHPFrame_titleAndFeedback:hover .ad_title{text-decoration:none}
+.UIEMUHPFrame_creative .ad_title:hover{text-decoration:underline !important}
+.UIEMUFrame_forceRTL{direction:rtl;text-align:right}
+.UIEMUFrame_forceLTR{direction:ltr;text-align:left}
+.emu_ad .ad_title{display:block;font-weight:bold;margin-right:20px;padding-bottom:4px}
+.emu_ad .uiVideoThumb img{_clear:expression(
+style.width = this.offsetWidth > 130 ? "130px":"auto",
+style.clear = "none", 0
+)}
+.emu_ad .ad_text{color:#333;display:block;line-height:13px}
+.emu_ad .ad_text:hover{text-decoration:none}
+.emu_ad .ad_image{margin-right:8px}
+.emu_ad a.underlined_title{text-decoration:underline}
+.emu_ad .inline_comment{background-color:#eceff5;border-bottom:1px solid #e5eaf1;clear:both;float:none;margin:0 0 2px 0;overflow:hidden;padding:6px 4px 6px 6px}
+.emu_ad .comment_profile_pic{float:left}
+.emu_ad .comment_content{float:left;line-height:13px;padding:0 0 0 6px;width:199px}
+.fbx .emu_ad .comment_content{width:185px}
+.emu_ad .comment_content .comment_actions .comment_meta_data{color:#999;font-size:9px;font-weight:normal}
+.emu_ad .comment_text{padding:2px 0 4px}
+.emu_ad .comment_content .x_to_hide{background:transparent url(/rsrc.php/z574F/hash/38fffwed.gif) no-repeat scroll center;border:medium none;float:right;margin-left:3px;margin-top:-1px;overflow:hidden;padding:1px 5px 2px;width:3px}
+.emu_ad .comment_box .comment_content .x_to_hide:hover{background:#3B5998 url(/rsrc.php/zD93Q/hash/6aqv88j2.gif) no-repeat scroll center}
+a.emu_x{display:block;font-size:0;height:13px;width:11px;background:transparent url(/rsrc.php/zA4IG/hash/cny9pytx.png) no-repeat -869px -65px}
+a.emu_x:hover{background-color:#3b5998;background-position:-857px -65px;text-decoration:none}
+.emu_action_bar{padding-top:4px}
+.emu_ad .UIMutableFilterList_Toggle{border-top:none;float:none;font-size:9px;font-weight:bold;padding:0 0 2px 3px;position:relative}
+.emu_ad .toggle_links{clear:both}
+.emu_ad .social_context{padding-top:2px}
+.emu_preview{border-bottom:1px solid #e6e6e6;padding-bottom:10px;width:250px}
+.emu_ad .invalid_emu_warning{color:#f00}
+#facebook .emu_ad .hidden{display:none}
+.emu_ad .emu_itb_creative:hover .ad_title{text-decoration:underline}
+.emu_ad .emu_video_creative:hover .ad_title{text-decoration:underline}
+.emu_ad .emu_X_container{display:block;float:right;height:13px;margin:1px 2px 0 0;overflow:hidden;width:11px;padding-bottom:2px;padding-left:10px}
+.emu_ad .event_action_frame .emu_followup{padding-top:3px}
+.emu_ad .poll_action_frame .friend_count_link{display:block;padding-bottom:7px}
+.emu_ad .emu_followup .async_saving{background:url(/rsrc.php/zBS5C/hash/7hwy7at6.gif) no-repeat left
+center;text-indent:-5000px;display:block}
+.emu_ad .CIEmu_Link{font-weight:bold}
+.emu_ad .address_book_form{overflow:hidden}
+.emu_ad .CIEmuRow{padding:8px 0 4px 0}
+.emu_ad .ci_submit_container{margin-top:5px}
+.emu_ad .contact_importer_widget .ci_submit_container .ci_submit_button{padding-left:0}
+.emu_ad .contact_importer_widget{width:230px}
+.ci_form input.email_password{width:226px}
+.sms_link_action_frame .sms_link_title{font-weight:bold}
+.sms_link_action_frame .sms_link_form{margin:10px 0 0 0}
+.sms_link_action_frame .phone_number_input{margin-right:0;width:95%}
+.sms_link_action_frame .sms_link_submit{margin-top:6px}
+.sms_link_action_frame .sms_link_success,
+.sms_link_action_frame .sms_link_failure{margin:5px 0 5px 0}
+#pagelet_eventbox input.async_saving{background:url(/rsrc.php/zBS5C/hash/7hwy7at6.gif) 207px center no-repeat}
+#pagelet_eventbox input.event_name{width:226px}
+hr{background:#d9d9d9;border-width:0;color:#d9d9d9;height:1px}
+.friends_online_sidebar{*line-height:0;padding-bottom:6px}
+.friends_online_sidebar li.buddy_row a{background:url(/rsrc.php/z2IHN/hash/c8hrcja7.png) no-repeat right 9px;display:block;line-height:22px;padding:1px 15px 1px 6px;overflow:hidden}
+.friends_online_sidebar li.buddy_row a.idle{background-position:right -112px}
+.friends_online_sidebar li.buddy_row a:hover{background-color:#eff2f7;text-decoration:none}
+.friends_online_sidebar .buddy_photo{height:22px;width:22px}
+.friends_online_sidebar_navigation_link,
+.friends_online_sidebar_empty_list_message{padding-left:6px}
+.friends_online_sidebar_navigation_link span{background:url(/rsrc.php/z9T00/hash/a0c6t4d4.png) no-repeat right 3px;*display:inline-block;padding-right:12px}
+.fbxWelcomeBox .fbxWelcomeBoxBlock{margin-right:8px}
+.fbxWelcomeBox .fbxWelcomeBoxProfileLink{display:block;padding-top:1px}
+.fbxWelcomeBoxName{display:block;font-weight:bold;padding:4px 0 1px;width:112px;word-wrap:break-word}
+.security_badge{position:relative;text-indent:17px}
+.security_badge img{position:absolute;left:-3px;top:-1px}
+.contact_importer_widget .ci_simple .ci_fields,
+.contact_importer_widget .contact_importer_simple{display:none}
+.contact_importer_widget .ci_simple .contact_importer_simple{display:inline-block}
+.ie7 .contact_importer_widget .ci_simple .contact_importer_simple{padding-right:25px}
+.contact_importer_widget .contact_importer_simple .full_importer{clear:left;display:block;margin:3px 0 0 0;padding:0 9px 0 0}
+.contact_importer_widget .contact_importer_button{cursor:pointer;display:block}
+.contact_importer_widget .contact_importer_button div{background:#879ac0;border:1px solid #29447e;border-bottom:1px solid #1a356e;display:inline-block}
+.ie7 .contact_importer_widget .contact_importer_button div,
+.ie6 .contact_importer_widget .contact_importer_button div{display:inline}
+.contact_importer_widget .lhs_logo_class{float:left;margin:0 10px 0 0}
+.contact_importer_widget .contact_importer_button input.inputsubmit,
+#wizard_step .contact_importer_widget .contact_importer_button input.inputsubmit{color:#fff;cursor:pointer;padding:2px 10px 3px 24px;background-color:#5d76aa;background-image:url(/rsrc.php/z34UJ/hash/7mpe5iby.gif);background-position:8px 7px;background-repeat:no-repeat;border:none;font-size:13px;font-weight:normal;margin:1px 0 0 0;left:0;text-align:left}
+.contact_importer_widget .contact_importer_button div input.inputsubmit:active,
+#wizard_step .contact_importer_widget .contact_importer_button div input.inputsubmit:active{background-color:#314c85}
+.contact_importer_widget #address_book_form{width:450px;float:left;display:block;padding-right:11px}
+.contact_importer_widget #address_book_login_form #login_str,
+.contact_importer_widget #address_book_login_form #password{margin-left:4px;width:236px}
+.contact_importer_widget #address_book_login_form #login_str{direction:ltr}
+.contact_importer_widget.freeform #password.disabled,
+.contact_importer_widget.freeform #dummy_password.disabled{background-color:#f7f7f7;border:1px solid #ccc;color:#666}
+.contact_importer_widget.freeform #unsupported_email{width:275px;padding:10px 2px 0}
+.contact_importer_widget.freeform #unsupported_email h5{font-weight:bold}
+.contact_importer_widget.freeform #unsupported_email p{padding:0;margin:6px 0 0 0;line-height:15px}
+#address_book_login_widget .address_book_email td.label,
+#address_book_login_widget .password td.label{width:106px}
+.dialog_body .supported_domains ul li{background:transparent url(/rsrc.php/z6JTN/hash/7d2w3tn4.gif) 0 7px no-repeat;padding:2px 0 0 11px;margin:0 0 0 6px;color:#666;font-weight:normal}
+.dialog_body .supported_domains ul li{margin:0 0 0 2px}
+.dialog_body .supported_domains{width:420px;height:220px;overflow:auto;display:block;position:relative;z-index:30}
+.dialog_body .supported_domains:before{content:""}
+.dialog_body p.domain_description{padding-bottom:11px;margin-bottom:9px;border-bottom:1px solid #ccc}
+.contact_importer_widget.address_book_hide_divider #address_book_login_widget{width:450px;border:none;padding:0
+margin:0}
+.contact_importer_widget .disclaimer{color:#666;font-size:11px}
+.contact_importer_widget.freeform #address_book_login_widget #unsupported_email{display:none}
+.contact_importer_widget.freeform #address_book_login_widget.unsupported #unsupported_email{display:block}
+.contact_importer_widget .provider_logo{padding-left:10px;padding-top:5px}
+#address_book_login_widget .wl_hotmail_logo,
+#address_book_login_widget .gmail_logo,
+#address_book_login_widget .yahoo_logo{display:none}
+#address_book_login_widget.yahoo .wl_hotmail_logo,
+#address_book_login_widget.yahoo .gmail_logo{display:none}
+#address_book_login_widget.yahoo .yahoo_logo{display:block}
+#address_book_login_widget.windows_live_noiframe .yahoo_logo,
+#address_book_login_widget.windows_live_noiframe .gmail_logo{display:none}
+#address_book_login_widget.windows_live_noiframe .wl_hotmail_logo{display:block}
+#address_book_login_widget.gmail .wl_hotmail_logo,
+#address_book_login_widget.gmail .yahoo_logo{display:none}
+#address_book_login_widget.gmail .gmail_logo{display:block}
+.contact_importer_widget .ci_submit_container{display:block}
+.contact_importer_widget .ci_submit_container .ci_submit_button{padding-left:4px;float:left}
+.contact_importer_widget .ci_submit_container .ci_submit_button label{width:auto}
+.contact_importer_widget .ci_submit_container .ci_status_elem{float:left;padding-top:8px;padding-left:3px}
+.contact_importer_widget #ci_logo_importer{padding-left:80px;margin:20px 0;width:300px}
+.contact_importer_widget #ci_logo_importer .provider_name{text-align:center;font-weight:bold}
+.contact_importer_widget #ci_logo_importer .normal_importer_link{margin-top:10px;float:right;font-size:12px}
+.contact_importer_widget #ci_logo_importer .logo_container{background-color:#f5f4f5;background-image:url(/rsrc.php/zCCSI/hash/7am1obcj.png);background-position:0 8px;border:1px solid #a0a0a0;cursor:pointer;float:right;margin-left:13px;padding:5px}
+.contact_importer_widget #ci_logo_importer .disclaimer{margin-top:10px;float:right}
+.home #leftCol{_height:600px;min-height:600px}
+.home #rightCol{padding-top:9x}
+.UIUpcoming_Item{padding-bottom:3px}
+#UIUpcoming_New{background-color:#fff7c5;margin:-3px 0 3px -2px;padding:2px 0 2px 2px}
+#UIUpcoming_New a{margin-top:2px}
+.UIUpcoming .UIImageBlock{padding-bottom:7px}
+.uiBubbleCount{background:url(/rsrc.php/zBMWL/hash/1wh1cvbg.png) no-repeat 0 -16px;*background-position:0 -15px;color:#fff;display:inline-block;font-size:11px;font-weight:bold;line-height:14px;padding-left:6px}
+.safari4 .uiBubbleCount{float:right}
+.uiBubbleCount .number{background:url(/rsrc.php/zBMWL/hash/1wh1cvbg.png) no-repeat right -1px;*background-position:right 0;display:inline-block;line-height:14px;padding:0 7px 0 1px;*padding-bottom:1px}
+* a:hover .uiBubbleCount{text-decoration:none}
+.spritemap_dhr5fo{background-image:url(/rsrc.php/z5PWZ/hash/1lnq38hr.png);_background-image:url(/rsrc.php/zE1WV/hash/8tqu8r6t.gif);background-repeat:no-repeat;display:inline-block;height:16px;width:16px}
+.sx_31f756{background-position:-0px -1px}
+.sx_92d94a{background-position:-0px -18px}
+.sx_560ceb{background-position:-0px -35px}
+.sx_8c9299{background-position:-0px -52px}
+.sx_31b2a9{background-position:-0px -69px}
+.sx_d50d92{width:8px;height:14px;background-position:-0px -86px}
+.fbx_stream_header .fbx_action_list a{font-weight:normal}
+.UIIntentionalStream_Top_Header{font-weight:bold;font-size:16px;line-height:20px;*line-height:19px}
+.UIIntentionalStream_Top_Header span{height:21px}
+.UIIntentionalStream_Top_Link{font-size:13px;padding-top:3px}
+.UIIntentionalStream_Top_Icon_Sprite{background-position:top right;background-repeat:no-repeat;display:block;height:16px;width:16px}
+.UIIntentionalStream_Top_Icon .UIImageBlock_Image{margin:3px 6px 0 0}
+.UIIntentionalStream_Top li{display:inline;float:left;height:21px;padding-right:8px}
+a.UIIntentionalStream_LiveLink:hover{text-decoration:none;_text-decoration:underline}
+a.UIIntentionalStream_LiveLink:hover .UIIntentionalStream_LiveText{text-decoration:underline}
+.UIIntentionalStream_LiveText{float:left;padding-right:4px}
+.uiGrid{border:0;border-collapse:collapse;border-spacing:0}
+.uiGridCalc{width:100%}
+.uiGrid .vTop{vertical-align:top}
+.uiGrid .vMid{vertical-align:middle}
+.uiGrid .vBot{vertical-align:bottom}
+.uiGrid .hLeft{text-align:left}
+.uiGrid .hCent{text-align:center}
+.uiGrid .hRght{text-align:right}
+.uiFacepileSmall ul{margin-top:-2px}
+.uiFacepileMedium ul{margin-top:-3px}
+.uiFacepileLarge ul{margin-top:-5px}
+.uiFacepile .link{display:block}
+.uiFacepileSmall .img{height:24px;margin:2px 2px 0 0;vertical-align:bottom;width:24px}
+.uiFacepileMedium .img{height:32px;margin:3px 3px 0 0;vertical-align:bottom;width:32px}
+.uiFacepileLarge .img{height:50px;margin:5px 5px 0 0;vertical-align:bottom;width:50px}
+.uiFacepile li:last-child .img{margin-right:0}
+.uiPhotoThumb{border:1px solid #ccc}
+.uiPhotoThumb img{display:block;margin:3px}
+.uiPhotoThumb:hover{border:1px solid #3b5998}
+.uiSideNav ul{display:none}
+.uiSideNav .open ul{display:block}
+.uiSideNav li{display:block;position:relative;z-index:2;zoom:1}
+.uiSideNav .hidden{display:none}
+.uiSideNav .item,
+.uiSideNav .subitem{color:#333;display:block;border-bottom:1px solid #fff;line-height:13px;padding:3px 4px 4px 28px;position:relative;text-decoration:none;zoom:1}
+.uiSideNav .subitem{padding:3px 4px 4px 37px}
+.uiSideNav .item:hover,
+.uiSideNav .item:active,
+.uiSideNav .item:focus,
+.uiSideNav .subitem:hover,
+.uiSideNav .subitem:active,
+.uiSideNav .subitem:focus{background:#eff2f7;text-decoration:none}
+.uiSideNav .selected .item,
+.uiSideNav .selected .item:hover,
+.uiSideNav ul .selected .subitem,
+.uiSideNav ul .selected .subitem:hover{background:#d8dfea;font-weight:bold}
+.uiSideNav .item .imgWrap{position:absolute;top:2px;left:5px;text-align:center;width:18px}
+.uiSideNav .external{*display:inline-block;padding-right:12px;background:url(/rsrc.php/z9T00/hash/a0c6t4d4.png) no-repeat right 3px}
+.uiSideNav .loading ul .count,
+.uiSideNav .count{color:#808080;padding-left:3px}
+.uiSideNav .loading a{background-color:#eff2f7;border-color:#eff2f7;border-bottom-color:#fff}
+.uiSideNav .loading ul a{background-color:#fff;border-color:#fff}
+.uiSideNav .loadingIndicator{background:url(/rsrc.php/zBS5C/hash/7hwy7at6.gif) no-repeat 0 0;display:none;height:11px;position:absolute;right:5px;top:5px;width:16px}
+.loading .loadingIndicator{display:block}
+.loading ul .loadingIndicator{display:none}
+.uiSideNav ul .loading .loadingIndicator{top:5px}
+.uiSideNav .showSubitems .hiddenSubitem,
+.uiSideNav .open .navMore{display:block}
+.uiSideNav .hiddenSubitem,
+.uiSideNav .showSubitems .navMore,
+.uiSideNav .navMore{display:none}
+.uiSideNav li .navMore{margin:4px 0 10px 37px}
+.uiSideNav .loading .navMore{background-color:transparent}
+.navMore .moreLessArrow,
+.navLess .moreLessArrow{margin:4px 0 0 4px;position:absolute;display:inline}
+.uiSideNav .uiCloseButton{display:none;position:absolute;right:4px;top:3px;z-index:2}
+.uiSideNav .mover{display:none;left:-8px;overflow:hidden;position:absolute;text-align:right;top:3px;z-index:2}
+.editMode .item{cursor:default;opacity:.5;-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity = 50)';filter:alpha(opacity = 50)}
+.editMode .item:hover{background-color:none}
+.editMode .sortableItem{cursor:move;opacity:1;-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity = 100)';filter:alpha(opacity = 100)}
+.editMode .sortableItem:hover{background:#eff2f7}
+.editMode .uiCloseButton,
+.editMode .mover{display:block}
+.uiSideNav .mover .arrow{position:relative;top:-20px}
+.uiSideNav .mover .arrow:active,
+.uiSideNav .mover .arrow:focus{top:0}
+.editMode .uiSideNav .external{background-image:none}
+.middot,
+.navEdit,
+.navDone{display:none}
+.expandedMode .middot,
+.expandedMode .navEdit,
+.editMode .navDone{display:inline}
+.editMode .middot,
+.editMode .navEdit,
+.editMode .navMoreLess,
+.editMode .uiSideNav ul,
+.editMode .uiSideNav .count,
+.editMode .uiSideNav .divider,
+.editMode .uiSideNav .loading .mover{display:none !important}
+.uiSideNav .divider{border-bottom:1px solid #ededed;border-top:1px solid #ededed;height:1px;left:auto;display:none;padding-left:0;margin-bottom:1px;width:179px;font-size:1px;line-height:1px;overflow:hidden}
+.editMode .uiSideNav .hidden,
+.expandedMode .uiSideNav .hidden,
+.expandedMode .uiSideNav .divider{display:block}
+.navLess,
+.expandedMode .navMore{display:none}
+.navMore,
+.expandedMode .navLess{display:inline}
+.actionLinks{margin:3px 0 9px 6px}
+.uiProfilePhotoLarge{width:50px;height:50px}
+.uiProfilePhotoMedium{width:32px;height:32px}
+.uiProfilePhotoSmall{width:25px;height:25px}
+.uiStream .uiStreamMessage{font-size:13px;font-weight:normal;margin:0 0 5px 0}
+.uiStreamMessage,
+.uiAttachmentTitle,
+.uiAttachmentDesc{word-wrap:break-word}
+.uiStream .hideButton{float:right;margin-top:-2px;opacity:0;filter:alpha(opacity = 0);_filter:alpha(opacity = 100);-ms-filter:'alpha(opacity = 0)'}
+.uiStream li:hover .hideButton,
+.uiStream .hideButton:active,
+.uiStream .hideButton:focus{opacity:1;filter:alpha(opacity = 100);-ms-filter:'alpha(opacity = 100)'}
+.uiAttachmentDesc,
+.uiStreamPassive,
+.uiStreamSource,
+.uiStreamSource a{color:#808080}
+.uiStream .text_exposed_link{display:block;padding-top:4px;font-size:11px}
+.uiStreamAttachments .external img{max-height:90px;max-width:90px;_width:90px}
+.uiStream .uiAttachmentDetails{color:#333}
+.uiAttachmentInline .uiAttachmentTitle,
+.uiAttachmentInline .uiAttachmentDesc{display:inline}
+.uiStreamMessage .actorName,
+.uiStreamMessage .passiveName{font-weight:bold}
+.uiAttachmentNoMedia{border-left:2px solid #ccc}
+.uiAttachmentMedia{float:left}
+.uiStreamSource .img{margin:0 4px -4px 0}
+.uiStreamAttachments .exploded .UIImageBlock_Image{margin-right:0}
+.uiStreamAttachments .exploded .UIImageBlock_Content{clear:both;display:block;width:auto}
+.uiStreamPrivacy .uiTooltipWrap{left:-5px}
+.uiStreamCollapsed{border-top:1px solid #eee}
+.uiStream .uiUfi{margin-top:2px}
+
+#bootloader_css_3nx06xuqsmiog48k_pkg_css { height: 42px; }

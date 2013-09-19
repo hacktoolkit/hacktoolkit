@@ -1,0 +1,56 @@
+/*
+HTTP Host: static.ak.fbcdn.net
+Generated: June 7th 2010 12:14:25 PM PDT
+Machine: 10.16.139.102
+Locale: nu_ll
+Path: css/67hn1an3qloogsg0.pkg.css
+*/
+
+.UIProfileBox_Box{padding-bottom:15px;position:relative;overflow:hidden}
+.UIProfileBox_Header{background:#eceff5;border-top:1px solid #94a3c4;margin:0;padding:5px 8px;position:relative;overflow:hidden}
+.UIProfileBox_Title{font-size:11px;float:left}
+.UIProfileBox_EditLink{font-size:13px;float:right;display:block;font-weight:normal}
+.UIProfileBox_EditLink a{display:block;background:url(/rsrc.php/z4BZ9/hash/d0p9bnvk.gif) 0 -36px no-repeat;width:18px;height:18px}
+.UIProfileBox_EditLink a:hover{text-decoration:none;background-position:left top}
+.UIProfileBox_SubHeader{background:white;border-bottom:1px solid #eceff5;color:#444;font-weight:normal;overflow:hidden;margin:0;padding:2px 8px}
+.UIProfileBox_Subtitle{float:left}
+.UIProfileBox_ActionLink{float:right;font-size:11px}
+.UIProfileBox_Content{overflow:hidden;padding:10px 8px 0 8px}
+.UIProfileBox_ContentNoPadding{padding:0}
+.UIProfileBox_BoxNoPadding{padding:0}
+.profile .admins ul{margin:0;padding:0}
+.profile .admins ul{margin:0;padding:0}
+.profile .admins li{color:#3b5998;list-style:square;margin:0 0 0 1.5em}
+.profile .admins li span{color:#000}
+#event .actionspro{padding:10px 0}
+.guestlist .gueststatus_box{border-bottom:1px solid #d8dfea;padding-bottom:2px}
+.guestlist .gueststatus_box .gueststatus{float:left}
+.guestlist .gueststatus_box .see_all{float:right}
+.guestlist .guests{margin:8px 0 0}
+#event .info_table{margin-bottom:10px}
+#event .info_table td{vertical-align:top;padding:1px 0}
+#event .info_table td.label{width:100px;color:#808080}
+#event .event_left_column_boxes{border-left:1px solid #d8dfea;clear:left;border-bottom:1px solid #94a3c4}
+#event .other_info ul{padding:0;margin:0}
+#event .other_info li{margin:0 0 0 1.5em}
+#event .event_profile_information{padding:5px 8px 8px 8px}
+.event_profile_title{background:transparent url(/rsrc.php/z7KX9/hash/dqzv8mc1.gif) no-repeat left 1px;border-bottom:1px solid #eee;color:#808080;margin:0 0 10px 10px;padding:0 0 15px 22px}
+.event_profile_title h3{padding-bottom:2px;font-size:14px}
+#event .report_footer_actions{padding:20px 10px}
+.rsvp_status_text{color:#808080;font-weight:bold;margin:0 0 5px}
+#rsvp_form div.rsvp_option{padding:2px 0 3px 4px}
+#rsvp_form .inputradio{margin-right:5px}
+#rsvp_form label{color:#000;font-weight:normal}
+#rsvp_form #rsvp{margin:8px 0 0 2px}
+#event .share_section{background:white;padding:0 10px 10px 0;float:left}
+.profileTable{margin:0;padding:0}
+.profileTable td{vertical-align:top;font-size:11px;line-height:13px;margin:0;padding:1px 0 1px 0}
+.profileTable .label{width:120px;color:#808080}
+.profilebox .profileTable{margin-left:0}
+// table of fan photos
+.fan_photos .fan_table{width:100%}
+.fan_photos .fan_table td{vertical-align:middle;width:62px}
+.fan_photos .fan_photo{background:white;padding:4px;border:solid 1px #ccc}
+.fan_photos .fan_photo:hover{border:solid 1px #3b5998}
+
+#bootloader_css_67hn1an3qloogsg0_pkg_css { height: 42px; }

@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>Jonathan's Tic, Tac, Toe</title>
+
+    <link rel="stylesheet" type="text/css" href="lib/yui/reset-fonts-grids.css">
+    <link type="text/css" rel="stylesheet" href="style.css" />
+
+    <script src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
+    <script src="TTTGame.class.js"></script>
+    <script src="script.js"></script>
+
+  </head>
+  <body>
+    <div id="container">
+      <div id="board_header" class="game-text">
+	Tic, Tac, Toe!
+      </div>
+      <div id="ttt_board">
+	<div id"ttt_row0" class="ttt-row">
+	  <div id="ttt_0_0" class="ttt-cell"></div>
+	  <div id="ttt_0_1" class="ttt-cell"></div>
+	  <div id="ttt_0_2" class="ttt-cell ttt-lastcol"></div>
+	</div>
+	<div id"ttt_row1" class="ttt-row">
+	  <div id="ttt_1_0" class="ttt-cell"></div>
+	  <div id="ttt_1_1" class="ttt-cell"></div>
+	  <div id="ttt_1_2" class="ttt-cell ttt-lastcol"></div>
+	</div>
+	<div id"ttt_row2" class="ttt-row ttt-lastrow">
+	  <div id="ttt_2_0" class="ttt-cell"></div>
+	  <div id="ttt_2_1" class="ttt-cell"></div>
+	  <div id="ttt_2_2" class="ttt-cell ttt-lastcol"></div>
+	</div>
+      </div>
+      <div id="board_footer" class="game-text">
+	Three in a Row!
+      </div>
+    </div>
+    <div id="scoreboard">
+      <div id="scoreboard_title">
+	Scoreboard
+      </div>
+      <div id="scoreboard_labels">
+	Wins<br/>
+	Coordinates<br/>
+	Game State<br/>
+	Turn<br/>
+      </div>
+      <div id="scoreboard_values">
+	<div id="scoreboard_wins">Waiting...</div>
+	<div id="scoreboard_position">Waiting...</div>
+	<div id="scoreboard_game_state">Waiting...</div>
+	<div id="scoreboard_turn">Waiting...</div>
+      </div>
+      <div id="scoreboard_controls">
+	<button id="new_game">New Game</button>
+      </div>
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,322 @@
+CoolIris Engineering Evaluation Response
+Jonathan Tsai
+2009.04.13
+
+1.
+
+Assumption: Normal table where the number of columns per row and rows per column are even (colspan = 1).
+
+The optimal solution and my preference:
+- I would arrange so that the content is inside a data structure (list or array)
+  and can be iterated over
+- Know how many columns per row to start a new row (<tr> tag)
+- Each <td> has a shared CSS class, so that we would say:
+  <td class="datagrid">
+- Elsewhere, in the CSS defintion, have:
+  .datagrid {
+      width: 15px;
+      height: 15px;
+  }
+
+Other methods:
+- Coding each cell with HTML and specifically set its dimensions as attributes
+  <td width="15" height="15"></td>
+- Coding each cell and setting its dimensions as a style attribute
+  <td style="width: 15px; height: 15px;">
+
+Why is the first method preferred?
+- Separates presentation from content
+- Don't have to do a lot of manual work when presentation layout change
+- Just change the CSS class definition, or do a search-find-replace on the
+  existing class to have it become another class
+
+1b.
+
+Not enough time for a detailed solution, so approximately:
+
+- put a checkbox on each of the rows to allow row selection
+
+Just do it. Put that in the row-rendering logic at the beginning of each row
+
+- enable row selection by clicking on the rows
+
+Use JavaScript:
+<td onclick="selectRow(this);">
+
+function selectRow(target) {
+    // DOM lookup for the TR that contains TD
+}
+
+- enable multi-row selection by selecting every row between the 2 rows clicked
+  in subsequent clicks if the shift key was held while clicking the last row.
+
+var shift_pressed = false;
+
+document.onkeydown = toggleShiftPressed();
+
+Make event handlers for row clicks, and set when the first and last row were clicked
+
+- make this code work if there were an arbitrary number of data grids on your
+  page.
+
+Don't hard code data grids, or make instantiate event handlers to bind to
+different data grinds
+
+--------------------------------------------------------------------------------
+2.
+
+Find the mising page in order-n (n pages, 1 missing)
+
+Python:
+
+A program that takes in pages numbers from standard input
+
+def main(page_nums):
+    checksum = 0
+    for n in page_nums:
+        checksum += 1 << page_num
+    cursor = 1
+    missing_page = 0
+    while checksum > 0:
+        # bitwise AND to check if page is missing
+        is_present = checksum & 1
+        if not is_present:
+            missing_page = cursor
+            break
+        checksum >>= 1
+        cursor += 1
+    # return the missing page
+    return missing_page
+
+--------------------------------------------------------------------------------
+3.
+
+Regular expression for phone numbers:
+- 3-digit area code + separator (hyphen, period, or nothing) + 3 digits +
+  separator + 4 digits
+- Parenthesis are optional
+- (510)555-1212
+- 5105551212
+- 510.555.1212
+
+^\(\))?[0-9]{3}(\)|-|\.)?([0-9]{3})(-|\.)?([0-9]{4})$
+
+--------------------------------------------------------------------------------
+4.
+
+- Polymorphism
+  Involves inheritance; in polymorphism, there are sub-classes (child) and
+  super-classes (parent). Super-classes are more generic classes, and
+  sub-classes are more specific, and can take on additional attributes and
+  methods, or different implementations. In Java, you can always cast upward,
+  but not always downward (unless you are sure that it is an appropriate instance).
+
+Java:
+
+public class Animal {
+   public Animal() {
+       hunger_level = 0;
+       thirst_level = 0;
+       energy_level = 0;
+   }
+
+   public void eat(Food f) {
+       hunger_level -= 1 * f.get_calories();
+       energy_level -= 1 * f.get_calories();
+   }
+
+   public void drink(Drink d) {
+       thirst_level -= 1;
+   }
+
+   public void sleep(int hours) {
+       energy_level += 1;
+       hunger_level -= 1;
+       thirst_level -= 1;
+   }
+
+   private int hunger_level;
+   private int thirst_level;
+   private int energy_level;
+}
+
+public class Mouse extends Animal {
+   public void eat(Food f) {
+       hunger_level -= 10 * f.get_calories();
+       energy_level -= 5 * f.get_calories();
+   }
+
+   public void play() {
+       System.out.println("Yay!");
+   }
+}
+
+public class Cat extends Animal {
+   public void meow() {
+       System.out.println("Meow!");
+   }
+}
+
+// Demo
+Animal a = new Animal();
+Cat c = new Cat();
+Mouse m = new Mouse();
+Vector<Animal> animals = new Vector<Animal>();
+animals.add(a);
+animals.add(c);
+animals.add(m);
+// Feed all the animals
+Food f =  new Food();
+for (Animal a : animals) {
+    // each animal will get filled at a different rate based on their metabolism
+    a.eat(food);
+}
+// Casting upward examples
+Animal c2 = (Animal) c;
+Animal m2 = (Animal) m;
+// Casting downward examples
+Cat c3 = (Cat) m2; // ERROR
+Mouse m3 = (Mouse) m2; // OK
+a.meow(); // ERROR
+m2.meow(); // ERROR
+
+- Singleton
+  A class that will have one instance only. It is preferred over global
+  variables, and is often used to maintain state or a factory.
+
+Java:
+
+public class Singleton {
+    private static class SingletonHolder() {
+        private final static Singleton INSTANCE = new Singleton();
+    }
+
+    public static Singleton getInstance() {
+        return SingletonHolder.INSTANCE;
+    }
+
+    protected Singleton() {}
+}
+
+
+- Abstract Class
+  A class that acts as a template for other classes to extend (child
+  classes). All extending classes must support all of the attributes, and
+  implement its methods.
+
+Java:
+public abstract class BankAccount {
+    abstract boolean deposit(double amount);
+    abstract boolean withdraw(double amount);
+    protected double balance;
+}
+
+public class CheckingAccount extends BankAccount {
+    boolean deposit(double amount) {
+        balance += amount;
+        return true;
+    }
+    boolean withdraw(double amount) {
+        boolean success = false;
+        if (balance >= amount) {
+            balance -= amount;
+            success = true;         
+        }
+        return success;
+    }
+}
+
+public class SavingsAccount extends BankAccount {
+    boolean deposit(double amount) {
+        balance += amount;
+        return true;
+    }
+    boolean withdraw(double amount) {
+        boolean success = false;
+        // max 5 withdrawals per month and maintain a minimum balance
+        if (withdraws_this_month < Singleton.getInstance().getSavingsMinimumBalance() &&
+            balance - Singleton.getInstance().getSavingsMinimumBalance() >= amount) {
+            balance -= amount;
+            success = true;         
+        }
+        return success;
+    }
+    private int withdraws_this_month;
+}
+
+--------------------------------------------------------------------------------
+5. Not enough time to complete, partial answer given
+
+CREATE TABLE Company
+- id
+
+CREATE TABLE Employee
+- id
+- manager_id
+- salary
+
+CREATE TABLE Manager
+- id
+
+CREATE TABLE Project
+- id
+
+CREATE TABLE EmployeeCompanies
+- employee_id
+- company_id
+
+CREATE TABLE EmployeeProjects
+- employee_id
+- project_id
+
+CREATE VIEW ManagerEmployees
+
+Queries:
+
+- A list of employees for a given company
+
+SELECT employee_id
+FROM EmployeeCompanies ec
+WHERE ec.company_id = 'COMPANY_ID'
+
+- A list of projects a given employee works on
+
+SELECT project_id
+FROM EmployeeProjects ep
+WHERE ep.employee_id = 'EMPLOYEE_ID'
+
+- Average salaries of people who work in companies with at least 500 employees
+Cannot be done with only one query; requires a join
+
+QUERY A (Average Salary of employees at a company)
+SELECT ec.company_id ...
+
+QUERY B (Companies who have >= 500 employees)
+SELECT ec.company_id, COUNT(ec.employee_id) as num_employees
+FROM EmployeeCompanies ec
+GROUP BY company_id
+HAVING COUNT(employee_id) >= 500
+
+(Combine those two queries)
+QUERY A where ec.company_id in QUERY B
+
+- The total number of people a given person directly or indirectly manages. For example, the VP of engineering manages the entire engineering department, even though he may directly manage only a few people.
+
+Cannot be done in one query; it's a tree relationship
+
+-- Number of employees whose direct manager is 'MANAGER_ID'
+SELECT COUNT(*)
+FROM Employee e
+WHERE e.manager_id = 'MANAGER_ID'
+
+- Companies having employees who work for at least one other company.
+
+SELECT ec.company_id
+FROM EmployeeCompanies ec
+WHERE ec.employee_id IN
+( -- Employees who work at more than one company
+  SELECT ec2.employee_id
+  FROM EmployeeCompanies ec2
+  GROUP BY ec2.employee_id
+  HAVING COUNT(ec2.employee_id) > 1
+)

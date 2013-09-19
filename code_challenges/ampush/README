@@ -1,0 +1,61 @@
+The story:
+
+The company has decided to create a simple forum available to the public.
+Specific implementation details are left up to you.  The company will want
+to reuse this code and possibly grow this site so!!!!
+
+1. OOP principles will be watched.
+2. You MAY NOT use a framework or other pre-built model system. (Ruby on Rails,
+CakePHP, CodeIgniter, Orbit, etc)
+3. This is a backend position, only basic html for the content.  No need for
+ajax, jquery, etc.
+4. You will not be dinged if you do not finish the project.
+
+Everyone will have a username and a password.  There will only be one forum.
+
+Here are the 2 tables that you must use.  Session handling can use the file
+system, no need for memcache etc, cookies are also fine.
+
+CREATE TABLE users (
+    username varchar(255),
+    password varchar(255),
+    primary key(username)
+);
+
+CREATE TABLE board (
+    username varchar(255),
+    entered_on datetime,
+    message text
+);
+
+Notes:
+    1. Everyone has to create an account
+    2. Sign up for an account
+    3. Everyone has cookies enabled and you are welcome to use php sessions
+    4. This is open to the public
+    5. Previous messages may not be editted
+    6. No replies
+
+Steps:
+1. Sign in or create an account
+2. Add a message / view the board
+
+Example screen for step 2
+
+New Message:
+
+[ Enter message here               ]
+[                                  ]
+[                                  ]
+            [Submit]
+
+Previous messages:
++-----------+---------------+------+
+| Username  | Message ..... | Date | (newest messages appearing first)
++-----------+---------------+------+
+| Username  | Message ..... | Date |
++-----------+---------------+------+
+| Username  | Message ..... | Date |
++-----------+---------------+------+
+| Username  | Message ..... | Date |
++-----------+---------------+------+

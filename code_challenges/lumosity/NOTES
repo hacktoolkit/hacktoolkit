@@ -1,0 +1,9 @@
+- Unpack the files `tar zxvf`
+- Run tests using `make`
+- I assumed that there are no exact duplicate menu entries at one restaurant (e.g. chicken_sandwich listed for 5.0 and 7.0)
+- I assumed that a food is not represented in both a combo and a la carte (single item) at a given restaurant, because if it is this problem has exponential computational complexity.
+- I assumed (although not written in the code) that a combo with more items is more expensive than just the single item
+- I did not handle the case when there are multiple combos containing overlapping items at one restaurant. Although this is a reasonable case to handle, I had already spent over 7 hours trying to solve the difficult scenario, and just wanted to finish the basic, naive, greedy algorithm--I am also assuming that this programming challenge is a test of programming skills and basic algorithms, not advanced algorithms.
+- Provided code works with the examples given
+- The way the question was worded led me to think of the more difficult scenario, since it is my habit to consider all corner cases. Why I believe it is exponential complexity: multiple restaurants part of the problem is a joke (+1 layer of complexity) if you allow for, and consider the following scenario: foods [f1 .. fn]; each food has combos [c1 .. cm]; thereby having total combinations: [m^n]
+- Took me ~8 hours to write, would have just taken ~2 hours but I got stuck for 6 hours trying to solve the more difficult case, and then gave up

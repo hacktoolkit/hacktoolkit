@@ -1,0 +1,20 @@
+/*
+HTTP Host: static.ak.fbcdn.net
+Generated: May 22nd 2010 9:53:28 PM PDT
+Machine: 10.16.140.106
+Locale: nu_ll
+Path: css/jobs_engineering.css
+*/
+
+.jobs .column{float:left}
+.jobs .text_column{width:684px}
+.jobs .pics_column{margin-top:20px;width:76px}
+.jobs #content img{border:1px solid #c0c0c0;padding:2px;margin:0 10px 2px 2px}
+.jobs img.right{margin:0 0 2px 6px}
+.jobs img:hover{border-color:#3b5998}
+.jobs .puzcode{padding:5px;border-style:solid;border-width:1px;border-color:lightgrey;margin:10px 20px 10px 20px;background-color:#eee}
+.jobs .nowrap{white-space:nowrap
+}
+.jobs .code{font-family:courier new;font-size:12px}
+
+#bootloader_css_jobs_engineering_css { height: 42px; }
