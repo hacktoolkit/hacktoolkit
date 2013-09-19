@@ -9,6 +9,7 @@ The spirit of this project is summarized in this tagline: _**Win hackathons by u
 
 * Easy to use; easy onboarding process
 * Clean, robust code
+* Find the best examples that are already existing (don't reinvent the wheel), and import them as submodules
 
 ## This `README`
 
@@ -33,6 +34,12 @@ Use `hacktoolkit` (all lowercase) only when referring to the code, library, or p
 
 * Java or Android package names, for example, should start with `com.hacktoolkit`
 * `htk` is the preferred abbreviation
+
+## Submodules
+
+This project makes extensive use of Git Submodules.
+
+For information on how to use Git Submodules, read <http://git-scm.com/book/en/Git-Tools-Submodules>.
 
 ## Contributing
 
