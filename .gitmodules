@@ -1,0 +1,3 @@
+[submodule "android/hello_world"]
+	path = android/hello_world
+	url = git@github.com:thecodepath/android_hello_world.git
