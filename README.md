@@ -21,8 +21,7 @@ For information about the project, see the website: http://hacktoolkit.com
 * Easy to use; easy onboarding process
 * Clean, robust code
 * Find the best examples that are already existing (don't reinvent the wheel), and import them as submodules
-
-
+* **We love skeletons and bootstrap code**
 
 ## Nomenclature
 
@@ -36,6 +35,20 @@ Use `hacktoolkit` (all lowercase) only when referring to the code, library, or p
 
 * Java or Android package names, for example, should start with `com.hacktoolkit`
 * `htk` is the preferred abbreviation
+
+## Getting Started
+
+Three simple steps:
+
+1. **Clone the repository**
+   * `git clone git@github.com:hacktoolkit/hacktoolkit.git`
+2. **Update submodules**
+   * `git submodule init` (inside the directory of the newly cloned repository; only run the first time)
+   * `git submodule update` (Download the submodule codes the first time)
+3. **Profit**
+   * Start coding away with Hacktoolkit
+   * Share your delight with  everyone else
+   * To get future updates, run: `git pull && git submodule update`
 
 ## Submodules
 
