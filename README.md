@@ -5,22 +5,24 @@ Hacktoolkit is the ONE open source project to rule them all (we try to, at least
 
 The spirit of this project is summarized in this tagline: _**Win hackathons by using bootstrap code to build complete websites and apps in 24 hours.**_
 
-### Goals
-
-* Easy to use; easy onboarding process
-* Clean, robust code
-* Find the best examples that are already existing (don't reinvent the wheel), and import them as submodules
-
-## This `README`
+## About this `README`
 
 This `README` is about the hacktoolkit library hosted at: https://github.com/hacktoolkit/hacktoolkit
 
 For information about the project, see the website: http://hacktoolkit.com
 
-* There will only be one repository, ever, for Hacktoolkit.
+* Code is organized into sub-folders or submodules, each with their own `README`s.
+* **Always** read the `README` files in subdirectories before using the code so that your computer or mobile device doesn't blow up.
+
+## Goals and Philosophy
+
+* There will only be one main repository, ever, for Hacktoolkit (with the exception of submodules--more on this later)
 * The goal is to be one repository that users can clone and immediately start using, not 47 different repositories.
-* Code is organized into sub-folders, each with their own READMEs.
-* Always read the `README` files in subdirectories before using the code so that your computer or mobile device doesn't blow up.
+* Easy to use; easy onboarding process
+* Clean, robust code
+* Find the best examples that are already existing (don't reinvent the wheel), and import them as submodules
+
+
 
 ## Nomenclature
 
@@ -41,10 +43,16 @@ This project makes extensive use of Git Submodules.
 
 For information on how to use Git Submodules, read <http://git-scm.com/book/en/Git-Tools-Submodules>.
 
+In addition to the normal `git clone` or `git pull`, two commands are necessary to keep the submodules up-to-date:
+
+1. `git submodule init` after cloning
+2. `git submodule update` updates all the submodules
+
 ## Contributing
 
 Hacktoolkit is always looking for help, whether you are a designer or a developer.
 If you would like to be a maintainer for Hacktoolkit, contact Jonathan Tsai (<https://github.com/jontsai>).
+The majority of people should probably just fork this repository and issue pull requests.
 
 * Always include a `README`(`.md` is preferred) file in each directory, unless it is a leaf
 * Follow the best practices and coding style guides for that language, platform, or API
