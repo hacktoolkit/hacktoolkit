@@ -40,15 +40,14 @@ Use `hacktoolkit` (all lowercase) only when referring to the code, library, or p
 
 Three simple steps:
 
-1. **Clone the repository**
-   * `git clone git@github.com:hacktoolkit/hacktoolkit.git`
-2. **Update submodules**
-   * `git submodule init` (inside the directory of the newly cloned repository; only run the first time)
-   * `git submodule update` (Download the submodule codes the first time)
-3. **Profit**
-   * Start coding away with Hacktoolkit
-   * Share your delight with  everyone else
-   * To get future updates, run: `git pull && git submodule update`
+1. **Clone the repository**  
+   `git clone git@github.com:hacktoolkit/hacktoolkit.git`
+2. **Update submodules**  
+   `git submodule init` (inside the directory of the newly cloned repository; only run the first time)  
+   `git submodule update` (Download the submodule codes the first time)
+3. **Profit**  
+   Start coding away with Hacktoolkit and share your delight with everyone else.  
+   To get future updates, run: `git pull && git submodule update`
 
 ## Submodules
 
