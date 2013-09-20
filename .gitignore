@@ -1,2 +1,5 @@
+# mac filesystem
 .DS_Store
+
+# Python compiled
 *.pyc
