@@ -9,4 +9,4 @@
 	url = git@github.com:hacktoolkit/android_hello_world.git
 [submodule "android/simple_todo"]
 	path = android/simple_todo
-	url = git@github.com:jontsai/android_simple_todo.git
+	url = git@github.com:hacktoolkit/android_simple_todo.git
