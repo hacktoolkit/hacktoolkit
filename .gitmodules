@@ -10,3 +10,6 @@
 [submodule "android/simple_todo"]
 	path = android/simple_todo
 	url = git@github.com:hacktoolkit/android_simple_todo.git
+[submodule "android/hacktoolkit-android_lib"]
+	path = android/hacktoolkit-android_lib
+	url = git@github.com:hacktoolkit/hacktoolkit-android_lib.git
