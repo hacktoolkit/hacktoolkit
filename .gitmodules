@@ -16,3 +16,6 @@
 [submodule "webapps/html5-less-pure-icons-yui-parse-facebook-maps"]
 	path = webapps/html5-less-pure-icons-yui-parse-facebook-maps
 	url = git@github.com:hacktoolkit/html5-less-pure-icons-yui-parse-facebook-maps.git
+[submodule "webapps/angular-seed"]
+	path = webapps/angular-seed
+	url = git@github.com:hacktoolkit/angular-seed.git
