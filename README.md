@@ -13,7 +13,7 @@ This `README` is about the hacktoolkit library hosted at: https://github.com/hac
 
 For information about the project, see the website: http://hacktoolkit.com
 
-* Code is organized into sub-folders or submodules, each with their own `README`s.
+* Code is organized into sub-folders or submodules, each with their own `README` files.
 * **Always** read the `README` files in subdirectories before using the code so that your computer or mobile device doesn't blow up.
 
 ## Goals and Philosophy
@@ -35,8 +35,9 @@ Use `hacktoolkit` (all lowercase) only when referring to the code, library, or p
 
 ### Names in code
 
-* Java or Android package names, for example, should start with `com.hacktoolkit`
-* `htk` is the preferred abbreviation
+* Java or Android package names, for example, should start with `com.hacktoolkit` and `com.hacktoolkit.android`, respectively
+* `htk` is the preferred abbreviation for lowercase names
+* Java class names can use the prefix `HTK`, e.g. `HTKUtils.java`, `HTKConstants.java`, `HTKSettings.java`
 
 ## Getting Started
 
