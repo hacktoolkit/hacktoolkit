@@ -1,9 +1,9 @@
-[submodule "algorithms/java"]
-	path = algorithms/java
-	url = git@github.com:hacktoolkit/java-algorithms.git
 [submodule "algorithms/ruby"]
 	path = algorithms/ruby
-	url = git@github.com:hacktoolkit/ruby-algorithms.git
+	url = git@github.com:hacktoolkit/htk-algorithms-ruby.git
+[submodule "algorithms/java"]
+	path = algorithms/java
+	url = git@github.com:hacktoolkit/htk-algorithms-java.git
 [submodule "android/hello_world"]
 	path = android/hello_world
 	url = git@github.com:hacktoolkit/android_hello_world.git
