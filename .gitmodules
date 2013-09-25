@@ -31,6 +31,6 @@
 [submodule "webapps/angular-seed"]
 	path = webapps/angular-seed
 	url = git@github.com:hacktoolkit/angular-seed.git
-[submodule "webapps/jekyll/jekyll-bootstrap"]
-	path = webapps/jekyll/jekyll-bootstrap
+[submodule "webapps/jekyll-bootstrap"]
+	path = webapps/jekyll-bootstrap
 	url = git@github.com:hacktoolkit/jekyll-bootstrap.git
