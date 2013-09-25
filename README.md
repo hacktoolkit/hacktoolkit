@@ -5,7 +5,7 @@ hacktoolkit
 
 Hacktoolkit is the ONE open source project to rule them all (we try to, at least).
 
-The spirit of this project is summarized in this tagline: _**Win hackathons by using bootstrap code to build complete websites and apps in 24 hours.**_
+The spirit of this project is summarized in this tagline: _**Win hackathons by using refined APIs and bootstrap code to build complete websites and apps in 24 hours.**_
 
 ## About this `README`
 
