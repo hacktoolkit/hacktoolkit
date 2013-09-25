@@ -13,12 +13,6 @@
 [submodule "android/hacktoolkit-android_lib"]
 	path = android/hacktoolkit-android_lib
 	url = git@github.com:hacktoolkit/hacktoolkit-android_lib.git
-[submodule "webapps/html5-less-pure-icons-yui-parse-facebook-maps"]
-	path = webapps/html5-less-pure-icons-yui-parse-facebook-maps
-	url = git@github.com:hacktoolkit/html5-less-pure-icons-yui-parse-facebook-maps.git
-[submodule "webapps/angular-seed"]
-	path = webapps/angular-seed
-	url = git@github.com:hacktoolkit/angular-seed.git
 [submodule "servers/ubuntu-desktop-bootstrap"]
 	path = servers/ubuntu-desktop-bootstrap
 	url = git@github.com:hacktoolkit/ubuntu-desktop-bootstrap.git
@@ -31,3 +25,12 @@
 [submodule "servers/ubuntu-mac-bootstrap"]
 	path = servers/ubuntu-mac-bootstrap
 	url = git@github.com:hacktoolkit/mac-bootstrap.git
+[submodule "webapps/html5-less-pure-icons-yui-parse-facebook-maps"]
+	path = webapps/html5-less-pure-icons-yui-parse-facebook-maps
+	url = git@github.com:hacktoolkit/html5-less-pure-icons-yui-parse-facebook-maps.git
+[submodule "webapps/angular-seed"]
+	path = webapps/angular-seed
+	url = git@github.com:hacktoolkit/angular-seed.git
+[submodule "webapps/jekyll/jekyll-bootstrap"]
+	path = webapps/jekyll/jekyll-bootstrap
+	url = git@github.com:hacktoolkit/jekyll-bootstrap.git
