@@ -31,6 +31,9 @@
 [submodule "webapps/htk-jekyll-bootstrap"]
 	path = webapps/htk-jekyll-bootstrap
 	url = git@github.com:hacktoolkit/htk-jekyll-bootstrap.git
+[submodule "webapps/htk-jekyll-hacktoolkit"]
+	path = webapps/htk-jekyll-hacktoolkit
+	url = git@github.com:hacktoolkit/htk-jekyll-hacktoolkit.git
 [submodule "webapps/htk-static-html5"]
 	path = webapps/htk-static-html5
 	url = git@github.com:hacktoolkit/htk-static-html5.git
