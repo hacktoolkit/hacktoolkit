@@ -19,3 +19,15 @@
 [submodule "webapps/angular-seed"]
 	path = webapps/angular-seed
 	url = git@github.com:hacktoolkit/angular-seed.git
+[submodule "servers/ubuntu-desktop-bootstrap"]
+	path = servers/ubuntu-desktop-bootstrap
+	url = git@github.com:hacktoolkit/ubuntu-desktop-bootstrap.git
+[submodule "servers/raspbian-bootstrap"]
+	path = servers/raspbian-bootstrap
+	url = git@github.com:hacktoolkit/raspbian-bootstrap.git
+[submodule "servers/ubuntu-server-bootstrap"]
+	path = servers/ubuntu-server-bootstrap
+	url = git@github.com:hacktoolkit/ubuntu-server-bootstrap.git
+[submodule "servers/ubuntu-mac-bootstrap"]
+	path = servers/ubuntu-mac-bootstrap
+	url = git@github.com:hacktoolkit/mac-bootstrap.git
