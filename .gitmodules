@@ -28,6 +28,9 @@
 [submodule "webapps/angular-seed"]
 	path = webapps/angular-seed
 	url = git@github.com:hacktoolkit/angular-seed.git
+[submodule "webapps/htk-angular-node-skeleton"]
+	path = webapps/htk-angular-node-skeleton
+	url = git@github.com:hacktoolkit/htk-angular-node-skeleton.git
 [submodule "webapps/htk-jekyll-bootstrap"]
 	path = webapps/htk-jekyll-bootstrap
 	url = git@github.com:hacktoolkit/htk-jekyll-bootstrap.git
