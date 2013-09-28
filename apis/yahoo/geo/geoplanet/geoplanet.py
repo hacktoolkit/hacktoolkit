@@ -33,6 +33,12 @@ class Usage(Exception):
         self.msg = msg
 
 def main(argv = None):
+    OPT_STR = 'hqr'
+    OPT_LIST = [
+        'help',
+        'query',
+        'resolve',
+    ]
     is_query = True
     if argv is None:
         argv = sys.argv
@@ -40,8 +46,8 @@ def main(argv = None):
         try:
             progname = argv[0]
             opts, args = getopt.getopt(argv[1:],
-                                       'hqr',
-                                       ['help','query', 'resolve',])
+                                       OPT_STR,
+                                       OPT_LIST)
         except getopt.error, msg:
              raise Usage(msg)
         # process options
@@ -55,7 +61,7 @@ def main(argv = None):
                 is_query = False
         # process arguments
         #for arg in args:
-            pass
+        #    pass
         if len(args) == 1:
             if is_query:
                 woeid = get_woeid(args[0])
