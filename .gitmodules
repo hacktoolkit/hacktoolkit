@@ -31,6 +31,9 @@
 [submodule "webapps/htk-angular-node-skeleton"]
 	path = webapps/htk-angular-node-skeleton
 	url = git@github.com:hacktoolkit/htk-angular-node-skeleton.git
+[submodule "webapps/htk-firebase-bootstrap"]
+	path = webapps/htk-firebase-bootstrap
+	url = git@github.com:hacktoolkit/htk-firebase-bootstrap.git
 [submodule "webapps/htk-jekyll-bootstrap"]
 	path = webapps/htk-jekyll-bootstrap
 	url = git@github.com:hacktoolkit/htk-jekyll-bootstrap.git
