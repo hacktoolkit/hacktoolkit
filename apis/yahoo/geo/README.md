@@ -1,4 +1,6 @@
 Hacktoolkit Yahoo GEO APIs
 ==========================
 
-<http://developer.yahoo.com/geo/geoplanet/>
+Yahoo! BOSS Geo Service
+
+<http://developer.yahoo.com/geo/>
