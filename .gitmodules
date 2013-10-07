@@ -4,12 +4,12 @@
 [submodule "algorithms/java"]
 	path = algorithms/java
 	url = git@github.com:hacktoolkit/htk-algorithms-java.git
-[submodule "android/hello_world"]
-	path = android/hello_world
-	url = git@github.com:hacktoolkit/android_hello_world.git
-[submodule "android/simple_todo"]
-	path = android/simple_todo
-	url = git@github.com:hacktoolkit/android_simple_todo.git
+[submodule "android/HelloWorld"]
+	path = android/HelloWorld
+	url = git@github.com:hacktoolkit/htk-android-HelloWorld.git
+[submodule "android/SimpleTodo"]
+	path = android/SimpleTodo
+	url = git@github.com:hacktoolkit/htk-android-SimpleTodo.git
 [submodule "android/hacktoolkit-android_lib"]
 	path = android/hacktoolkit-android_lib
 	url = git@github.com:hacktoolkit/hacktoolkit-android_lib.git
