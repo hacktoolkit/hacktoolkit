@@ -43,3 +43,9 @@
 [submodule "webapps/htk-static-html5"]
 	path = webapps/htk-static-html5
 	url = git@github.com:hacktoolkit/htk-static-html5.git
+[submodule "django/htk-django-skeleton"]
+	path = django/htk-django-skeleton
+	url = git@github.com:hacktoolkit/htk-django-skeleton.git
+[submodule "django/django-htk"]
+	path = django/django-htk
+	url = git@github.com:hacktoolkit/django-htk.git
