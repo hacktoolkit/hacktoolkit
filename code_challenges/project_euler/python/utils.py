@@ -35,7 +35,11 @@ def fib_up_to(n, repeat_1=False):
 PRIME_MEMO = []
 def generate_primes(n):
     """Generate prime numbers up to `n`
+
+    Uses trial division
     """
+    if len(PRIME_MEMO) and PRIME_MEMO[-1] > n:
+        return
     for x in xrange(2, n + 1):
         if is_prime(x):
             PRIME_MEMO.append(x)
@@ -80,3 +84,24 @@ def prime_factorization(n):
 def is_palindromic(n):
     palindromic = str(n) == str(n)[::-1]
     return palindromic
+
+def range_sum(lower, upper):
+    """Find the sum of a range of numbers
+    """
+    # sum(xrange(lower, upper + 1))
+    total = (upper + lower) * (upper - lower + 1) / 2
+    return total
+
+def list_product(l):
+    """Multiplies all of the numbers in a list
+    """
+    product = 1
+    for x in l:
+        product *= x
+    return product
+
+def str_to_digits(s):
+    """Get a list of digits from a numeric string
+    """
+    digits = [int(digit) for digit in s]
+    return digits
