@@ -1,5 +1,7 @@
 import math
 
+from constants import *
+
 def is_even(n):
     """Determines whether `n` is even
     """
@@ -31,6 +33,17 @@ def fib_up_to(n, repeat_1=False):
     end = k
     numbers = FIB_MEMO[start:end]
     return numbers
+
+FACT_MEMO = [1, 1]
+def factorial(n):
+    """Computes n!
+    """
+    if n < len(FACT_MEMO):
+        value = FACT_MEMO[n]
+    else:
+        value = n * factorial(n-1)
+        FACT_MEMO.append(value)
+    return value
 
 PRIME_MEMO = []
 def generate_primes(n):
@@ -105,3 +118,58 @@ def str_to_digits(s):
     """
     digits = [int(digit) for digit in s]
     return digits
+
+def sum_digits(n):
+    """Find the sum of the digits of n
+    """
+    digits = str_to_digits(str(n))
+    summation = sum(digits)
+    return summation
+
+def number_to_words(n):
+    words = ''
+    # thousands
+    if n >= 1000:
+        quotient = n / 1000
+        words += NUM_WORDS[quotient] + ' ' + NUM_WORDS[1000]
+        n -= quotient * 1000
+
+    # hundredths
+    if n >= 100:
+        quotient = n / 100
+        words += NUM_WORDS[quotient] + ' ' + NUM_WORDS[100]
+        n -= quotient * 100
+        if n > 0:
+            words += ' and '
+
+    # tens
+    if n >= 20:
+        quotient = n / 10
+        words += NUM_WORDS[quotient * 10]
+        n -= quotient * 10
+        if n > 0:
+            words += '-'
+    elif n >= 10:
+        words += NUM_WORDS[n]
+        n -= n
+
+    # ones
+    if n > 0:
+        words += NUM_WORDS[n]
+    return words
+
+def letter_score(letter):
+    """Gets the value of a letter
+
+    E.g. A = 1, B = 2, C = 3, ..., Z = 26
+    """
+    letter = letter.upper()
+    score = ord(letter) - ord('A') + 1
+    return score
+
+def word_score(word):
+    """Computes the sum of the alphabetical value of each character
+    """
+    letter_scores = [letter_score(letter) for letter in word]
+    score = sum(letter_scores)
+    return score
