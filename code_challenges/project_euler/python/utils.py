@@ -45,54 +45,89 @@ def factorial(n):
         FACT_MEMO.append(value)
     return value
 
-PRIME_MEMO = []
-def generate_primes(n):
+PRIME_MEMO_TRIAL_DIVISION = []
+def generate_primes_trial_division(n):
     """Generate prime numbers up to `n`
 
     Uses trial division
     """
-    if len(PRIME_MEMO) and PRIME_MEMO[-1] > n:
+    if len(PRIME_MEMO_TRIAL_DIVISION) and PRIME_MEMO_TRIAL_DIVISION[-1] > n:
         return
     for x in xrange(2, n + 1):
-        if is_prime(x):
-            PRIME_MEMO.append(x)
+        if is_prime_trial_division(x):
+            PRIME_MEMO_TRIAL_DIVISION.append(x)
         else:
             pass
 
-def is_prime(n):
+def is_prime_trial_division(n):
     """Determines whether `n` is a prime number
+
+    Prerequisite: generate_primes_trial_division(math.sqrt(n))  called
     """
     primeness = True
     limit = math.sqrt(n)
-    for prime in PRIME_MEMO:
+    for prime in PRIME_MEMO_TRIAL_DIVISION:
         if prime > limit:
             break
         elif n % prime == 0:
             primeness = False
     # n must be prime if no divisors found yet
     if primeness:
-        PRIME_MEMO.append(n)
+        PRIME_MEMO_TRIAL_DIVISION.append(n)
+    return primeness
+
+PRIMES = []
+PRIME_MEMO = {}
+def generate_primes(n):
+    """Generates a list of prime numbers
+    Uses the sieve of Eratosthenes
+    """
+    numbers = range(2, n + 1)
+    PRIME_MEMO = dict(zip(numbers, [True] * len(numbers)))
+    for k in PRIME_MEMO.iterkeys():
+        composite = not PRIME_MEMO[k]
+        if not composite:
+            # mark every kth number following k as composite
+            for x in xrange(k, n + 1, k):
+                if x == k:
+                    # k is a prime
+                    pass
+                else:
+                    PRIME_MEMO[x] = False
+        else:
+            # k is already composite, do nothing
+            pass
+    PRIMES = []
+    for k, primeness in PRIME_MEMO.iteritems():
+        if primeness:
+            PRIMES.append(k)
+    PRIMES = sorted(PRIMES)
+    return PRIMES
+
+def is_prime(n):
+    """Determines whether n is a prime number
+    """
+    if not PRIME_MEMO:
+        generate_primes(n)
+    primeness = n in PRIME_MEMO
     return primeness
 
 def factor(n):
     """Get the factors of `n`
+
     E.g. numbers that evenly divide `n`
+
+    Returns the prime factorization of n
     """
     limit = int(math.sqrt(n))
-    generate_primes(limit)
+    primes = generate_primes(limit)
     divisors = []
     reduced = n
-    for i in xrange(1, len(PRIME_MEMO)):
-        prime = PRIME_MEMO[-i]
+    for prime in primes[::-1]:
         while reduced % prime == 0:
             reduced /= prime
             divisors.append(prime)
     return divisors
-
-def prime_factorization(n):
-    factors = list(set(factor(n)))
-    prime_factors = filter(is_prime, factors)
-    return prime_factors
 
 def is_palindromic(n):
     palindromic = str(n) == str(n)[::-1]
