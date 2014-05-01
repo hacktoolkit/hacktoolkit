@@ -76,14 +76,19 @@ def is_prime_trial_division(n):
         PRIME_MEMO_TRIAL_DIVISION.append(n)
     return primeness
 
-PRIMES = []
+PRIMES = [2]
 PRIME_MEMO = {}
 def generate_primes(n):
     """Generates a list of prime numbers
     Uses the sieve of Eratosthenes
     """
-    numbers = range(2, n + 1)
-    PRIME_MEMO = dict(zip(numbers, [True] * len(numbers)))
+    global PRIMES
+    greatest_prime_so_far = PRIMES[-1]
+    if not PRIME_MEMO or greatest_prime_so_far < n:
+        numbers = range(greatest_prime_so_far, n + 1)
+        dict_values = dict(zip(numbers, [True] * len(numbers))) 
+        PRIME_MEMO.update(dict_values)
+
     for k in PRIME_MEMO.iterkeys():
         composite = not PRIME_MEMO[k]
         if not composite:
@@ -109,8 +114,35 @@ def is_prime(n):
     """
     if not PRIME_MEMO:
         generate_primes(n)
-    primeness = n in PRIME_MEMO
+    primeness = PRIME_MEMO.get(n, False)
     return primeness
+
+def get_truncations(s, dir='all'):
+    """Get truncations
+
+    `dir` direction of truncation
+
+    E.g. 'asdf' => ['sdf', 'df', 'f'] (ltr)
+         'asdf' => ['asd', 'as', 'a'] (rtl)
+    """
+    truncations = []
+    for i in xrange(1, len(s)):
+        if dir in ('ltr', 'all',):
+            truncations.append(s[i:])
+        if dir in ('rtl', 'all',):
+            truncations.append(s[:-i])
+    return truncations
+
+def is_truncatable_prime(n):
+    """A truncatable prime is a prime number that, when continuously removing digits from the left to right or right to left, the subsequent numbers are also prime
+    """
+    truncatable = False
+    if is_prime(n):
+        truncations = get_truncations(str(n))
+        truncatable = truncations and len(truncations) == len(filter(is_prime, [int(num) for num in truncations]))
+    else:
+        pass
+    return truncatable
 
 def factor(n):
     """Get the factors of `n`
