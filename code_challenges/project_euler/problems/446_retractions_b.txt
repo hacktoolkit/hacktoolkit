@@ -1,0 +1,18 @@
+http://projecteuler.net/problem=446
+
+Retractions B
+
+
+For every integer n1, the family of functions fn,a,b  is defined 
+by fn,a,b(x)ax+b mod n for a,b,x integer and  0an, 0bn, 0xn.
+We will call fn,a,b a retraction if fn,a,b(fn,a,b(x))fn,a,b(x) mod n for every 0xn.
+Let R(n) be the number of retractions for n.
+
+
+F(N)=R(n4+4) for 1nN.  
+F(1024)=77532377300600.
+
+
+Find F(107) (mod 1 000 000 007)
+
+
