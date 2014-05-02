@@ -9,6 +9,50 @@ def is_even(n):
     even = not(n & 1)
     return even
 
+def gcd(a, b):
+    """Efficiently finds the gcd of two integers
+
+    Uses Euclidean algorithm
+
+    http://en.wikipedia.org/wiki/Greatest_common_divisor
+    http://en.wikipedia.org/wiki/Euclidean_algorithm
+    """
+    while a != b:
+        if a > b:
+            a = a - b
+        else:
+            b = b - a
+    return a
+
+def lcm(num_list):
+    """Finds the lcm of a list of numbers
+
+    http://en.wikipedia.org/wiki/Least_common_multiple
+
+    This algorithm uses a table
+    http://en.wikipedia.org/wiki/Least_common_multiple#A_method_using_a_table
+
+    We don't actually need the previous columns of the table, just the most recent,
+    so an array is sufficient
+    """
+    largest_num = max(num_list)
+    primes = generate_primes(largest_num)
+    factors = []
+    for prime in primes:
+        divides = True
+        while divides:
+            divides = False
+            for i in xrange(len(num_list)):
+                n = num_list[i]
+                if n % prime == 0:
+                    n /= prime
+                    num_list[i] = n
+                    divides = True
+            if divides:
+                factors.append(prime)
+    result = list_product(factors)
+    return result
+
 FIB_MEMO = [1, 1]
 def fibonacci(n):
     """Get the `n`th Fibonacci number
@@ -172,11 +216,11 @@ def range_sum(lower, upper):
     total = (upper + lower) * (upper - lower + 1) / 2
     return total
 
-def list_product(l):
+def list_product(num_list):
     """Multiplies all of the numbers in a list
     """
     product = 1
-    for x in l:
+    for x in num_list:
         product *= x
     return product
 
