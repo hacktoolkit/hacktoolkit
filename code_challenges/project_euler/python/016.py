@@ -6,11 +6,10 @@ Power digit sum
 What is the sum of the digits of the number 2^1000?
 
 Solution by jontsai <hello@jontsai.com>
-
-Answer: 1366
 """
-
 from utils import *
+
+EXPECTED_ANSWER = 1366
 
 POWER = 1000
 
@@ -18,4 +17,4 @@ n = 2 << (POWER - 1)
 
 answer = sum_digits(n)
 
-print answer
+print 'Expected: %s, Answer: %s' % (EXPECTED_ANSWER, answer)

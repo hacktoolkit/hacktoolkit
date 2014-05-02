@@ -6,9 +6,8 @@ If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
 Find the sum of all the multiples of 3 or 5 below 1000.
 
 Solution by jontsai <hello@jontsai.com>
-
-Answer: 233168
 """
+EXPECTED_ANSWER = 233168
 
 UPPER = 1000
 
@@ -19,4 +18,4 @@ multiples_of_3_or_5 = set(multiples_of_3 + multiples_of_5)
 
 answer = sum(multiples_of_3_or_5)
 
-print answer
+print 'Expected: %s, Answer: %s' % (EXPECTED_ANSWER, answer)

@@ -7,11 +7,10 @@ For example, when the list is sorted into alphabetical order, COLIN, which is wo
 What is the total of all the name scores in the file?
 
 Solution by jontsai <hello@jontsai.com>
-
-Answer: 871198282
 """
 from utils import *
 
+EXPECTED_ANSWER = 871198282
 
 filename = 'names.txt'
 
@@ -32,4 +31,4 @@ for name in sorted_names:
 
 answer = total
 
-print total
+print 'Expected: %s, Answer: %s' % (EXPECTED_ANSWER, answer)

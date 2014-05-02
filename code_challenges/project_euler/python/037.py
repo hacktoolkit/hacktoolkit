@@ -7,10 +7,10 @@ Find the sum of the only eleven primes that are both truncatable from left to ri
 NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
 
 Solution by jontsai <hello@jontsai.com>
-
-Answer: 748317
 """
 from utils import *
+
+EXPECTED_ANSWER = 748317
 
 truncatable_primes = []
 
@@ -28,4 +28,4 @@ while len(truncatable_primes) < target:
 
 answer = sum(truncatable_primes[:11])
 
-print answer
+print 'Expected: %s, Answer: %s' % (EXPECTED_ANSWER, answer)

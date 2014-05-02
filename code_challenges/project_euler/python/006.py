@@ -10,11 +10,10 @@ Hence the difference between the sum of the squares of the first ten natural num
 Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 
 Solution by jontsai <hello@jontsai.com>
-
-Answer: 25164150
 """
-
 from utils import *
+
+EXPECTED_ANSWER = 25164150
 
 lower = 1
 upper = 100
@@ -25,4 +24,4 @@ square_sum = range_sum(lower, upper) ** 2
 
 answer = square_sum - sum_squares
 
-print answer
+print 'Expected: %s, Answer: %s' % (EXPECTED_ANSWER, answer)

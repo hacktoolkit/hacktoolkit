@@ -106,9 +106,9 @@ Work out the first ten digits of the sum of the following one-hundred 50-digit n
 53503534226472524250874054075591789781264330331690
 
 Solution by jontsai <hello@jontsai.com>
-
-Answer: 5537376230
 """
+EXPECTED_ANSWER = 5537376230
+
 
 numbers = [
     37107287533902102798797998220837590246510135740250,
@@ -215,4 +215,4 @@ numbers = [
 
 answer = str(sum(numbers))[:10]
 
-print answer
+print 'Expected: %s, Answer: %s' % (EXPECTED_ANSWER, answer)
