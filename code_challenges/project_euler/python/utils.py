@@ -120,44 +120,80 @@ def is_prime_trial_division(n):
         PRIME_MEMO_TRIAL_DIVISION.append(n)
     return primeness
 
-PRIMES = [2]
-PRIME_MEMO = {}
+# seed with basic primes
+PRIMES = [2, 3]
+PRIME_MEMO = { 2 : True, 3 : True }
+PRIMES_BATCH_SIZE = 10000000 # look at 10M numbers at a time
 def generate_primes(n):
     """Generates a list of prime numbers
     Uses the sieve of Eratosthenes
+
+    Optimizations:
+    - after 2, all other primes must be odd
+    - use xrange instead of range to save on memory
+    - extend PRIME_MEMO by a constant factor, in batches
+
+    Test cases:
+    - 007
+    - 010
+    - 037
+    - 041
     """
     global PRIMES
+    global PRIME_MEMO
     greatest_prime_so_far = PRIMES[-1]
-    if not PRIME_MEMO or greatest_prime_so_far < n:
-        numbers = range(greatest_prime_so_far, n + 1)
-        dict_values = dict(zip(numbers, [True] * len(numbers))) 
-        PRIME_MEMO.update(dict_values)
+    lower = greatest_prime_so_far + 2
+    upper = min(lower + PRIMES_BATCH_SIZE, n)
+    while lower <= upper <= n:
+        # generate the next batch of numbers to sieve
+        # always increment by 2, since primes cannot be even
+        num_range = xrange(lower, upper + 1, 2)
+        local_memo = dict(zip(num_range, [True] * len(num_range))) 
 
-    for k in PRIME_MEMO.iterkeys():
-        composite = not PRIME_MEMO[k]
-        if not composite:
+        # mark off the composite numbers, sieve style
+        for k in PRIMES:
+            # k is a prime number
             # mark every kth number following k as composite
-            for x in xrange(k, n + 1, k):
-                if x == k:
-                    # k is a prime
-                    pass
-                else:
-                    PRIME_MEMO[x] = False
-        else:
-            # k is already composite, do nothing
-            pass
-    PRIMES = []
-    for k, primeness in PRIME_MEMO.iteritems():
-        if primeness:
+            for x in xrange(k + k, upper + 1, k):
+                if x in local_memo:
+                    # just delete instead of marking False to save memory
+                    del local_memo[x]
+
+        # make a copy of keys, since we are modifying the underlying dict
+        for k in sorted(local_memo.keys()):
+            if k in local_memo:
+                # k is a prime
+                for x in xrange(k + k, upper + 1, k):
+                    if x in local_memo:
+                        del local_memo[x]
+            else:
+                # k is already marked as composite, do nothing
+                pass
+
+        lower = min(upper + 2, n + 1)
+        upper = min(upper + PRIMES_BATCH_SIZE, n + 1)
+
+        PRIME_MEMO.update(local_memo)
+        for k in sorted(local_memo.keys()):
             PRIMES.append(k)
-    PRIMES = sorted(PRIMES)
+
     return PRIMES
 
 def is_prime(n):
     """Determines whether n is a prime number
+
+    Test cases:
+    - 007
+    - 010
+    - 037
+    - 041
     """
+    global PRIME_MEMO
     if not PRIME_MEMO:
-        generate_primes(n)
+        primes = generate_primes(n)
+    else:
+        primes = PRIMES
+    #primeness = n in primes
     primeness = PRIME_MEMO.get(n, False)
     return primeness
 
@@ -179,6 +215,9 @@ def get_truncations(s, dir='all'):
 
 def is_truncatable_prime(n):
     """A truncatable prime is a prime number that, when continuously removing digits from the left to right or right to left, the subsequent numbers are also prime
+
+    Test cases:
+    - 037
     """
     truncatable = False
     if is_prime(n):
@@ -284,3 +323,12 @@ def word_score(word):
     letter_scores = [letter_score(letter) for letter in word]
     score = sum(letter_scores)
     return score
+
+def is_pandigital(n):
+    """An n-digit number is pandigital if it makes use of all the digits 1 to n exactly once
+
+    E.g. 2143 is a 4-digit pandigital (and is also a prime)
+    """
+    digits = [int(digit) for digit in str(n)]
+    pandigitalness = len(digits) == max(digits) == len(set(digits))
+    return pandigitalness
