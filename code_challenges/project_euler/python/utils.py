@@ -353,6 +353,31 @@ def is_pandigital(n):
     pandigitalness = len(digits) == max(digits) == len(set(digits))
     return pandigitalness
 
+def rotations(s):
+    """Get all the rotations of a string
+    E.g.
+    'abc' => ['abc', 'bca', 'cba']
+    """
+    all_rotations = []
+    for i in xrange(len(s)):
+        rotation = s[i:] + s[:i]
+        all_rotations.append(rotation)
+    return all_rotations
+
+def is_circular_prime(n):
+    """Determines if n is a circular prime
+
+    It is a circular prime if all rotations of n are also prime
+
+    E.g. 197 => 197, 971, 719
+
+    Test cases:
+    - 035
+    """
+    rotations_of_n = [int(rotation) for rotation in rotations(str(n))]
+    circular_primeness = is_prime(n) and len(filter(is_prime, rotations_of_n)) == len(rotations_of_n)
+    return circular_primeness
+
 def permutations(s):
     """Get all the permutations of a string, i.e. anagrams
 
