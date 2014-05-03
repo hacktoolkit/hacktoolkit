@@ -397,3 +397,39 @@ def permutations(s):
             sub_permutations = [c + sub_permutation for sub_permutation in permutations(substring)]
             all_permutations += sub_permutations
     return all_permutations
+
+def prime_permutations(n):
+    """Find all permutations of the digits of the numbers in n that are primes
+
+    Test cases:
+    - 049
+    """
+    permutations_of_n = [int(permutation) for permutation in permutations(str(n))]
+    prime_permutations_of_n = filter(is_prime, sorted(set(permutations_of_n)))
+    return prime_permutations_of_n
+
+def arithmetic_series_subset(num_list):
+    """Given a list of numbers in increasing order, return the subset of numbers that are in an arithmetic series
+
+    An arithmetic series must have at least 3 items
+
+    Returns the first subset found, not necessarily the longest subset
+
+    Test cases:
+    - 049
+    """
+    if len(num_list) < 3:
+        subset = []
+    else:
+        subset = []
+        for i in xrange(len(num_list)):
+            # find the difference between every pair
+            for j in xrange(i + 1, len(num_list)):
+                n1 = num_list[i]
+                n2 = num_list[j]
+                difference = n2 - n1
+                n3 = n2 + difference
+                if n3 in num_list:
+                    subset = [n1, n2, n3]
+                    break
+    return subset
