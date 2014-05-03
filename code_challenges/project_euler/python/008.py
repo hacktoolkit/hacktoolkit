@@ -37,8 +37,9 @@ SLICE_SIZE = 5
 
 digit_sets = []
 
+# generate a list of SLICE_SIZE-long substrings
 for x in xrange(len(n) - SLICE_SIZE):
-    digits = n[x : x + 5]
+    digits = n[x : x + SLICE_SIZE]
     digit_sets.append(sorted(digits, reverse=True))
 
 digit_sets = sorted(digit_sets, reverse=True)
