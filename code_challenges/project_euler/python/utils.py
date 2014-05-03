@@ -197,6 +197,15 @@ def is_prime(n):
     primeness = PRIME_MEMO.get(n, False)
     return primeness
 
+def possibly_prime(n):
+    """Determines whether n is possibly a prime number
+
+    Cannot be even
+    Not divible by 3 (sum of digits cannot be divisible by 3)
+    """
+    possible = not is_even(n) and n % 3 > 0
+    return possible
+
 def get_truncations(s, dir='all'):
     """Get truncations
 
@@ -263,8 +272,19 @@ def list_product(num_list):
         product *= x
     return product
 
+def digits(n, string=False):
+    """Get the digits of a number as a list of numbers
+
+    `string` if True, return a list of strings
+    """
+    if string:
+        list_of_digits = [digit for digit in str(n)]
+    else:
+        list_of_digits = [int(digit) for digit in str(n)]
+    return list_of_digits
+
 def str_to_digits(s):
-    """Get a list of digits from a numeric string
+    """Get a list of digits from a numeric string or numeric list
     """
     digits = [int(digit) for digit in s]
     return digits
@@ -272,7 +292,7 @@ def str_to_digits(s):
 def sum_digits(n):
     """Find the sum of the digits of n
     """
-    digits = str_to_digits(str(n))
+    digits = list_of_digits(n)
     summation = sum(digits)
     return summation
 
@@ -332,3 +352,23 @@ def is_pandigital(n):
     digits = [int(digit) for digit in str(n)]
     pandigitalness = len(digits) == max(digits) == len(set(digits))
     return pandigitalness
+
+def permutations(s):
+    """Get all the permutations of a string, i.e. anagrams
+
+    E.g.
+    'abc' => ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']
+    """
+    if len(s) == 0:
+        all_permutations = []
+    elif len(s) == 1:
+        all_permutations = [s]
+    else:
+        all_permutations = []
+        string = ''.join(sorted([c for c in s]))
+        for i in xrange(len(string)):
+            c = string[i]
+            substring = string[:i] + string[i + 1:]
+            sub_permutations = [c + sub_permutation for sub_permutation in permutations(substring)]
+            all_permutations += sub_permutations
+    return all_permutations
