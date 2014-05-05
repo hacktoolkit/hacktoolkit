@@ -254,6 +254,11 @@ def factor(n):
     return divisors
 
 def is_palindromic(n):
+    """Determines whether a number or a string is palindromic
+
+    Test cases:
+    - 036
+    """
     palindromic = str(n) == str(n)[::-1]
     return palindromic
 
