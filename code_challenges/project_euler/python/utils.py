@@ -78,6 +78,60 @@ def fib_up_to(n, repeat_1=False):
     numbers = FIB_MEMO[start:end]
     return numbers
 
+TRIANGLE_MEMO = [0, 1]
+def triangle_number(n):
+    """Get the nth triangle number
+
+    1: 1 = 1
+    2: 1 + 2 = 3
+    3: 1 + 2 + 3 = 6
+    4: 1 + 2 + 3 + 4 = 10
+
+    Test cases:
+    - 012
+    """
+    if n == 0 or n == 1 or n < len(TRIANGLE_MEMO):
+        triangle = TRIANGLE_MEMO[n]
+    elif n > 1:
+        triangle = n + triangle_number(n - 1)
+        TRIANGLE_MEMO.append(triangle)
+    return triangle
+
+def is_triangle_num(n):
+    """Determines if n is a triangle number
+
+    The nth term of the sequence of triangle numbers is given by, tn = 0.5n(n+1)
+
+    Tries to solve the quadratic formula:
+    (-b + sqrt(b^2 - 4ac)) / 2a
+    Where:
+    a = 1
+    b = 1
+    c = -2(tn)
+
+    This becomes (1 + sqrt(1 - 4 * -2 * tn)) / 2
+
+    Test cases:
+    - 042
+    """
+    x = (math.sqrt(1 + 8 * n) - 1) / 2
+    is_triangle = int(x) == x
+    return is_triangle
+
+def get_divisors(n):
+    """Get integer divisors of n
+
+    Test cases:
+    - 012
+    """
+    divisors = [1,]
+    for k in xrange(2, int(math.sqrt(n))):
+        if n % k == 0:
+            divisors.append(k)
+    if n > 1:
+        divisors.append(n)
+    return divisors
+
 FACT_MEMO = [1, 1]
 def factorial(n):
     """Computes n!
