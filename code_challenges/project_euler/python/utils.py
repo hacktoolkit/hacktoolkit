@@ -124,12 +124,14 @@ def get_divisors(n):
     Test cases:
     - 012
     """
-    divisors = [1,]
-    for k in xrange(2, int(math.sqrt(n))):
+    divisors = []
+    for k in xrange(1, int(math.sqrt(n)) + 1):
         if n % k == 0:
+            quotient = n / k
             divisors.append(k)
-    if n > 1:
-        divisors.append(n)
+            if k != quotient:
+                divisors.append(quotient)
+    divisors = sorted(divisors)
     return divisors
 
 FACT_MEMO = [1, 1]
