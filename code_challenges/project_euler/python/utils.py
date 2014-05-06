@@ -2,6 +2,13 @@ import math
 
 from constants import *
 
+def is_odd(n):
+    """Determines whether `n` is odd
+    """
+    # odd = n % 2 == 1
+    odd = bool(n & 1)
+    return odd
+
 def is_even(n):
     """Determines whether `n` is even
     """
@@ -117,6 +124,37 @@ def is_triangle_num(n):
     x = (math.sqrt(1 + 8 * n) - 1) / 2
     is_triangle = int(x) == x
     return is_triangle
+
+def collatz_sequence(n):
+    """Produces the Collatz sequence for a starting number, n
+
+    n -> n/2 (n is even)
+    n -> 3n + 1 (n is odd)
+    Terminates when n is 1
+    """
+    sequence = [n,]
+    while n > 1:
+        if is_even(n):
+            n = n / 2
+        else:
+            n = 3 * n + 1
+        sequence.append(n)
+    return sequence
+
+COLLATZ_LENGTH_MEMO = { 0 : 0, 1 : 1,}
+def collatz_sequence_length(n):
+    """Finds the length of the Collatz sequence for a starting number, n
+    Does not need to actually calculate or return the sequence
+    """
+    if n in COLLATZ_LENGTH_MEMO:
+        length = COLLATZ_LENGTH_MEMO[n]
+    else:
+        if is_even(n):
+            length = 1 + collatz_sequence_length(n / 2)
+        else:
+            length = 1 + collatz_sequence_length(3 * n + 1)
+        COLLATZ_LENGTH_MEMO[n] = length
+    return length
 
 def get_divisors(n):
     """Get integer divisors of n
