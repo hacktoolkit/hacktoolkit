@@ -161,6 +161,35 @@ def collatz_sequence_length(n):
         COLLATZ_LENGTH_MEMO[n] = length
     return length
 
+def get_proper_divisors(n):
+    """Get proper divisors of n
+    Number less than n which divide evenly into n
+
+    Test cases:
+    - 021
+    """
+    divisors = get_divisors(n)[:-1]
+    return divisors
+
+def get_amicable_pair(n):
+    """Get amicable pair for n, if one exists
+
+    An amicable pair (a, b) is such that
+    a = sum of proper divisors of n
+    b = sum of proper divisors of a
+    a = b
+
+    Test cases:
+    - 021
+    """
+    candidate = sum(get_proper_divisors(n))
+    candidate_divisors_sum = sum(get_proper_divisors(candidate))
+    if candidate_divisors_sum == n:
+        pair = (n, candidate,)
+    else:
+        pair = None
+    return pair
+
 def get_divisors(n):
     """Get integer divisors of n
 
