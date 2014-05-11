@@ -20,7 +20,7 @@ Solution by jontsai <hello@jontsai.com>
 
 from utils import *
 
-EXPECTED_ANSWER = 0
+EXPECTED_ANSWER = 76576500
 
 answer = None
 n = 1

@@ -85,7 +85,6 @@ def fib_up_to(n, repeat_1=False):
     numbers = FIB_MEMO[start:end]
     return numbers
 
-TRIANGLE_MEMO = [0, 1]
 def triangle_number(n):
     """Get the nth triangle number
 
@@ -97,17 +96,23 @@ def triangle_number(n):
     Test cases:
     - 012
     """
-    if n == 0 or n == 1 or n < len(TRIANGLE_MEMO):
-        triangle = TRIANGLE_MEMO[n]
-    elif n > 1:
-        triangle = n + triangle_number(n - 1)
-        TRIANGLE_MEMO.append(triangle)
+    triangle = (n * (n + 1)) / 2
     return triangle
+
+def quadratic(a, b, c):
+    """Solves the quadratic equation
+    ax^2 + b + c = 0
+    (-b + sqrt(b^2 - 4ac)) / 2a
+    """
+    x = (math.sqrt((b * b) - (4 * a * c)) - b) / (2 * a)
+    return x
 
 def is_triangle_num(n):
     """Determines if n is a triangle number
 
     The nth term of the sequence of triangle numbers is given by, tn = 0.5n(n+1)
+
+    n^2 + n - 2tn = 0
 
     Tries to solve the quadratic formula:
     (-b + sqrt(b^2 - 4ac)) / 2a
@@ -116,13 +121,13 @@ def is_triangle_num(n):
     b = 1
     c = -2(tn)
 
-    This becomes (1 + sqrt(1 - 4 * -2 * tn)) / 2
+    This becomes (-1 + sqrt(1 - 4 * -2 * tn)) / 2
 
     Test cases:
     - 042
     """
-    x = (math.sqrt(1 + 8 * n) - 1) / 2
-    is_triangle = int(x) == x
+    x = quadratic(1, 1, -2 * n)
+    is_triangle = int(x) == x # x is a whole number
     return is_triangle
 
 def collatz_sequence(n):
