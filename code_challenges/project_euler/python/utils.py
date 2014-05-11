@@ -167,9 +167,35 @@ def get_proper_divisors(n):
 
     Test cases:
     - 021
+    - 023
     """
     divisors = get_divisors(n)[:-1]
     return divisors
+
+def sum_proper_divisors(n):
+    """Get the sum of the proper divisors of n
+
+    Test cases:
+    - 021
+    - 023
+    """
+    value = sum(get_proper_divisors(n))
+    return value
+
+def is_perfect_number(n):
+    """A perfect number n is a number whose sum of its proper divisors is equal to n
+    """
+    perfectness = sum_proper_divisors(n) == n
+    return perfectness
+
+def is_abundant_number(n):
+    """An abundant number n is a number whose sum of its proper divisors exceeds n
+
+    Test cases:
+    - 023
+    """
+    abundance = sum_proper_divisors(n) > n
+    return abundance
 
 def get_amicable_pair(n):
     """Get amicable pair for n, if one exists
@@ -182,8 +208,8 @@ def get_amicable_pair(n):
     Test cases:
     - 021
     """
-    candidate = sum(get_proper_divisors(n))
-    candidate_divisors_sum = sum(get_proper_divisors(candidate))
+    candidate = sum_proper_divisors(n)
+    candidate_divisors_sum = sum_proper_divisors(candidate)
     if candidate_divisors_sum == n:
         pair = (n, candidate,)
     else:
