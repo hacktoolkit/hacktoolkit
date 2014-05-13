@@ -508,8 +508,8 @@ def is_pandigital(n):
 
     E.g. 2143 is a 4-digit pandigital (and is also a prime)
     """
-    digits = [int(digit) for digit in str(n)]
-    pandigitalness = len(digits) == max(digits) == len(set(digits))
+    digits_n = digits(n)
+    pandigitalness = len(digits_n) == max(digits_n) == len(set(digits_n))
     return pandigitalness
 
 def rotations(s):
