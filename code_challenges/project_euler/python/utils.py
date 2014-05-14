@@ -424,6 +424,7 @@ def factor(n):
 
     Test cases:
     - 003
+    - 047
     """
     limit = int(math.sqrt(n))
     primes = generate_primes(limit)
