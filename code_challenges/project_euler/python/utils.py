@@ -85,6 +85,14 @@ def fib_up_to(n, repeat_1=False):
     numbers = FIB_MEMO[start:end]
     return numbers
 
+def quadratic(a, b, c):
+    """Solves the quadratic equation
+    ax^2 + b + c = 0
+    (-b + sqrt(b^2 - 4ac)) / 2a
+    """
+    x = (math.sqrt((b * b) - (4 * a * c)) - b) / (2 * a)
+    return x
+
 def triangle_number(n):
     """Get the nth triangle number
 
@@ -98,14 +106,6 @@ def triangle_number(n):
     """
     triangle = (n * (n + 1)) / 2
     return triangle
-
-def quadratic(a, b, c):
-    """Solves the quadratic equation
-    ax^2 + b + c = 0
-    (-b + sqrt(b^2 - 4ac)) / 2a
-    """
-    x = (math.sqrt((b * b) - (4 * a * c)) - b) / (2 * a)
-    return x
 
 def is_triangle_num(n):
     """Determines if n is a triangle number
@@ -129,6 +129,31 @@ def is_triangle_num(n):
     x = quadratic(1, 1, -2 * n)
     is_triangle = int(x) == x # x is a whole number
     return is_triangle
+
+def pentagon_number(n):
+    """Get the nth pentagon number
+
+    Pn = n * (3 * n - 1) / 2
+
+    Test cases:
+    - 044
+    """
+    pentagon = (n * (3 * n - 1)) / 2
+    return pentagon
+
+def is_pentagon_num(n):
+    """Determines if n is a pentagon number
+
+    Pn = n(3n - 1)/2
+
+    3n^2 - n - 2Pn = 0
+    a = 3
+    b = -1
+    c = -2(Pn)
+    """
+    x = quadratic(3, -1, -2 * n)
+    is_pentagon = int(x) == x # x is a whole number
+    return is_pentagon
 
 def collatz_sequence(n):
     """Produces the Collatz sequence for a starting number, n
@@ -396,6 +421,9 @@ def factor(n):
     E.g. numbers that evenly divide `n`
 
     Returns the prime factorization of n
+
+    Test cases:
+    - 003
     """
     limit = int(math.sqrt(n))
     primes = generate_primes(limit)
@@ -405,6 +433,8 @@ def factor(n):
         while reduced % prime == 0:
             reduced /= prime
             divisors.append(prime)
+    if reduced != 1:
+        divisors.append(reduced)
     return divisors
 
 def is_palindromic(n):
