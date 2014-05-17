@@ -125,6 +125,7 @@ def is_triangle_num(n):
 
     Test cases:
     - 042
+    - 045
     """
     x = quadratic(1, 1, -2 * n)
     is_triangle = int(x) == x # x is a whole number
@@ -146,14 +147,45 @@ def is_pentagon_num(n):
 
     Pn = n(3n - 1)/2
 
-    3n^2 - n - 2Pn = 0
+    Quadratic: 3n^2 - n - 2Pn = 0
     a = 3
     b = -1
     c = -2(Pn)
+
+    Test cases:
+    - 045
     """
     x = quadratic(3, -1, -2 * n)
     is_pentagon = int(x) == x # x is a whole number
     return is_pentagon
+
+def hexagon_number(n):
+    """Get the nth hexagon number
+
+    Hn=n(2n-1)
+
+    Test cases:
+    - 045
+    """
+    hexagon = n * (2 * n - 1)
+    return hexagon
+
+def is_hexagon_num(n):
+    """Determines if n is a hexagon number
+
+    Hn=n(2n-1)
+
+    Quadratic: 2n^2 - n - Hn = 0
+    a = 2
+    b = -1
+    c = -Hn
+
+    Test cases:
+    - 045
+    """
+    x = quadratic(2, -1, -n)
+    is_hexagon = int(x) == x # x is a whole number
+    return is_hexagon
 
 def collatz_sequence(n):
     """Produces the Collatz sequence for a starting number, n

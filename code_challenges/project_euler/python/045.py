@@ -1,4 +1,4 @@
-http://projecteuler.net/problem=045
+"""http://projecteuler.net/problem=045
 
 Triangular, pentagonal, and hexagonal
 
@@ -11,3 +11,20 @@ Hexagonal    Hn=n(2n-1)      1, 6, 15, 28, 45, ...
 
 It can be verified that T285 = P165 = H143 = 40755.
 Find the next triangle number that is also pentagonal and hexagonal.
+
+Solution by jontsai <hello@jontsai.com>
+"""
+from utils import *
+
+EXPECTED_ANSWER = 1533776805
+
+n = 286
+answer = None
+while answer is None:
+    triangle = triangle_number(n)
+    if is_pentagon_num(triangle) and is_hexagon_num(triangle):
+        answer = triangle
+    n += 1
+
+print 'Expected: %s, Answer: %s' % (EXPECTED_ANSWER, answer)
+
