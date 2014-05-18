@@ -31,6 +31,13 @@ def gcd(a, b):
             b = b - a
     return a
 
+def reduce_fraction(numerator, denominator):
+    """Reduces a fraction to its lowest terms
+    """
+    num_denom_gcd = gcd(numerator, denominator)
+    reduced = (numerator / num_denom_gcd, denominator / num_denom_gcd,)
+    return reduced
+
 def lcm(num_list):
     """Finds the lcm of a list of numbers
 
