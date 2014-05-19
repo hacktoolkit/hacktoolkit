@@ -342,6 +342,7 @@ def is_prime_trial_division(n):
 PRIMES = [2, 3]
 PRIME_MEMO = { 2 : True, 3 : True }
 PRIMES_BATCH_SIZE = 10000000 # look at 10M numbers at a time
+PRIMES_GENERATED_UP_TO = 0
 def generate_primes(n):
     """Generates a list of prime numbers
     Uses the sieve of Eratosthenes
@@ -359,6 +360,8 @@ def generate_primes(n):
     """
     global PRIMES
     global PRIME_MEMO
+    global PRIMES_GENERATED_UP_TO
+    PRIMES_GENERATED_UP_TO = max(PRIMES_GENERATED_UP_TO, n)
     greatest_prime_so_far = PRIMES[-1]
     lower = greatest_prime_so_far + 2
     upper = min(lower + PRIMES_BATCH_SIZE, n)
@@ -400,6 +403,8 @@ def generate_primes(n):
 def is_prime(n):
     """Determines whether n is a prime number
 
+    Requires generate_primes(n) called before
+
     Test cases:
     - 007
     - 010
@@ -407,12 +412,12 @@ def is_prime(n):
     - 041
     """
     global PRIME_MEMO
-    if not PRIME_MEMO:
+    global PRIMES_GENERATED_UP_TO
+    if not PRIME_MEMO or PRIMES_GENERATED_UP_TO < n:
         primes = generate_primes(n)
     else:
         primes = PRIMES
-    #primeness = n in primes
-    primeness = PRIME_MEMO.get(n, False)
+    primeness = n in primes
     return primeness
 
 def possibly_prime(n):
@@ -443,13 +448,22 @@ def get_truncations(s, dir='all'):
 def is_truncatable_prime(n):
     """A truncatable prime is a prime number that, when continuously removing digits from the left to right or right to left, the subsequent numbers are also prime
 
+    23 is the lowest truncatable prime that has an even digit
+
     Test cases:
     - 037
     """
     truncatable = False
-    if is_prime(n):
-        truncations = get_truncations(str(n))
-        truncatable = truncations and len(truncations) == len(filter(is_prime, [int(num) for num in truncations]))
+    if is_prime(n) and (n == 23 or (n > 23 and not has_even_digits(n))):
+        truncations = [int(truncation) for truncation in get_truncations(str(n))]
+        if truncations:
+            truncatable = True
+            for truncation in truncations:
+                if not is_prime(truncation):
+                    truncatable = False
+                    break
+                else:
+                    pass
     else:
         pass
     return truncatable
@@ -524,6 +538,11 @@ def sum_digits(n):
     digits = list_of_digits(n)
     summation = sum(digits)
     return summation
+
+def has_even_digits(n):
+    even_digits = filter(is_even, digits(n))
+    has_even = len(even_digits) > 0
+    return has_even
 
 def number_to_words(n):
     words = ''

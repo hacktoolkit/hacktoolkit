@@ -10,6 +10,7 @@ Solution by jontsai <hello@jontsai.com>
 """
 from utils import *
 
+# truncatable_primes = [23, 37, 53, 73, 313, 317, 373, 797, 3137, 3797, 739397]
 EXPECTED_ANSWER = 748317
 
 truncatable_primes = []
@@ -17,15 +18,25 @@ truncatable_primes = []
 target = 11
 
 primes = PRIMES
+last_prime_tested = 0
+batch_size = 50000
 
 while len(truncatable_primes) < target:
-    primes = generate_primes(2 * primes[-1])
+    primes = generate_primes(primes[-1] + batch_size)
     if not truncatable_primes:
         truncatable_primes = filter(is_truncatable_prime, primes)
+        last_prime_tested = primes[-1]
     else:
-        new_primes = filter(lambda x: x > truncatable_primes[-1], primes)
-        truncatable_primes += filter(is_truncatable_prime, new_primes)
+        new_primes = filter(lambda x: x > last_prime_tested, primes)
+        for prime in new_primes:
+            if is_truncatable_prime(prime):
+                truncatable_primes.append(prime)
+                if len(truncatable_primes) >= target:
+                    break
+        last_prime_tested = primes[-1]
+    print last_prime_tested
+    print truncatable_primes
 
-answer = sum(truncatable_primes[:11])
+answer = sum(truncatable_primes[:target])
 
 print 'Expected: %s, Answer: %s' % (EXPECTED_ANSWER, answer)
