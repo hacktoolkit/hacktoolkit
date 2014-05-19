@@ -534,9 +534,12 @@ def str_to_digits(s):
 
 def sum_digits(n):
     """Find the sum of the digits of n
+
+    Test cases:
+    - 056
     """
-    digits = list_of_digits(n)
-    summation = sum(digits)
+    digits_n = digits(n)
+    summation = sum(digits_n)
     return summation
 
 def has_even_digits(n):
