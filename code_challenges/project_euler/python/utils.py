@@ -599,9 +599,13 @@ def is_pandigital(n):
     """An n-digit number is pandigital if it makes use of all the digits 1 to n exactly once
 
     E.g. 2143 is a 4-digit pandigital (and is also a prime)
+
+    Test cases:
+    - 038
+    - 041
     """
     digits_n = digits(n)
-    pandigitalness = len(digits_n) == max(digits_n) == len(set(digits_n))
+    pandigitalness = len(digits_n) == max(digits_n) == len(set(digits_n)) and min(digits_n) == 1
     return pandigitalness
 
 def rotations(s):
