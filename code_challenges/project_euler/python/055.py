@@ -1,4 +1,4 @@
-http://projecteuler.net/problem=055
+"""http://projecteuler.net/problem=055
 
 Lychrel numbers
 
@@ -18,3 +18,21 @@ Surprisingly, there are palindromic numbers that are themselves Lychrel numbers;
 How many Lychrel numbers are there below ten-thousand?
 
 NOTE: Wording was modified slightly on 24 April 2007 to emphasise the theoretical nature of Lychrel numbers.
+
+Solution by jontsai <hello@jontsai.com>
+"""
+from utils import *
+
+EXPECTED_ANSWER = 0
+
+limit = 10000
+
+lychrel_count = 0
+
+for n in xrange(limit):
+    if is_lychrel_number(n):
+        lychrel_count += 1
+
+answer = lychrel_count
+
+print 'Expected: %s, Answer: %s' % (EXPECTED_ANSWER, answer)
