@@ -32,7 +32,7 @@ for prime in primes:
     permutations_of_prime = filter(lambda x: x >= lower, prime_permutations(prime))
     subseries = arithmetic_series_subset(permutations_of_prime)
     if len(subseries) >= 3:
-        answer = ''.join([str(n) for n in subseries])
+        answer = int(''.join([str(n) for n in subseries]))
         if answer != existing_answer:
             break
 

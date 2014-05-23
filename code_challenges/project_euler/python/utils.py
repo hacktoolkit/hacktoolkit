@@ -92,6 +92,39 @@ def fib_up_to(n, repeat_1=False):
     numbers = FIB_MEMO[start:end]
     return numbers
 
+CUBE_ROOTS = { 1: 1, }
+def generate_cubes(n):
+    """Generate cubes for 1, ..., n
+
+    Test cases:
+    - 062
+    """
+    for z in xrange(len(CUBE_ROOTS) + 1, n + 1):
+        CUBE_ROOTS[z**3] = z
+    return CUBE_ROOTS
+
+GENERATE_CUBES_BATCH_SIZE = 10000
+def get_perfect_cubic_root(n):
+    """Gets the cubic root of a perfect cube
+    """
+    largest_cube_generated = sorted(CUBE_ROOTS.keys())[-1]
+    while largest_cube_generated < n:
+        generate_cubes(len(CUBE_ROOTS) + GENERATE_CUBES_BATCH_SIZE)
+    cubic_root = CUBE_ROOTS.get(n)
+    return cubic_root
+
+def is_perfect_cube(n):
+    """Determines whether a number is a perfect cube
+
+    Requires generate_cubes already called
+
+    Test cases:
+    - 062
+    """
+    cubic_root = get_perfect_cubic_root(n)
+    is_cube = cubic_root is not None
+    return is_cube
+
 def quadratic(a, b, c):
     """Solves the quadratic equation
     ax^2 + b + c = 0
@@ -500,6 +533,23 @@ def is_palindromic(n):
     palindromic = str(n) == str(n)[::-1]
     return palindromic
 
+def is_lychrel_number(n, iterations=50):
+    """Determines if a number is a Lychrel number within `iterations`
+    """
+    summation = n
+    found_palindrome = False
+    count = 0
+    while not found_palindrome and count < iterations:
+        reversed_digits = int(''.join(reversed(digits(summation, string=True))))
+        summation += reversed_digits
+        if is_palindromic(str(summation)):
+            found_palindrome = True
+            break
+        else:
+            count += 1
+    is_lychrel = not(found_palindrome)
+    return is_lychrel
+
 def range_sum(lower, upper):
     """Find the sum of a range of numbers
     """
@@ -653,13 +703,23 @@ def permutations(s):
             all_permutations += sub_permutations
     return all_permutations
 
+def numeric_permutations(n):
+    """Find the permutations of a number n
+
+    Test cases:
+    - 049
+    - 062
+    """
+    permutations_of_n = [int(permutation) for permutation in permutations(str(n))]
+    return permutations_of_n
+
 def prime_permutations(n):
     """Find all permutations of the digits of the numbers in n that are primes
 
     Test cases:
     - 049
     """
-    permutations_of_n = [int(permutation) for permutation in permutations(str(n))]
+    permutations_of_n = numeric_permutations(n)
     prime_permutations_of_n = filter(is_prime, sorted(set(permutations_of_n)))
     return prime_permutations_of_n
 
