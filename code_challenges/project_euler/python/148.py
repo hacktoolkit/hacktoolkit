@@ -22,7 +22,7 @@ from utils import *
 
 EXPECTED_ANSWER = 0
 
-limit = 1000000000
+limit = 100
 divisor = 7
 
 not_divisible_count = 0
@@ -31,23 +31,38 @@ previous_row = []
 for row in xrange(limit):
     next_row = []
     previous_row_length = row
-    for col in xrange(previous_row_length + 1):
-        if col == 0:
-            next_row.append(1)
-        if col + 1 < previous_row_length:
-            next_row.append(previous_row[col] + previous_row[col + 1])
-        if col + 1 == previous_row_length:
-            next_row.append(1)
-    midpoint = int(len(next_row) / 2)
-    if is_odd(row + 1):
-        midpoint += 1
+    odd_row = is_odd(row + 1)
+    # calculate midpoint, the number of items for half symmertry of this row of Pascal's triangle
+    if odd_row:
+        midpoint = int(row / 2) + 1
+    else:
+        midpoint = (row + 1) / 2
     for col in xrange(midpoint):
-        value = next_row[col]
-        if value % divisor > 0:
-            if is_odd(row + 1) and col + 1 == midpoint:
+        # just build half of a triangle row
+        if col == 0:
+            value = 1
+            next_row.append(1)
+            if row == 0:
                 not_divisible_count += 1
             else:
                 not_divisible_count += 2
+        elif col + 1 < midpoint:
+            value = previous_row[col] + previous_row[col - 1]
+            next_row.append(value)
+            if value % divisor > 0:
+                not_divisible_count += 2
+        elif col + 1 == midpoint:
+            if odd_row:
+                value = previous_row[-1] + previous_row[-1]
+                if value % divisor > 0:
+                    not_divisible_count += 1
+            else:
+                value = previous_row[-1] + previous_row[-2]
+                if value % divisor > 0:
+                    not_divisible_count += 2
+            next_row.append(value)
+        else:
+            pass
     previous_row = next_row
 
 answer = not_divisible_count
