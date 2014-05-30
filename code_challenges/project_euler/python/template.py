@@ -5,5 +5,6 @@ from utils import *
 
 EXPECTED_ANSWER = 0
 
-print 'Expected: %s, Answer: %s' % (EXPECTED_ANSWER, answer)
+answer = None
 
+print 'Expected: %s, Answer: %s' % (EXPECTED_ANSWER, answer)
