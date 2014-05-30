@@ -34,7 +34,9 @@ best_a = 0
 best_b = 0
 
 for a in xrange(-limit + 1, limit):
-    for b in xrange(-limit + 1, limit):
+    for b in xrange(1, limit):
+        if not is_prime(b):
+            continue
         unbroken_prime_chain = True
         n = 0
         consecutive_primes = 0
