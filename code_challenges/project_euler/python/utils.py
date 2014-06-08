@@ -93,30 +93,33 @@ def fib_up_to(n, repeat_1=False):
     return numbers
 
 CUBE_ROOTS = { 1: 1, }
+LARGEST_CUBE_GENERATED = 1
 def generate_cubes(n):
     """Generate cubes for 1, ..., n
 
     Test cases:
     - 062
     """
+    global CUBE_ROOTS
+    global LARGEST_CUBE_GENERATED
     for z in xrange(len(CUBE_ROOTS) + 1, n + 1):
         CUBE_ROOTS[z**3] = z
+    LARGEST_CUBE_GENERATED = max(LARGEST_CUBE_GENERATED, (n + 1) ** 3)
     return CUBE_ROOTS
 
-GENERATE_CUBES_BATCH_SIZE = 10000
+GENERATE_CUBES_BATCH_SIZE = 100000
 def get_perfect_cubic_root(n):
     """Gets the cubic root of a perfect cube
     """
-    largest_cube_generated = sorted(CUBE_ROOTS.keys())[-1]
-    while largest_cube_generated < n:
-        generate_cubes(len(CUBE_ROOTS) + GENERATE_CUBES_BATCH_SIZE)
-    cubic_root = CUBE_ROOTS.get(n)
+    global CUBE_ROOTS
+    global LARGEST_CUBE_GENERATED
+    while LARGEST_CUBE_GENERATED < n:
+        cubes = generate_cubes(len(CUBE_ROOTS) + GENERATE_CUBES_BATCH_SIZE)
+    cubic_root = CUBE_ROOTS.get(n, None)
     return cubic_root
 
 def is_perfect_cube(n):
     """Determines whether a number is a perfect cube
-
-    Requires generate_cubes already called
 
     Test cases:
     - 062
@@ -124,6 +127,17 @@ def is_perfect_cube(n):
     cubic_root = get_perfect_cubic_root(n)
     is_cube = cubic_root is not None
     return is_cube
+
+def nth_root(number, n):
+    """Gets the integral nth-root
+
+    Test cases:
+    - 063
+    """
+    nth_root = int(round(pow(number, 1.0 / n)))
+    if nth_root ** n != number:
+        nth_root = None
+    return nth_root
 
 def quadratic(a, b, c):
     """Solves the quadratic equation
@@ -226,6 +240,38 @@ def is_hexagon_num(n):
     x = quadratic(2, -1, -n)
     is_hexagon = int(x) == x # x is a whole number
     return is_hexagon
+
+REVERSIBLE_MEMO = {}
+def is_reversible(n):
+    """Determines if n is a reversible number
+
+    Reversible numbers:
+    36 + 63 = 99
+    409 + 904 = 1313
+
+    Test cases:
+    - 145
+    """
+    first_digit = int(str(n)[0])
+    last_digit = n % 10
+    if n in REVERSIBLE_MEMO:
+        reversible = REVERSIBLE_MEMO[n]
+    elif last_digit == 0:
+        reversible = False
+    elif is_even((first_digit + last_digit) % 10):
+        reversible = False
+    else:
+        digits_n_str = digits(n, string=True)
+        reverse_n = int(''.join(digits_n_str[::-1]))
+        n_plus_reverse_n = n + reverse_n
+        reversible = True
+        for digit in digits(n_plus_reverse_n):
+            if is_even(digit):
+                reversible = False
+                break
+        REVERSIBLE_MEMO[n] = reversible
+        REVERSIBLE_MEMO[reverse_n] = reversible
+    return reversible
 
 def collatz_sequence(n):
     """Produces the Collatz sequence for a starting number, n
@@ -640,10 +686,18 @@ def letter_score(letter):
 
 def word_score(word):
     """Computes the sum of the alphabetical value of each character
+
+    Test cases:
+    - 042
     """
     letter_scores = [letter_score(letter) for letter in word]
     score = sum(letter_scores)
     return score
+
+def word_number(word):
+    """Converts a word to a number
+    """
+    pass
 
 def is_pandigital(n):
     """An n-digit number is pandigital if it makes use of all the digits 1 to n exactly once
@@ -710,7 +764,7 @@ def numeric_permutations(n):
     - 049
     - 062
     """
-    permutations_of_n = [int(permutation) for permutation in permutations(str(n))]
+    permutations_of_n = sorted(set([int(permutation) for permutation in permutations(str(n))]))
     return permutations_of_n
 
 def prime_permutations(n):
@@ -720,7 +774,7 @@ def prime_permutations(n):
     - 049
     """
     permutations_of_n = numeric_permutations(n)
-    prime_permutations_of_n = filter(is_prime, sorted(set(permutations_of_n)))
+    prime_permutations_of_n = filter(is_prime, permutations_of_n)
     return prime_permutations_of_n
 
 def arithmetic_series_subset(num_list):
