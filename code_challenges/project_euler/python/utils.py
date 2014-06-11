@@ -499,6 +499,28 @@ def is_prime(n):
     primeness = n in primes
     return primeness
 
+def primality(n):
+    """A basic primality test
+
+    http://en.wikipedia.org/wiki/Primality_test
+    """
+    if n < 0:
+        primeness = False
+    elif n <= 3:
+        if n <= 1:
+            primeness = False
+        else:
+            primeness = True
+    elif not(n % 2) or not(n % 3):
+        primeness = False
+    else:
+        primeness = True
+        for i in xrange(5, int(n ** 0.5) + 1, 6):
+            if not n % i or not n % (i + 2):
+                primeness = False
+                break
+    return primeness
+
 def possibly_prime(n):
     """Determines whether n is possibly a prime number
 

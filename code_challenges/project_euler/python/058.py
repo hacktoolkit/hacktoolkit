@@ -20,7 +20,7 @@ Solution by jontsai <hello@jontsai.com>
 """
 from utils import *
 
-EXPECTED_ANSWER = 0
+EXPECTED_ANSWER = 26241
 
 # this problem is similar to 028
 #
@@ -28,16 +28,13 @@ EXPECTED_ANSWER = 0
 # dimension is always n x n, where n % 2 == 1 (n is always odd)
 # (n - 1) / 2 = distance from the center to any corner or midpoint on the edges
 
-target_ratio = 0.5
+target_ratio = 0.1
 minimum_length = 7
 
 n = 1
 ratio = 1
 diagonals = 0
 diagonal_primes = 0
-
-# pre-generate primes to cache lookups
-primes = generate_primes(10**6)
 
 while n < minimum_length or ratio > target_ratio:
     #diagonals = 1 + ((n - 1) / 2) * 4
@@ -50,15 +47,15 @@ while n < minimum_length or ratio > target_ratio:
         top_left = bottom_left - distance
         top_right = top_left - distance
         # bottom right is always a square, so not a prime
-        if is_prime(bottom_left):
+        if primality(bottom_left):
             diagonal_primes += 1
         else:
             pass
-        if is_prime(top_left):
+        if primality(top_left):
             diagonal_primes += 1
         else:
             pass
-        if is_prime(top_right):
+        if primality(top_right):
             diagonal_primes += 1
         else:
             pass
@@ -66,8 +63,7 @@ while n < minimum_length or ratio > target_ratio:
         diagonals += 1
 
     ratio = float(diagonal_primes) / diagonals
-    if (n - 1) % 20 == 0:
-        print n, ratio
+    #print n, ratio
     if n >= minimum_length and ratio <= target_ratio:
         break
     else:
