@@ -1,0 +1,157 @@
+Velkommen til IO wargame på smash the stack netverket.
+------------------------------------------------------
+
+Du har gjort den vanskelige delen og funnet riket vårt. Her tillater vi deg �
+å leke med klassiske, og opp til dato svakheter i programvare. Siden mange av
+dere kanskje er ukjente med hvordan et "wargame" virker, vil vi gi en rask
+introduksjon i de følgende paragrafene. Hvis du er en erfaren wargamer vil alt
+dette være kjent for de, da vil du kanskje hoppe til den siste seksjonen
+som itererer gjennom spesifikasjonene til dette spillet.
+
+Problemene vil bli presentert til deg som en serie av programmer. De vil
+variere i størrelse fra noen få linjer som inneholder en åpenbar bug, 
+over til større, og til slutt ekte programvare. 
+Poenget er hele tiden å utnytte denne svakheten på en slik måte at
+du kan gripe kontroll over programmet og få det til å gjøre det du vil.
+Som vil tillate deg til å lese passordet til neste nivå.
+For eksempel vil du ofte kjøre et shell.
+
+Måten dette virker på er at binærfilene er SUID binærer.
+(http://en.wikipedia.org/wiki/Setuid). Dette betyr essensielt at de kjører som
+en annen bruker enn du er. Poenget er å ta kontroll av programmet og få det til
+å kjøre din egen shellcode. Som vil etter tur tillate deg å lese passrodet for
+neste nivå.
+
+Hvordan komme igang
+-------------------
+
+Nå kommer jeg til å snakke deg gjennom det første nivået (level1). I
+dette øyeblikket er du en "level 1" bruker. Dette betyr at du kan bare
+aksessere de filene som er eid av level1, eller som er aksesserbare av alle.
+
+  level1@io:~# cd /levels
+  level1@io:/levels# ls -las level1
+  8 -r-sr-x--- 1 level2 level1 7500 Nov 16  2007 level1
+ 
+Når du kjører programmet vil det spørre deg etter et passord. Som du på en
+eller annen måte må finne. Når du forsyner programmet med dette vil du få opp et
+nytt shell som har level2 rettigheter. Ved å bruke dette kan du lese
+filen
+
+  level1@io:/levels$ ./level1 [passordet du har funnet ut]
+  Win.
+  level1@io:/levels$ id
+  uid=1001(level1) gid=1001(level1) euid=1002(level2) groups=1001(level1),1029(nosu)
+
+som du kan se, ut i fra utskriften av "id" kommandoen, har du nå en euid
+(effektiv bruker id) som level2. Du kan nå lese filer som tilhører level2.
+Poenget er å bruke denne retten til å lese passord-filen for neste nivå.
+
+  level1@io:/levels$ cat /home/level2/.pass
+  [BINGO DU KLARTE DET]
+
+Nå har du level2 passordet. Du kan nå logge inn som level2. Koble fra den
+nåværende tilkoblingen. Logg inn som level2 og bruk passordet du netopp fant.
+Når du gjør dette vil du se at du er level2. På dette punktet vil du kanskje fortelle
+verden om oppnåelsen din. Du kan gjøre dette ved å legge til en tag, kommentar,
+eller hva som helst, til tags filen. For eksempel ved å bruke
+følgende kommando
+  level2@io:~$ echo "<p>superleetzor was here and pwnd level1</p>" >> tags
+
+dette vil dermed bli synelig på internet:
+http://io.smashthestack.org:84/tags/level2.html
+
+Og det er stort sett det. Vi tillater nesten hva som helst i tags filene. Så
+føl deg fri til å være kreativ. Men bruk folkevett. Deaktiver også javascript
+når du viser disse filene i en nettleser...
+
+
+Ofte stilte spørsmål
+-------------------
+
+Spørsmål:   Jeg er helt ny på dette, vil jeg klare å løse dette spillet? Er det vanskelig?
+Svar:       Vel, det er et spill med flere steg. Det første steget som varer til og
+            med level10 er relativt enkelt. Du burde kunne klare å løse disse nivåene
+            uavhengig av bakgrunn, alder, kjønn, ... Hvis du er villig til å spørre etter litt
+            hjelp. Etter dette punktet vil du ha hatt gleden av å lære det grunnleggende
+            ganske bra. Spillet flytter seg da til litt vanskeligere og avanserte nivåer.
+            Det er ingen skam å sette seg fast her, og spørre etter hjelp eller
+            veiledning. Eller bare la det være akkurat nå. Smashthestack har vært og vil
+            fortsette å være stabil i den�rmeste forutseende fremtid.
+
+Spørsmål:   Er det et sted jeg kan skrive filer?
+Svar:       Ja, du kan skrive filer i /tmp mappen. Denne mappen er satt opp slik at
+            du ikke kan se filene som allerede er der. Dette er gjort så du ikke lett kan
+            aksessere filene andre spillere jobber i. Du er oppfordret til å lage din egen
+            undermappe å jobbe i. For eksempel ved å kjøre følgende kommandoer.
+
+              mkdir /tmp/noevanskeligågjette
+              cd /tmp/noevanskeligågjette
+
+            Du kan nå skrive, liste og lagre midlertidige filer i denne mappen. Vi vil
+            periodisk rydde i denne mappen når nøden oppstår. Dette vil vanligvis bli
+            opplyst om i chatte-rommet. Uansett, det er en god ide å ha en lokal kopi av
+            arbeidet ditt.
+
+Spørsmål:   Har du en liste med lesestoff jeg kan lese for nivå X?
+Svar:       Vanligvis er det noe du kan lese, men det er ingen nivå-spesifik
+            liste. Føl deg fri til å gjøre uavhengig etterforskni å finne ut av hva som
+            er problemet er en del av spillet. Og derfor vil du aldri bli
+            tildelt med, si alle dokumenter. IO er ikke en omfattende lesetest.
+
+Spørsmål:   Hvorfor kan jeg ikke bruke su?
+Svar:       su opptar ressurser. Av ingen god grunn. Og siden vi satser på å beholde
+            boksen stabil for alle, begrenser vi mengden ressurser. For å forhindr 
+            problemer deaktiverer vi su, og krever at du kobler til på nytt.
+
+Spørsmål:   Hvorfor kan jeg ikke bruke nano, vim ... for å endre tags filen?
+Svar:       Tags-filene er satt til "bare tilføying", og på grunn av noe som kalles
+            en "editor bug". Editorer har en tendens til å reskrive porsoner av filen med
+            en gang istedenfor å tilføye. Du må derfor bruke tilføy (>>) output redirect.
+
+Spørsmål:   Jeg liker virkelig denne filen, vil du at jeg skal oversette den?
+Svar:       Ja! Føl deg fri til å logge på vår IRC, eller email det til noen. Det
+            skal være email addresser i motd'en.
+
+Spørsmål:   Jeg prøver hardt å lære, men hvilken som helst shellcode jeg prøver
+            eller tester, får jeg segmenteringsfeil med. Hva skjer?!
+Svar:       Du kompilerer antakeligvis nivåene eller testkoden din manuelt, uten å ta
+            i betrakning at noen minneseksjoner er ikke kjørbare som standard. Det er slik
+            det er innstilt, og vi har ingen intensjon om å holde dette sjult for våre
+            spillere. De fleste av nivåene i dette spillet har en kjørbar stack. Det er
+            flere grunner til dette. Hovedsakelig fordi å jobbe seg rundt visse
+            beskyttelser er for tungvindt for å være en del av hvert nivå.
+            De senere nivåene berører disse temaene.
+
+            Når du vil teste shellcoden din kan du bruke en kode tilsvarende den under:
+
+            #include <sys/mman.h>
+            #include <string.h>
+            #include <stdio.h>
+
+            char sc[]= "din shellcode her";
+
+            int main(){
+                    void * a = mmap(0, 4096, PROT_EXEC |PROT_READ | PROT_WRITE, MAP_ANONYMOUS | MAP_SHARED, -1, 0);
+                    printf("allokerte kjørbart minne på: %p\n", a);
+                    ((void (*)(void)) memcpy(a, sc, sizeof(sc)))();
+            }
+
+Spørsmål:   Hvorfor inneholder dette dokumentet så mange stavefeil?
+Svar:       Det er skrevet av bla. (Og oversatt av narhen)
+
+
+Spill spesifikasjoner
+---------------------
+
+- nivåer er i mappen /levels
+- passord er lagret i hjemme-mappen for nivået, i filen som heter .pass.
+  For eksampel /home/level2/.pass inneholder passordet for bruker "level 2".
+- Chat:
+        Det er et chatterom på irc nettverket vårt. irc.smashthestack.org, ssl port 6697.
+        Du kan også bruke webklienten for å koble til http://www.smashthestack.org/cgiirc/
+- forum:
+        På vår webside http://forum.smashthestack.org/ men å bruke
+        chatte-rommet vil antakeligvis hjelpe deg raskere og bedre.
+
+- aslr er av, og de fleste nivåene har en kjørbar stack.

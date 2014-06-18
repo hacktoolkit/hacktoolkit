@@ -1,0 +1,149 @@
+Selamat datang di IO Wargame pada smash the stack network. 
+-------------------------------------------------- ------- 
+
+Anda telah melakukan bagian yang sulit dan menemukan alam kita. Di sini kami mengizinkan anda untuk bermain dengan kerentanan klasik dan sampai terbaru dalam perangkat lunak. Karena banyak dari anda mungkin tidak terbiasa dengan cara Wargame bekerja, kami akan memberikan pengenalan yang cepat dalam 
+paragraf berikut. Jika anda adalah wargamer berpengalaman, semua ini akan 
+akrab bagi anda sehingga Anda mungkin ingin untuk melompat ke bagian terakhir yang mengulas 
+spesifikasi game ini. 
+
+Masalah akan disajikan kepada anda sebagai serangkaian program. Yang akan bervariasi 
+dalam ukuran dari beberapa baris yang mengandung bug yang sangat jelas, ke yang lebih besar, dan akhirnya perangkat lunak nyata. Intinya adalah selalu untuk mengeksploitasi bug sedemikian rupa sehingga anda bisa mengambil kontrol pelaksanaan program dan membuatnya melakukan apa yang anda inginkan. Untuk misalnya anda pasti akan sering ingin mendapatkan shell. 
+
+Bagaimana cara ini bekerja adalah bahwa binari adalah binari SUID 
+(http://en.wikipedia.org/wiki/Setuid). Ini berarti dalam singkatnya bahwa mereka dijalankan sebagai 
+user yang berbeda dari yang anda. Intinya adalah untuk merebut kendali program 
+dan membuatnya mengeksekusi shellcode anda sendiri. Yang pada gilirannya akan memungkinkan anda untuk membaca password untuk tingkat berikutnya.
+
+
+Bagaimana untuk memulai 
+------------------ 
+
+Saat ini saya akan membimbing anda melewati tingkat pertama. Saat ini anda adalah user "level1". 
+Ini berarti anda hanya dapat mengakses file dimiliki oleh level1 saja, atau dapat diakses 
+oleh semua orang. 
+
+  level1@io:~# cd /levels
+  level1@io:/levels# ls-las level1 
+  8-r-sr-x --- 1 level1 level2 7500 November 16, 2007 level1 
+
+Ketika anda menjalankannya anda akan diminta password. Yang anda entah bagaimana harus temukan. Dan 
+ketika anda memasukkan itu anda akan mendapatkan shell baru yang memiliki hak level2. Menggunakan 
+shell itu anda dapat membaca file 
+
+  level1@io:/levels$ ./level1 [sesuatu yang harus anda harus mencari tahu disini] 
+  Win. 
+  level1@io:/levels$ id 
+  uid = 1001 (level1) gid = 1001 (level1) EUID = 1002 (level2) group = 1001 (level1), 1029 (nosu) 
+
+seperti yang Anda lihat, dengan output dari perintah "id" Anda sekarang memiliki EUID (effective user id) dari level2. Anda sekarang dapat membaca file yang milik level2. Intinya adalah menggunakan hak ini untuk membaca file password untuk tingkat berikutnya. 
+
+  level1@io:/levels$ cat /home/level2/.pass 
+  [BINGO YOU DID IT] 
+
+Sekarang Anda memiliki password level2. Anda sekarang dapat login sebagai level2. Putuskan koneksi saat ini. Login sebagai level2 dan gunakan sandi yang baru saja ditemukan. Ketika anda melakukan ini 
+anda akan melihat bahwa anda level2. Pada titik ini anda mungkin ingin memberitahu dunia 
+prestasi anda. Dan anda dapat melakukannya dengan menambahkan tag anda, komentar, atau cukup banyak 
+apapun yang anda inginkan pada file tag. Misalnya dengan menggunakan perintah berikut 
+  level2@io:~$ echo "superleetzor <p> di sini dan pwnd level1 </p>" >> tags
+
+Hal ini kemudian akan menjadi terlihat online di: 
+http://io.smashthestack.org:84/tags/level2.html 
+
+Dan seperti itu. Kami mengizinkan hampir semua pada file tags. Jadi anda merasa bebas 
+untuk menjadi kreatif. Meskipun menggunakan akal sehat. Javascript juga sebaiknya dinonaktifkan ketika Anda melihat file ini dengan browser ... 
+
+
+FAQ 
+--- 
+
+Q: Saya sangat baru untuk semua ini, apakah saya akan mampu menyelesaikan game ini? Apakah sulit? 
+A: Ini adalah permainan bertahap. Tahap pertama yang berlangsung sekitar samapi level10 adalah 
+   relatif sederhana. Anda seharusnya dapat mengatasi tingkat ini terlepas dari 
+   latar belakang, usia, jenis kelamin anda, ... Jika anda bersedia untuk bertahan dan meminta 
+   sedikit bantuan. Setelah titik itu anda akan memiliki kesenangan 
+   belajar dasar-dasar dengan cukup baik. Permainan kemudian pindah ke sedikit tingkat
+   lebih maju. Tidak perlu ada rasa malu apabila terjebak di sini, dan meminta 
+   untuk beberapa bantuan atau bimbingan. Atau hanya meninggalkan itu untuk sementara waktu. 
+   Smashthestack telah dan akan terus stabil selama paling tidak 
+   masa mendatang. 
+
+Q: Apakah ada tempat saya bisa menulis file? 
+A: Ya, Anda dapat menulis di direktori /tmp. 
+   Namun direktori ini sudah diatur sedemikian rupa sehingga anda tidak dapat 
+   mendaftar file yang ada. Hal ini dilakukan sehingga anda tidak mudah 
+   untuk mengakses file yang pemain lain kerjakan. Anda dianjurkan 
+   untuk membuat subdirektori sendiri untuk bekerja. Misalnya dengan menggunakan 
+   perintah berikut ini. 
+
+   mkdir /tmp/sesuatuyangsulitditebak 
+   cd /tmp /sesuatuyangsulitditebak 
+
+   Anda sekarang dapat mendaftar, menyimpan file-file sementara, dan banyak lagi dalam direktori ini. Kami secara berkala akan membersihkan isi direktori ini setiap kali 
+   kebutuhan muncul. Hal ini biasanya akan diumumkan di chat room. 
+   Oleh karena itu biasanya ide yang baik untuk memiliki cadangan lokal kerjaan anda. 
+
+Q: Apakah Anda memiliki daftar tulisan-tulisan yang dapat saya baca untuk tingkat X? 
+J: Biasanya ada beberapa hal yang dapat anda baca, tetapi tidak ada daftar untuk tingkat 
+   spesifik. Jangan ragu untuk mencoba keberuntungan anda dalam chatroom dengan 
+   pertanyaan itu. Meskipun penelitian sendiri dan mencari tahu apa 
+   masalahnya adalah bagian dari permainan. Dan maka anda tidak akan selalu 
+   dilengkapi dengan dokumen yang mengatakan semua. IO bukan bacaan uji komprehensif. 
+
+T: Mengapa saya tidak bisa menggunakan su? 
+J: Su mengikat proses. Tanpa alasan yang baik. Dan karena kami bertujuan untuk menjaga 
+   kumputer stabil untuk semua orang kita membatasi jumlah proses. 
+   Oleh karena itu untuk mencegah masalah kita menonaktifkan su, dan meminta anda untuk koneksi  kembali. 
+
+T: Mengapa saya tidak bisa menggunakan nano, vim, ... untuk mengedit file tags? 
+J: File tags diset ke "append only", dan karena sesuatu yang disebut 
+   bug editor, editor cenderung untuk menulis ulang bagian file sekaligus 
+   bukannya menambahkan. Anda harus menggunakan append (>>) output 
+   redirector. 
+
+T: Saya benar-benar suka readme ini, apakah anda ingin saya menerjemahkannya? 
+A: Tentu, anda merasa bebas untuk log on ke IRC kami atau email ke seseorang. Pasti ada 
+   alamat email di motd tersebut.
+
+T: Saya sedang berusaha keras untuk belajar, tetapi setiap shellcode yang saya coba atau tes masih segfaults wth?! 
+J: Anda mungkin mengkompilasi tingkat-tingkat atau testcode anda secara manual tanpa mengambil 
+pertimbangan bahwa beberapa bagian dari memori tidak dapat dieksekusi oleh 
+default. Ini adalah pengaturan saat ini dan kami tidak punya niat menyembunyikan 
+ini dari players. Sebagian besar dari tingkat pada permainan ini memiliki executable stack. 
+Ada beberapa alasan untuk ini. Terutama karena pengerjaan untuk melewati perlindungan tertentu terlalu rumit untuk dikerjakan pada setiap tingkat. 
+Tingkat-tingkat selanjutnya akan ada pada topik ini. 
+
+Bila anda ingin menguji shellcode anda dapat menggunakan kode yang mirip dengan yang 
+termasuk di bawah ini dalam rangka untuk menguji: 
+
+#include <sys/mman.h> 
+#include <string.h> 
+#include <stdio.h> 
+
+char sc[]="shellcode Anda di sini"; 
+
+int main() { 
+        void * a = mmap (0, 4096, PROT_EXEC | PROT_READ | PROT_WRITE, MAP_ANONYMOUS | MAP_SHARED, -1, 0); 
+        printf("memori eksekusi dialokasikan sebesar:%p\n", a); 
+        ((void (*) (void)) memcpy(a, sc, sizeof (sc)))(); 
+} 
+
+
+T: Mengapa dokumen ini mengandung kesalahan ejaan begitu banyak? 
+J: Dokumen ini ditulis oleh bla. 
+
+
+
+Game spesifik 
+-------------- 
+
+- Tingkat berada di direktori /levels 
+- Password disimpan di direktori home untuk tingkat tersebut, dalam file yang disebut .pass. 
+  misalnya /home/level2/.pass berisi password untuk user "level2" 
+- Chat: 
+        Ada chatroom di irc pada jaringan kami irc.smashthestack.org, port ssl 6697 
+        Anda juga dapat menggunakan webclient untuk terhubung http://www.smashthestack.org/cgiirc/ 
+- Forum: 
+        di website kami http://forum.smashthestack.org/ meskipun menggunakan chat room akan 
+        mungkin membantu anda lebih cepat dan lebih baik. 
+
+- ASLR tidak aktif dan kebanyakan tingkat memiliki executable stack

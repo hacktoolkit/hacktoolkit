@@ -1,0 +1,167 @@
+Benvenuti in IO wargame nella rete di smash the stack.
+------------------------------------------------------
+
+Hai  fatto  la  parte difficile e trovato il nostro regno. Qui ti permettiamo di
+avere  a che fare sia con le vulnerabilità più classiche che quelle più recenti.
+Dato  che  molti  di  voi potrebbero non essere a conoscenza di come funziona un
+wargame,  vi  daremo  una  veloce introduzione nei paragrafi seguenti. Se sei un
+wargamer  esperto,  tutto  questo  sarà  per te familiare e probabilmente vorrai
+saltare  direttamente  all'ultima  sezione che spiegherà le specifiche di questo
+gioco.
+
+I problemi ti saranno presentati come una serie di programmi. I quali varieranno
+in  dimensione, da  poche  linee  contenenti  un  bug  ovvio,  per poi passare a
+dimensioni  più  grandi  e  finire  con del vero software. L'obbiettivo è sempre
+effettuare  l'exploit  di  questo  bug  in  modo  che tu riesca a controllare l'
+esecuzione del programma e fargli fare ciò che vuoi. Per esempio, spesso, vorrai
+eseguire una shell.
+
+Il motivo per cui funziona è che i binari sono SUID
+(http://en.wikipedia.org/wiki/Setuid).  Questo  in  breve  significa che vengono
+eseguiti sotto un utente differente. Bisogna prendere il controllo del programma
+e fargli  eseguire  il  proprio  shellcode,  che dovrà permetterti di leggere la
+password per il livello successivo.
+
+
+Come cominciare
+---------------
+
+Da adesso vi parlerò del primo livello. Ora tu sei l'utente "level1". Questo 
+significa che tu puoi accedere  solo ai file posseduti da level1, o che sono
+accessibili a tutti.
+
+  level1@io:~# cd /levels
+  level1@io:/levels# ls -las level01
+  8 -r-sr-x--- 1 level2 level1 7500 Nov 16  2007 level01
+
+Quando eseguirete il programma esso vi chiederà una password. Dovrete trovarla
+in qualche modo. Quando la inserirete, esso vi darà accesso a una nuova shell 
+con i diritti di level2. 
+
+  level1@io:/levels$ ./level01 [qualcosa che dovrai scoprire]
+  Win.
+  level1@io:/levels$ id
+  uid=1001(level1) gid=1001(level1) euid=1002(level2) groups=1001(level1),1029(nosu)
+
+Come puoi vedere dall' output del comando "id" ora hai l' euid (effective user
+id) di level2. Puoi così leggere i file che appartengono a level2. L'obbiettivo
+è leggere il file contenente la password per il prossimo livello.
+
+  level1@io:/levels$ cat /home/level2/.pass
+  [BINGO CI SEI RIUSCITO]
+
+Ora hai la password per level2. Puoi effettuare il login come level2.
+Disconnettiti, ri-effettua il login come level2 e usa la password che hai appena
+trovato.  Quando lo farai, noterai che sei level2. A questo punto vorrai dire al
+mondo della tua impresa. Potrai farlo aggiungendo il tuo tag, commento, o
+qualsiasi altra cosa vuoi al tags file. Per esempio usando il seguente comando
+  level2@io:~$ echo "<p>superleetzor è qui e ha pwnato level1</p>" >> tags
+
+Sarà visibile online all' indirizzo:
+http://io.smashthestack.org:84/tags/level2.html
+
+Ti permettiamo di aggiungere qualsiasi cosa al file tags. Sentiti libero di
+essere creativo. Tuttavia usate il buon senso. Disabilita javascript quando lo
+vorrai vedere nel browser...
+
+
+FAQ
+---
+
+Q: Sono nuovo da ogni punto di vista, posso risolvere questo gioco? è difficile?
+A: Bhè è un game a più stadi. Il primo stage che comprende i livelli fino al 10
+   è relativamente semplice. Dovresti essere in grado di risolvere indipendentemente
+   dalle tue conoscenze, età, sesso, ... Se tu sei disposto a perseverare e
+   chiedere un pò di aiuto. Dopo questo punto avuto il piacere di imparare le basi
+   velocemente, il gioco diventa leggermente più avanzato. Non bisogna
+   vergognarsi di rimanere bloccati e chiedere un pò di aiuto.  Oppure lascialo
+   stare per un pò di tempo. Smashthestack è stato e continuerà ad essere
+   stabile per quanto meno un prevedibile futuro.
+
+Q: C'è qualche posto in cui posso scrivere dei file ?
+A: Si, puoi scriverli nella directory /tmp. Questa directory è configurata in
+   modo che non puoi vedere i file presenti. Questo è stato fatto così che tu non
+   possa facilmente accedere ai file di altri giocatori. Ti incoraggiamo a creare
+   la tua sottodirectory in modo ottimale. Per esempio usando un comando di questo
+   tipo:
+
+   mkdir /tmp/qualcosanonfaciledaindovinare
+   cd /tmp/qualcosanonfaciledaindovinare
+
+   ora potrai vederne il contenuto, memorizzare file e autogestirtela. Noi
+   periodicamente puliamo la directory /tmp ogniqualvolta lo riteniamo
+   necessario. Sarà di buona norma annunciato nella chat.  E' comunque una buona
+   idea avere un backup locale del proprio lavoro.
+
+Q: Avete una lista di papers che posso leggere per il livello X?
+A: Tipicamente ci sono cose che puoi leggere, ma non ci sono liste specifiche
+   per ogni livello. Sentiti libero di provare la fortuna nella chatroom con
+   questa domanda. Attraverso ricerche indipendenti capirai che il problema
+   fa parte del gioco. Non sempre sarai provvisto di tutti i documenti.
+   IO non è una lettura facile e comprensiva.
+
+Q: Perchè non posso usare su?
+A: Su lega diversi processi. Per oscure ragioni. Fino che non riusciamo a 
+   mantenere stabile la piattaforma per tutti limitiamo il numero di processi.
+   In modo da evitare problemi abbiamo disabilitato su, e ti chiediamo di
+   riconnetterti.
+
+Q: Perchè non posso usare nano, vim, ... per modificare il file tags?
+A: Il file tags è configurato "append only", e per quel qualcosa chiamato 
+   the editor bug, gli editor tendono a riscrivere porzioni del file invece
+   che ne appendere soltanto. Dovrai usare la redirezione dell' output (>>).
+
+Q: Mi piace veramente questo readme, volete che lo traduco?  
+A: Certamente, sentiti libero di venire nel nostro canale IRC o mandaci una
+   mail. Ci dovrebbero essere gli indirizzi nel motd.
+
+Q: Sto cercando di imparare il più possibile, ma ogni shellcode che provo produce
+   segfault wtf?!
+A: Probabilmente stai compilando i livelli o il tuo codice manualmente senza 
+   prendere in considerazione che alcune sezioni di memoria non sono eseguibili
+   di default. Queste sono le opzioni iniziali e non abbiamo intenzione di 
+   nasconderle ai giocatori. La maggior parte dei livelli in questo gioco hanno
+   uno stack eseguibile. Per diverse ragioni. Principalmente perchè il lavoro
+   per bypassare alcune protezioni è troppo ingombrante per funzionare in ogni
+   livello. Solo i livelli finali toccheranno questi argomenti.
+
+Quando testerai shellcode potrai riutilizzare codice simile a quello incluso 
+qui sotto in modo da fare alcune prove:
+
+#include <sys/mman.h>
+#include <string.h>
+#include <stdio.h>
+
+char sc[]= "il tuo shellcode qui";
+
+int main(){
+        void * a = mmap(0, 4096, PROT_EXEC |PROT_READ | PROT_WRITE, MAP_ANONYMOUS | MAP_SHARED, -1, 0);
+        printf("allocated executable memory at: %p\n", a);
+        ((void (*)(void)) memcpy(a, sc, sizeof(sc)))();
+}
+
+
+Q: Perchè questo documento contiene così tanti errori di grammatica ?
+A: E' stato scritto da bla. (NB: Questa risposta è relativa alla versione
+   inglese, per quanto riguarda l' italiano gli errori sono dovuti a jake)
+
+
+
+Specifiche del gioco
+--------------------
+
+- i livelli sono nella directory /levels
+- le password sono memorizzare nella home directory del livello, in un file
+  chiamato .pass
+  per esempio /home/level2/.pass contiene la password per l' utente "level2"
+- Chat:
+        C'è una chatroom nel nostro server IRC irc.smashthestack.org, porta ssl
+        6697 Tu puoi inoltre usare il client web
+        http://www.smashthestack.org/cgiirc/
+        per connetterti
+- Forum:
+        Si trova nel nostro sito http://forum.smashthestack.org/ nonostante
+        attraverso la chatroom sia possibile aiutarti più velocemente e in modo
+        migliore.
+
+- aslr è disabilitato e in molti livelli hanno uno stack eseguibile

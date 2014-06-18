@@ -1,0 +1,39 @@
+ ______   _____
+/\__  _\ /\  __`\       Levels are in /levels
+\/_/\ \/ \ \ \/\ \      Passes are in ~/.pass
+   \ \ \  \ \ \ \ \     Readmes in /home/level1
+    \_\ \__\ \ \_\ \
+    /\_____\\ \_____\   Server admin: bla (blapost@gmail.com)
+    \/_____/ \/_____/
+
+        1. No DoS, local or otherwise
+        2. Do not try to connect to remote systems from this box
+        3. Quotas, watch resources usage, max 2 connections per IP
+
+                         (31 levels)
+
+-i reinstated the /home/email file, where you can leave your email
+ address
+
+- some  random commands:
+  gdb> python x=gdb.execute("info registers", False, True); print x
+  ld --verbose
+  pressing f, while running top
+
+- level31 by tsuro, it's a bit of an inbetween level
+
+- there is a more recent build of radare in /usr/locale/radare
+  please set $PATH and $LD_LIBRARY appropriately if you want to use it
+  over the stable version
+
+- there was a 42 hour downtime during 26,27,28 April. It was the
+  longest 
+  downtime for quite some time. changes have been made and wich should
+  improve reliablility. let me know if things stop working.
+
+!!!!!!!!!!!!!!!!
+ IODAY JUNE 25
+!!!!!!!!!!!!!!!!
+ It's our semi regular IRC meeting where we present content 
+ often based on personal projects and research. Everybody is
+ welcome to attend.

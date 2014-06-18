@@ -1,0 +1,171 @@
+Bienvenue sur le wargame IO du réseau smashthestack
+---------------------------------------------------
+
+Vous avez fait le plus dur et trouvé notre royaume. Ici on vous permet de jouer
+avec des failles applicatives classiques comme récentes. Puisque nombre d'entre
+vous ne connaissent pas forcément comment un wargame fonctionne, nous allons
+donner une petite introduction dans le paragraphe suivant. Si vous êtes un
+joueur de wargames expérimenté, tout cela vous sera familier donc vous voudrez
+certainement passer à la dernière section qui présente les spécificités de ce
+wargame.
+
+Les problèmes vous seront proposés sous la forme d'une série de programmes.
+Ceux-ci varient en taille, de quelques lignes contenant un bug évident, à plus
+gros, et finalement dans des programmes réels. L'idée est toujours d'exploiter
+ce bug pour obtenir le contrôle du programme et lui faire faire ce que vous
+voulez. Par exemple, vous voudrez souvent lui faire exécuter un shell.
+
+En réalité, les programmes sont SUID (http://fr.wikipedia.org/wiki/Setuid).
+Pour faire court cela signifie qu'ils tournent avec un utilisateur différent
+du vôtre. Le but est de prendre le contrôle du programme pour lui faire
+exécuter votre propre shellcode, pour au final arriver à lire le mot de passe
+du niveau suivant.
+
+
+Pour commencer
+--------------
+
+Maintenant nous allons parler du premier niveau. Vous commencez en tant
+qu'utilisateur "level1", cela signifie que vous ne pouvez accéder qu'aux
+fichiers appartenant à l'utilisateur "level1", ou qui sont accessibles à
+tout le monde.
+
+  level1@io:~# cd /levels
+  level1@io:/levels# ls -las level1
+  8 -r-sr-x--- 1 level2 level1 7500 Nov 16  2007 level1
+
+Lorsque vous lancez ce programme, il vous demande la clé. Votre but est de la
+trouver. Lorsque vous l'aurez trouvée et donnée au programme, il vous
+donnera un shell avec les droits de l'utilisateur "level2". Enfin avec
+ce shell vous pouvez lire le fichier du mot de passe.
+
+  level1@io:/levels$ ./level1 [la clé que vous devez trouver doit se mettre ici]
+  Win.
+  level1@io:/levels$ id
+  uid=1001(level1) gid=1001(level1) euid=1002(level2) groups=1001(level1),1029(nosu)
+
+Comme vous pouvez le voir par la sortie de la commande "id", vous avez
+désormais l'euid ("effective user id" ou id effectif d'utilisateur) du level2.
+Vous pouvez donc lire les fichiers qui appartiennent au level2. Le but est
+d'utiliser ce droit pour lire le mot de passe du niveau suivant.
+
+  level1@io:/levels$ cat /home/level2/.pass
+  [BINGO VOUS AVEZ REUSSI]
+
+Maintenant vous avez le mot de passe du level2. Déconnectez-vous, puis
+connectez-vous en tant que level2 avec le mot de passe que vous venez de
+trouver. Une fois connecté, vous remarquerez que vous êtes bien connecté sous
+l'utilisateur "level2". A partir de là vous voulez peut-être raconter au monde
+entier votre réussite, ce que vous pouvez faire en ajoutant votre tag,
+commentaire, ou n'importe quoi, au fichier des tags. Par exemple avec la
+commande suivante:
+  level2@io:~$ echo "<p>superleetzor est passé par là et a réussi le level1</p>" >> tags
+
+Et c'est à peu près tout. On autorise à peu près tout dans le fichier tags,
+alors soyez créatifs. Mais restez corrects. Aussi, pensez à désactiver le
+javascript lorsque vous regardez ces fichiers avec votre navigateur...
+
+
+FAQ
+---
+
+Q: Je suis nouveau à tout ça, est-ce que je serais capable de réussir le jeu ?
+   Est-ce que c'est dur ?
+A: En fait, c'est un jeu à étapes. La première étape qui dure environ 10
+   niveaux est relativement simple. Vous devriez être en mesure de résoudre
+   ces niveaux peu importe votre origine, âge, sexe... si vous êtes prêt
+   à persévérer et à demander un petit peu d'aide. Après cela vous aurez
+   eu le plaisir d'apprendre les bases. Le jeu propose alors des niveaux
+   un peu plus avancés. Il n'y a pas de honte à être bloqué ici, ni à demander
+   de l'aide ou des indices. Ou alors laissez pour l'instant. Smashthestack
+   a été et continuera d'être stable pendant encore quelques temps.
+
+Q: Est-ce qu'il y a un endroit où on peut écrire des fichiers ?
+A: Oui, dans le répertoire /tmp.
+   Cependant ce répertoire ne possède pas le droit de lecture donc vous
+   ne pouvez pas lister les fichiers, cela pour éviter de voir les fichiers
+   des autres. Il est recommandé de créer un sous-répertoire et de travailler
+   dedans. Par exemple avec les commandes suivantes :
+
+   mkdir /tmp/quelquechosededifficileadeviner
+   cd /tmp/quelquechosededifficileadeviner
+
+   vous pouvez ensuite lister, écrire des fichiers et plus encore dans ce
+   répertoire. On nettoie périodiquement le /tmp lorsque le besoin s'en
+   fait sentir, ce qui est généralement annoncé sur le salon de discussion.
+   Cependant, c'est une bonne idée de garder une sauvegarde locale de votre
+   travail.
+
+Q: Avez-vous une liste de documents que je puisse lire pour le level X ?
+A: Il y a souvent plusieurs documents à lire, mais il n'y a pas de liste
+   particulière pour les niveaux. Vous pouvez tenter votre chance sur le salon
+   de discussion avec cette question. Cependant, chercher et trouver quel
+   peut-être le problème fait aussi partie du jeu. Et donc on ne vous donnera
+   pas non plus tous les documents. IO n'est pas un test de lecture.
+
+Q: Pourquoi ne puis-je pas utiliser su?
+A: Su empile les processus. Pour aucune bonne raison. Et comme on essaye de
+   garder le serveur stable pour tout le monde, on limite le nombre de
+   processus. Donc pour éviter les problèmes on a désactivé su, et on vous
+   demande de vous reconnecter.
+
+Q: Pourquoi ne puis-je pas utiliser nano, vim... pour éditer les tags ?
+A: Les fichiers de tags sont configurés en "ajout uniquement", et
+   malheureusement les éditeurs ont tendance à réécrire des portions de
+   fichier au lieu d'ajouter, donc ça ne fonctionn pas. Vous devez utiliser
+   le redirecteur de sortie pour l'ajout (>>).
+
+Q: J'aime beaucoup ce readme, voulez-vous que je le traduise ?
+A: Bien sûr, venez sur notre IRC ou envoyez un email. Il devrait y avoir des
+   adresses email dans le motd ("message of the day", message du jour, le
+   message affiché à la connexion).
+
+Q: Je travaille dur pour apprendre, mais aucun shellcode que j'essaye ou teste
+   continue de segfault, c'est quoi ce *** ?
+A: Vous essayez certainement de compiler les niveaux ou votre shellcode de test
+   manuellement sans prendre en compte le fait que certaines sections de la
+   mémoire ne sont pas exécutables par défaut. C'est la configuration actuelle
+   et nous n'avons pas l'intention de le cacher aux joueurs. La plupart des
+   niveaux ont une pile exécutable. Il y a plusieurs raisons pour cela,
+   principalement parce que les méthodes de contournement sont trop difficiles
+   pour être traitées dans chaque niveau. Les niveaux de fin traitent de
+   ces sujets.
+   
+   Lorsque vous voulez tester votre shellcode, vous pouvez utiliser un code
+   similaire à celui-ci :
+
+#include <sys/mman.h>
+#include <string.h>
+#include <stdio.h>
+
+char sc[]= "your shellcode here";
+
+int main(){
+        void * a = mmap(0, 4096, PROT_EXEC |PROT_READ | PROT_WRITE, MAP_ANONYMOUS | MAP_SHARED, -1, 0);
+        printf("allocated executable memory at: %p\n", a);
+        ((void (*)(void)) memcpy(a, sc, sizeof(sc)))();
+}
+
+
+Q: Pourquoi ce document contient-il autant de fautes ?
+A: Il a été écrit par bla. (NDT : pour la version anglaise)
+
+
+
+Spécificités du jeu
+-------------------
+
+- les niveaux sont dans /levels
+- les mots de passe sont sauvés dans le répertoire personne du niveau, dans un
+  fichier appelé .pass
+  par exemple /home/level2/.pass contient le mot de passe de l'utilisateur "level2"
+- Chat :
+        Il y a un salon de discussion sur notre réseau irc irc.smashthestack.org, ssl port 6697
+        Vous pouvez aussi utiliser le client web pour vous connecter http://www.smashthestack.org/cgiirc/
+- forum :
+        sur notre site http://forum.smashthestack.org mais sachez qu'utiliser
+        le chat vous aidera certainement plus vite et mieux
+
+- l'ASLR est désactivé et la plupart des niveaux ont la pile exécutable
+
+
