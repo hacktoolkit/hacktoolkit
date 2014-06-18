@@ -23,4 +23,4 @@ Ib3F7i7FqjziuDOBKi
 
 level2@io:/levels$ ./level02_alt NAN
 sh-4.2$ cat /home/level3/.pass
-Ib3F7i7FqjziuDOBK
+Ib3F7i7FqjziuDOBKi
