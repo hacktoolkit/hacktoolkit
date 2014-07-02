@@ -1,0 +1,158 @@
+Vitaj v IO wargame na nasej sieti "smash the stack"
+---------------------------------------------------
+
+Tazku cast mas uz za sebou, objavil si nasu risu. Dovolime Ti pohrat sa ako s
+klasickymi, tak aj aktualnymi zranitelnostami v softveri. Pretoze vela z Vas
+nemusi byt oboznamenych s tym, ako wargame funguju, poskytneme kratky uvod v
+nasledujucich odstavcoch. Pokial uz mas nejake skusenosti s wargame, vsetko Ti
+pride zname a mozes preskocit na poslednu sekciu, ktora sa zameriava na
+specificke veci konkretne pri tejto hre.
+
+Problemy, ktore budes riesit, predstavuju serie programov. Ulohy mozu obsahovat
+niekolko malo riadkov kodu, s velmi evidentnou zranitelnostou, az po vacsiu
+aplikaciu alebo realny softver. Cielom je vzdy zneuzit tuto zranitelnost takou
+cestou, ktora poskytne kontrolu nad vykonavanym programom a schopnost vykonat,
+co chces. Vo vacsine pripadov spustit prikazovy riadok (shell). 
+
+System hry je zalozeny na SUID binarnych suboroch
+(http://sk.wikipedia.org/wiki/Setuid). V kratkosti to znamena, ze program je
+spusteny pod rozdielnym pouzivatelom, nez ho spusta. Pointa je ziskat kontrolu
+nad programom, tym vyssie opravnenia a pomocou neho spustit vlastny shellkod.
+Co umoznuje precitat heslo do dalsej urovne.
+
+Ako zacat
+------------------
+
+Prave teraz komunikujeme pomocou prvej urovne. Aktualne si totiz prihlaseny ako
+"level1" pouzivatel. Znamena to, ze mozes pristupit len k suborom, ktore
+vlastni pouzivatel level1, alebo su pristupne vsetkym.
+
+  level1@io:~# cd /levels
+  level1@io:/levels# ls -las level01
+  8 -r-sr-x--- 1 level2 level1 7500 Nov 16  2007 level01
+
+Pokial subor spustis, vypyta si heslo, ktore musis niekde najst. A ked ho
+pouzijes, obdrzis shell, ktory ma opravnenia level2. Pomocou neho mozes
+precitat subor.
+
+  level1@io:/levels$ ./level01 [nieco, co musis najst, ide sem]
+  Win.
+  level1@io:/levels$ id
+  uid=1001(level1) gid=1001(level1) euid=1002(level2) groups=1001(level1),1029(nosu)
+
+ako mozes vidiet podla vystupu prikazu "id", ziskal si euid (efektivne
+pouzivatelske id) z level2. Mozes precitat subory, ktore patria level2. Cielom
+je pouzit opravnenia na precitanie hesla do dalsieho levelu.
+
+  level1@io:/levels$ cat /home/level2/.pass
+  [BINGO, SPRAVIL SI TO]
+
+Teraz mas heslo do level2. Takze sa mozes ako level2 prihlasit. Z aktualnej
+urovne sa mozes odhlasit. Prihlas sa ako level2 a pouzi heslo, ktore si nasiel.
+Ked to spravis, v level2 mozes oznamit svetu svoj uspech. Spravis to tym, ze
+pridas svoj tag, komentar, alebo v podstate cokolvek chces do specialneho
+'tags' suboru. Napriklad pouzitim nasledovneho prikazu
+    level2@io:~$ echo "<p>superleetzor bol tu a pwnol level1</p>" >> tags
+
+Toto bude viditelne online na:
+http://io.smashthestack.org:84/tags/level2.html
+
+Dovolujeme do tagovych suborov pridat v podstate cokolvek. Takze mozes byt
+kreativny. Kazdopadne pouzivaj zdravy rozum. Taktiez odporucame mat vypnuty
+javascript, ked si prezeras tieto subory v prehliadaci...
+
+
+FAQ
+---
+
+Q: Som prilis novy v tychto veciach, budem schopny riesit tuto hru? Je tazka? 
+A: Takze, hra je rozdelena na rozne okruhy. Prvy okruh asi do level10 je
+   relativne jednoduchy. Mal by si byt schopny vyriesit tieto levely bez ohladu na
+   svoj povod, vek, pohlavie, ... pokial si schopny vytrvat a spytat sa v pripade
+   nejasnosti o pomoc. Po tomto bode, budes mat to potesenie ovladat velmi
+   slusne zaklady. Potom sa hra stane jemne zlozitejsia. Nie je hanba sa zaseknut
+   a pytat pomoc alebo voditko. Alebo to nechat na nejaky cas len tak.
+   Smashthestack je uz dlhu dobu stabilny a bude sa v tom snazit pokracovat aj v 
+   dohladnej buducnosti.
+
+Q: Je tu nejake miesto, kam mozem zapisovat subory?
+A: Ano, mozes zapisovat do /tmp adresara. 
+   Kazdopadne tento adresar je nastaveny tak, ze nemozes vidiet subory, ktore
+   sa tu nachadzaju. Je to z dovodu, ze to znemoznuje pristupovat k suborom 
+   ostatnych hracov. Si tym podnieteny vytvorit vlastny podadresar. Napriklad
+   pomocou nasledujucich prikazov.
+
+   mkdir /tmp/nejakatazkouhadnutelnavec
+   cd /tmp/nejakatazkouhadnutelnavec
+
+   V tomto adresari si mozes listovat subory, ukladat docasne subory a podobne.
+   Podla potrieb vsak zvykneme tieto adresare periadicky mazat. Byva to
+   vacsinou ohlasene v chatovacej miestnosti, kazdopadne je dobry napad
+   spravit si lokalnu zalohu svojej prace.
+
+Q: Mate zoznam clankov, ktore si mam precitat pre level X?
+A: Typicky su tu veci, o ktorych by si sa mohol docitat, ale neexistuje nijaky 
+   specificky zoznam. Skus bez obav stastie v chatovacej miestnosti s otazkou.
+   Kazdopadne nezavysly vyskum a zistenie, kde sa nachadza problem je sucastou
+   hry. Z toho plynie, ze Ti nebude vzdy poskytnuty dokument, ktory vsetko
+   prezradza. IO nie je nijaka skuska z citania.
+
+Q: Preco nemozem pouzit prikaz su?
+A: Su viaze procesy, z dobreho dovodu. A pretoze sa snazime udrziavat server
+   stabilny pre kazdeho, limitujeme pocet procesov. Aby sme sa vyhli problemom,
+   'su' sme vypli, takze je potrebne, aby si sa opatovne prihlasoval.
+
+Q: Preco nemozem pouzit nano, vim, ... na editovanie tags suborov? 
+A: Pretoze su nastavene tak, ze je k nim mozno udaje len pripajat ("append
+   only"). Editor sa pokusa prepisat subor naraz bez toho, aby udaje v pripade
+   nutnosti len pridaval. Obcas sa to povazuje za chybu editora. Budes musiet
+   pouzit "append" (>>) na presmerovanie vystupu.
+
+Q: Paci sa mi toto readme, chcete aby som ho prelozil?
+A: Iste, kludne nam to oznam na IRC alebo posli email niekomu. V motd by mali
+   byt emailove adresy.
+
+Q: Snazim sa naozaj tazko, ale kazdy shellkod, ktory som vyskusal alebo
+   testoval, segfaultuje.
+A: Pravdepodobne kompilujes levely alebo testovacie kody manualne bez toho, aby
+   si sa uistil, ze niektore sekcie v pamati nie su defaultne spustitelne. Toto je
+   bezne nastavenie a nemame zamer skryvat tento fakt pred hracmi. Vacsina levelov
+   v hre ma spustitelny zasobnik. Ma to niekolko dovodov. Vacsinou su riesenia
+   na obidenie niektorych ochran prilis krkolomne, aby fungovali pre
+   kazdy level. Neskorsie levely sa dotykaju tejto oblasti.
+
+Pokial potrebujes otestovat shellkod, mozes pouzit kod podobny uvedenemu
+nizsie na testovacie ucely:
+
+#include <sys/mman.h>
+#include <string.h>
+#include <stdio.h>
+
+char sc[]= "vloz sem svoj shellkod";
+
+int main(){
+        void * a = mmap(0, 4096, PROT_EXEC |PROT_READ | PROT_WRITE, MAP_ANONYMOUS | MAP_SHARED, -1, 0);
+        printf("allocated executable memory at: %p\n", a);
+        ((void (*)(void)) memcpy(a, sc, sizeof(sc)))();
+}
+
+
+Q: Preco tento dokument obsahuje tolko gramatickych chyb?
+A: Napisal ho bla. (Poznamka: plati pre anglicku verziu).
+
+
+
+Specificke veci ku hre
+----------------------
+
+- samotne urovne su v adresari /levels
+- hesla su ulozene v domovskom adresari pre danu uroven, v subore s nazvom pass,
+  napriklad /home/level2/.pass obsahuje heslo pre pouzivatela "level2"
+- Chat:
+        Existuje chatovacia miestnost na nasej irc sieti irc.smashthestack.org, ssl port 6697
+        Mozes tiez pouzit webovy klient na pripojenie sa: http://www.smashthestack.org/cgiirc/
+- forum:
+        na nasej webovej stranke http://forum.smashthestack.org/, kazdopadne pouzitie Chatu
+        bude pravdepodobne rychlejsie a lepsie
+
+- aslr je vypnute a vacsina levelov ma spustitelny zasobnik

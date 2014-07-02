@@ -1,0 +1,164 @@
+Welcome to the IO wargame at the smash the stack network.
+---------------------------------------------------------
+
+You have done the hard part and found our realm. Here you are able to play with
+classic, and up to date vulnerabilities in software. Since many of you may be
+unfamiliar with how a wargame works, the following paragraphs explain the basics
+of how a challenge based wargame works. If you are familiar with all this already
+you can skip to the last section, which lists all the IO specific information.
+
+The problems are presented to you as a series of programs. They will vary
+in size from a few lines containing an obvious bug, over to larger, and finally
+real software. The point is usually to exploit this bug in such a way that you
+can control the program's execution in such a way that you are able to read the
+password file for the next level.
+
+The way this works is that the programs are "SUID binaries"
+(http://en.wikipedia.org/wiki/Setuid). This means in short that they run with the
+privileges of the "owner" of the binary rather than the privileges of the user
+executing it. It are these extra privileges you need to read the password file
+to access the next level.
+
+
+How to get started
+------------------
+
+Currently you are "level1" user. 
+This means you can access only files that are owned by level1, or are accessible
+by everybody. (or accessible to one of the groups you belong)
+
+  level1@io:~# cd /levels
+  level1@io:/levels# ls -las level01
+  8 -r-sr-x--- 1 level2 level1 7500 Nov 16  2007 level01
+
+When you run it will ask you for a password. Which you must somehow find.
+Given the correct password it will launch a new shell with level2 rights.
+
+  level1@io:/levels$ ./level01 [something you have to figure out goes here]
+  Win.
+  level1@io:/levels$ id
+  uid=1001(level1) gid=1001(level1) euid=1002(level2) groups=1001(level1),1029(nosu)
+                                    -----------------
+                                            \_________> new privileges
+
+as you can see, by the output of the "id" command you now have euid (effective user id)
+of level2. You can now read files that belong to level2. The point is to use this right
+to read the password file for the next level.
+
+  level1@io:/levels$ cat /home/level2/.pass
+  [BINGO YOU DID IT]
+
+Now you have the level2 password. You can now login as level2. Disconnect the current
+connection. Login as level2 and use the password you just found. When you do this
+You'll notice that you are level2. At this point you may want to tell the world of
+your achievement. And you can do so by adding your tag, comment, or pretty much
+anything you want to the tags file. For example by using the following command
+  level2@io:~$ echo "<p>superleetzor was here and pwnd level1</p>" >> tags
+
+This will then become visible online at:
+http://io.smashthestack.org:84/tags/level2.html
+
+And that's pretty much it. We allow pretty much everything in the tags files. So feel free
+to be creative. Though use some common sense. Also disable javascript when you view these
+files in a browser...
+
+
+FAQ
+---
+
+Q: I'm very new to all this, will I be able to solve this game? Is it hard?
+A: Well it's a staged game. The first stage which lasts about to level10 is
+   relatively simple. You should be able to solve these levels regardless of
+   your background, age, sex, ... If you are willing to persevere and ask
+   for a little bit of help. After that point you will have had the pleasure
+   of learning the basics pretty well. The game then moves on to slightly
+   more advanced levels. There is no shame in getting stuck here, and asking
+   for some help or guidance. Or just leave it be for the time being.
+   Smashthestack has been and will continue to be stable for at least the
+   foreseeable future.
+
+Q: Is there somewhere I can write files?
+A: Yes, you can write in the /tmp directory.
+   However this directory is set up in such a way that you can not
+   list the files that are present. This is done so you can't easily
+   access the files other players are working on. You are encouraged
+   to make your own subdirectory to work in. For example by issueing
+   the following commands.
+
+   mkdir /tmp/somethinghardtoguess
+   cd /tmp/somethinghardtoguess
+
+   you can now write list, store temporary files, and whatnot in this
+   directory. We will periodically clear out this directory whenever
+   the needs arise. This will usually be announced in the chat room.
+   however it's typically a good idea to have a local backup of your
+   work.
+
+Q: Do you have a list of papers i can read for level X?
+A: Typically there are some things you can read, but there no level
+   specific list. Feel free to try you luck in the chatroom with that
+   question. Though independent research and figuring out what the
+   problem is part of the game. And hence you will not always be
+   provided with a say all document. IO is not a comprehensive reading
+   test.
+
+Q: Why can't i use su?
+A: Su ties up processes. For no good reason. And since we aim to keep
+   the box stable for everybody we limit the amount of processes.
+   Hence to prevent problems we disable su, and require you to reconnect.
+
+Q: Why can't i use nano, vim, ... to edit the tags file?
+A: The tags files are set to "append only", and due to something called
+   the editor bug, editors tend to rewrite portions of the file at once
+   instead of appending. You will have to use the append (>>) output
+   redirector.
+
+Q: I really like this readme, do you want me to translate it?
+A: Sure, feel free to log on to our IRC or email it to somebody. There
+   should be email addresses in the motd.
+
+Q: I'm trying hard to learn, but any shellcode i try or test still segfaults wth?!
+A: You are probably compiling the levels or your testcode manually without taking
+into consideration that some sections of memory are not executable by
+default. This is the current setting and we have no intention of hiding
+this from the players.Most of the levels on this game have an exectable stack.
+There are several reasons for this. Mainly because the
+workarounds to bypass certain protections are too cumbersome
+to be worked into each level.
+The later levels do touch on these topics.
+
+When you want to test shellcode you can use code similar to the one
+included below in order to test:
+
+#include <sys/mman.h>
+#include <string.h>
+#include <stdio.h>
+
+char sc[]= "your shellcode here";
+
+int main(){
+        void * a = mmap(0, 4096, PROT_EXEC |PROT_READ | PROT_WRITE, MAP_ANONYMOUS | MAP_SHARED, -1, 0);
+        printf("allocated executable memory at: %p\n", a);
+        ((void (*)(void)) memcpy(a, sc, sizeof(sc)))();
+}
+
+
+Q: Why does this document contain so many spelling errors?
+A: It was written by bla.
+
+
+
+Game specifics
+--------------
+
+- levels are in the directory /levels
+- passwords are stored in the home directory for the level, in a file called .pass.
+  for example /home/level2/.pass contains the password for the user "level2"
+- Chat:
+        There is a chatroom at our irc network irc.smashthestack.org, ssl port 6697
+        You can also use the webclient to connect http://www.smashthestack.org/cgiirc/
+(- forum:
+        at our website http://forum.smashthestack.org/ though using the chat room will
+        probably help you out quicker and better. )  no longer available
+
+- aslr is off and most levels have an executable stack

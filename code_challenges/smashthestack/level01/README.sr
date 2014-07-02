@@ -1,0 +1,154 @@
+Dobrodosli na IO wargame na smash the stack mrezi.
+---------------------------------------------------------
+
+Odradili ste tezi deo time sto ste nas nasli. Ovde vam omogucavamo da se igrate
+sa klasicnim i savremenim ranjivostima u softveru. Posto veliki broj vas mozda
+nije upoznat sa nacinom na koji wargame funkcionise predstavljamo vam kratak
+uvod u sledecih par paragrafa. Ako ste iskusni wargamer, sve ovo vam je verovatno
+vec poznato pa cete hteti da preskocite do zadnje sekcije koja objasnjava specificnosti
+ove igre.
+
+Problemi ce vam biti predstavljeni u obliku niza programa. Varirace po velicini
+od par linija koje sadrze ocigledan propust, preko vecih, do pravog softvera.
+Poenta je uvek da iskoristite propust tako da preuzmete kontrolu nad izvrsenjem
+programa i naterate ga da radi ono sto hocete. Na primer, cesto cete hteti da
+ga naterate da vam otvori shell.
+
+To radi tako sto su programi u stvari SUID probrami
+(http://en.wikipedia.org/wiki/Setuid). To bazicno znaci da programi rade 
+pod drugim korisnikom. Poenta je da preuzmete kontrolu nad programom i 
+naterate ga da izvrsi vas shellcode. To ce vam omoguciti da procitate
+lozinku za sledeci nivo.
+
+Kako krenuti
+------------------
+
+Sada cu vas provesti kroz prvi nivo. Trenutno ste "level1" korisnik.
+To znaci da mozete da pristupite iskljucivo fajlovima ciji je vlasnik level1,
+ili fajlovima kojima svi imaju pristup.
+
+  level1@io:~# cd /levels
+  level1@io:/levels# ls -las level01
+  8 -r-sr-x--- 1 level2 level1 7500 Nov 16  2007 level01
+
+Kada ga pokrenete zatrazice lozinku koju morate naci na neki nacin. A kada
+unesete pravu, dobicete novi shell sa level2 pravima pristupa. Koristeci
+ovaj shell mozete procitati fajl
+
+  level1@io:/levels$ ./level01 [something you have to figure out goes here]
+  Win.
+  level1@io:/levels$ id
+  uid=1001(level1) gid=1001(level1) euid=1002(level2) groups=1001(level1),1029(nosu)
+
+kao sto mozete videti, po listingu "id" komande, sada imate euid (id efektivnog korisnika)
+level2. Sada mozete procitati fajlove koji pripadaju level2 korisniku. Poenta je iskoristiti
+ovo provao da bi procitali lozinku za sledeci nivo. 
+
+  level1@io:/levels$ cat /home/level2/.pass
+  [BINGO YOU DID IT]
+
+Sada imate lozinku za level2. Mozete se ulogovati kao level2. Ugasite trenutnu konekciju.
+Prijavite se kao level2 i iskoristite novu lozinku. Kada ovo uradite, primeticete da ste
+level2. U ovom trenutku cete mozda zeleti da podelite sa svetom vase dostignuce.
+To mozete da uradite tako sto cete dodati svoj tag, komentar ili skoro bilo sta u
+tags fajl. Na primer , koriscenjem sledece komande
+  level2@io:~$ echo "<p>superleetzor je bio ovde i presao level1</p>" >> tags
+
+Ovo ce onda postati vidljivo na stranici:
+http://io.smashthestack.org:84/tags/level2.html
+
+I to je manje vise to. Dozvoljavamo gotovo sve u tagovima. Tako da mozete biti 
+kreativni. Naravno, koristite se zdravim razumom. Takodje, iskljucite javascript kada
+gledate ove stranice u browseru...
+
+CESTO POSTAVLJANA PITANJA
+---
+
+P: Ja sam jako nov u svemu ovome, hocu li moci da resim igru? Da li je tesko?
+O: Igra je po fazama. Prva faza koja traje otprilike do nivoa 10 je relativno 
+   prosta. Trebalo bi da ste u mogucnosti da resite ove nivoe bez obzira na vasu
+   proslost, godine, pol, ... Ako ste istrajni i voljni da pitate za malo pomoci.
+   Nakon toga imacete zadovoljstvo da ste naucili osnove poprilicno dobro. Igra
+   se zatim nastavlja na malo naprednije nivoe. Nije sramota zaglaviti se na nekom
+   i pitati za pomoci ili uputstva. Ili ih ostaviti, pa se vratiti kasnije. 
+   Smashthestack je bio i bice stabilan bar u bliskoj buducnosti.
+
+P: Da li postoji mesto gde mogu da pisem fajlove?
+O: Da, mozete ih pisati u /tmp direktorijumu. Ali ovaj direktorijum je 
+   namesten tako da ne mozete videti ostale fajlove koji su tu prisutni. Ovo
+   je uradjeno kako nebi ste lako mogli da pristupite fajlovima drugih igraca.
+   Proporucujemo da napravite sopstveni poddirektorijum u kome cete raditi. 
+   Na primer, koriscenjem sledecih komandi:
+
+   mkdir /tmp/somethinghardtoguess
+   cd /tmp/somethinghardtoguess
+
+   sada mozete da pisete i cuvate privremene fajlove ili sta god u ovom 
+   direktorijumu. Mi cemo periodicno brisati ovaj direktorijum kad god 
+   se pojavi potreba. Ovo ce obicno biti najavljeno u chat sobi, ali obicno
+   je dobra ideja imati lokalnu kopiju vaseg rada.
+   
+P: Da li imate listu tekstova koje bih mogao da procitam za nivo X?
+O: Obicno postoji nekoliko tekstova koje mozete procitati, ali ne postoji
+   lista specificna za nivo. Budite slobodni pa pitajte u chat sobi za to pitanje.
+   Ali nezavisno istrazivanje i pronalazenje sta je problem je deo igre. Tako
+   da vam nece uvek biti dostupan dokument u kom je opisano sve. IO nije 
+   test znanja citanja.
+
+P: Zasto ne mogu da koristim su?
+O: Su vezuje procese. Bez nekog posebnog razloga. A posto mi ciljamo da
+   odrzavamo masinu stabilnom za sve, mi ogranicavamo broj procesa. Tako da,
+   da bi sprecili probleme, onemogucili smo koriscenje su, i zahtevamo
+   ponovno vezivanje.
+
+P: Zasto ne mogu da korisnim nano, vim, ... da bih izmenio tags fajl?
+O: Tag fajlovi su namesteni na "samo dodavanje", a usled necega sto se zove
+   editor bug, editori imaju naviku da prepisu delove fajla od jednom umesto
+   da samo dodaju. Moracete da koristite append (>>) preusmerivac izlaza.
+
+
+P: Meni sam bas svidja ovaj readme, da li hocete da ga prevedem?   
+O: Naravno, budite slobodni pa dodjite na IRC ili posaljite email nekome.
+   Trebalo bi da postoji mail adresa u motd (ispise se prilikom logovanja). 
+
+P: Zaista pokusavam da naucim, ali svaki shellcode koji probam ili testiram se 
+   zavrsi segfaultom, sta je problem?!
+O: Verovatno komapjlirate nivoe ili vas probni kod rucno bez razmisljanja o mogucnosti
+   da neki delovi memorije nisu izvrsni podrazumevano. Ovo je trenutno podesavanje
+   i nemamo razloga da to krijemo od igraca. Vecina nivoa u ovoj igri ima izvrsni stek.
+   Postoji vise razloga za ovo. Uglavnom zato sto zaobilazenje odredjenih zastita jeste 
+   poprilicno nezgodno za ugraditi u nivo. Kasniji nivoi se doticu i ovih tema.
+
+Kada hocete da testirate shellcode, mozete koristiti kod slican ovome:
+
+#include <sys/mman.h>
+#include <string.h>
+#include <stdio.h>
+
+char sc[]= "vas shellcode ovde";
+
+int main(){
+        void * a = mmap(0, 4096, PROT_EXEC |PROT_READ | PROT_WRITE, MAP_ANONYMOUS | MAP_SHARED, -1, 0);
+        printf("alocirao izvrsnu memoriju na: %p\n", a);
+        ((void (*)(void)) memcpy(a, sc, sizeof(sc)))();
+}
+
+
+P: Zasto ovaj dokument sadrzi toliko gramatickih gresaka?
+O: Preveo ga je ea. Original je pisao bla.
+
+
+Specificnosti vezane za igru
+----------------------------
+
+- nivoi se nalaze u /levels
+- lozinke se cuvaju u home direktorijumu svakog nivoa, u fajlu sa nazivom .pass.
+  na primer /home/level2/.pass sadrzi lozinku za korisnika "level2"
+- Chat:
+		Postoji soba za chat na nasoj irc mrezi irc.smashthestack.org, ssl port 6697
+		Takodje, mozete koristiti i web klijenta na adresi http://www.smashthestack.org/cgiirc/
+- forum: 
+		na nasem web sajtu http://forum.smashthestack.org/ ali ce vam koriscenje chat sobe 
+		verovatno doneti brzu i bolju pomoc.
+
+- aslr je iskljucen i vecina nivoa ima izvrsni stek

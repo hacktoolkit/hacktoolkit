@@ -1,0 +1,103 @@
+Väl kommen till IO-spelet hos smash the stack!
+----------------------------------------------------------
+
+Du har klarat den svåra biten och hittat vår värld. Här låter vi dig leka med klassiska och nya sårbarheter i mjukvara; men eftersom att många som kommer hit är okunniga inom wargaming så kommer vi att ge dig en snabb genomgång. Om du är en erfaren spelare så kommer du med största sannorlikhet att känna igen detta och du kan då hoppa över till den sista delen av texten där vi kommer att gå igenom spelets detaljer.
+
+Problemen kommer att bestå av en serie program som kommer att öka gradvis från väldigt små program med enbart ett par rader kod och med en uppenbar sårbarhet, till mer avancerade och verkliga program. Ditt uppdrag är att exploatera buggarna så att du kan få kontroll över programmet och få det att göra som du vill, t.ex. få tillgång till ett shell.
+
+Smash the stack använder sig av SUID-baserade program. Detta betyder att programmen körs som en annan användare än dig, poängen är att ta kontroll över programmet och få det att exekvera din egen shellcode som därefter kommer att låta dig ta reda på lösenordet till nästa nivå.
+
+Hur man börjar.
+-------------------
+
+Så, nu kommer jag att guida dig igenom den första nivån. Du börjar med användaren ”level1”. Detta innebär att du bara kan komma åt filer som är publika eller som ägs av användaren level1.
+
+	level1@io:~# cd /levels
+	level1@io:/levels# ls -las level1
+	8 -r-sr-x--- 1 level2 level1 7500 Nov 16 2007 level1
+
+När du kör programmet kommer du att bli tillfrågad om ett lösenord som du måste hitta på något sätt. När du skriver in rätt lösenord så kommer du att få ett nytt shell med level2-rättigheter som du sedan kan använda för att läsa en fil som ger dig lösenordet till level2.
+
+	level1@io:/levels$ ./level1 [lösenordet]
+	Win.
+	level1@io:/levels$ id
+	uid=1001(level1) gid=1001(level1) euid=1002(level2) groups=1001(level1),1029(nosu)
+
+Som du kan se så har du euid (effective user id) av level1, vilket innebär att du kan läsa filer som ägs av level2. Poängen är att använda dina nyvunna rättigheter för att läsa filen nedan för att komma till nästa nivå.
+
+	level1@io:/levels$ cat /home/level2/.pass
+	[Grattis! Du har nu klarat level 1!]
+
+När du har lösenordet till level2 kan du logga in som level2 genom SSH, du får därför avbryta anslutningen och logga in som level2 med ditt nyvunna lösenord.
+När du har loggat in är du level2, grattis! Du kanske vill skryta och berätta för världen om dina framsteg, då kan du lägga till en kommentar, ditt namn, en speciell fras eller vad som helst, i en fil som alla kan läsa.  Detta kan du göra genom att köra följande kommando.
+
+	level2@io:~$ echo ”<p>Skriv vad du  vill här. :D</p>” >> tags
+
+Detta kommer att bli synligt på följande sida:
+http://io.smashthestack.org:84/tags/level2.html
+
+Så, det var väl det. Vi tillåter det mesta i tag-filerna så var gärna kreativa, men kom ihåg att använda sunt förnuft. Du bör dessutom stänga av javascript när du kollar på dessa filer i din webbläsare.
+
+FAQ
+------
+
+Q: Jag är en nybörjare inom detta, kommer jag att kunna klara detta spelet? Är det svårt?
+A: Det är ett spel med olika svårighetsgrader. Den första svårighetsgraden är ganska enkel och den slutar på ungefär nivå10. Du borde kunna lösa dessa nivåer oberoende av din bakgrund, din ålder eller ditt kön. Det är helt okej att fråga efter lite hjälp början, men försök gärna själv. När du har klarat de första nivåerna så har du fått nöjet att lära dig grunderna. Efter de första nivåerna går spelet över till lite svårare nivåer.
+Det är inget fel i att fråga efter hjälp när du har kommit till de mer avancerade nivåerna om du har fastnat; du kan även hoppa över nivån om du inte har tid att lösa den för tillfället. Smashthestack har varit och kommer fortsätta att vara stabil iallafall inom den närmsta framtiden.
+
+Q: Finns det något ställe där jag kan skapa filer?
+A: Ja, du kan skapa filer i /tmp-mappen. Mappen är inställd så att du inte kan se de filer som finns, detta är till för att du inte ska kunna komma in i andras mappar och se andra spelares program/filer så lätt.
+Vi uppmuntrar dig till att skapa din egen mapp som du kan lagra filer i, du kan skapa och gå in i en mapp genom att skriva kommandona nedan.
+
+	Mkdir /tmp/någotsomärsvårtattgissa
+	cd /mpt/någotsomärsvårtattgissa
+
+När du har gjort det så kan du lagra filer, visa alla filer i din mapp o.s.v. Vi kommer periodvis att tömma /tmp när det behövs, vi kommer antagligen att förvarna användarna i chatten innan vi kommer att göra detta. Men det är nog en bra idé att ha en backup på all din data som du inte vill förlora.
+
+Q: Har ni någon guide för nivå X som jag kan läsa?
+A: Det finns en del saker du kan läsa, men det finns inga guider för specifika nivåer. Känn dig fri att komma in i chatten och fråga, men självständig forskning och att försöka klura ut problem är en del av spelet vilket innebär att det inte finns några garantier att någon alltid hjälper dig. IO är inget omfattande lästest.
+
+Q: Varför kan jag inte använda su?
+A: Su tar upp onödiga processer utan någon bra anledning, och eftersom att vi siktar på att hålla servern så stabil som möjligt så har vi en gräns på hur många processer en användare får ha.
+Vi inaktiverade därför su och du måste därför gå återansluta.
+
+Q: Varför kan jag inte använda nano, vim, o.s.v. för att ändra tags-filerna?
+A: Tags-filerna är inställda på ”append only”, d.v.s. att du enbart får lägga till text och inte ta bort eller ändra något. Det finns en bugg som kallas ”the editor bug” som gör så att program som nano och vim brukar skriva om delar av filen istället för att enbart lägga till. Du måste använda append-kommandot (>>).
+
+Q: Jag gillar verkligen den här README'n, vill du att jag ska översätta den?
+A: Visst, känn dig fri att logga in på vår IRC eller maila den till någon. Det borde finnas en email-adress i MOTD'en.
+
+Q: Jag försöker verkligen att lära mig, men all shellcode jag provar segfaultar! Vad ska jag göra!?
+A: Du kompilerar troligen din kod eller nivåen manuellt utan att tänka på att vissa sektioner av minnet inte är exekverbara. Det är vi som har ställt in detta och vi har ingen anledning att dölja detta för spelarna. De flesta nivåerna i det här spelet har en exekveringsstack. Det är många anledningar till varför vi har gjort det så, den största anledningen är att lösningarna för att komma runt viss säkerhet är för besvärliga för att lägga till i varje nivå.
+De senare och mer avancerade nivåerna har ett visst innehåll av detta ämne.
+
+När du vill prova att köra din shellcode så kan du använda en liknande kod som jag skriver nedan.
+
+#include <sys/mman.h>
+#include <string.h>
+#include <stdio.h>
+
+char sc[] = ”Din shellcode”;
+
+int main()
+{
+	void * a = mmap(0, 4096, PROT_EXEC, | PROT_READ | PROT_WRITE, MAP_ANONYMOUS | MAP_SHARED, -1, 0);
+	printf(”Tilldelad exekverbart minne i: %p\n”, a);
+	((void (*)(void)) memcpy(a, sc, sizeof(sc)))();
+}
+
+Q: Varför innehåller detta dokumentet så många stavfel?
+A: Det var skrivet av bla.
+
+
+Spelspecifikationer.
+------------------------
+
+Nivåer finns i mappen /levels.
+Lösenord finns i home-mappen för respektive nivå i en fil kallad .pass.
+/home/level2/.pass innehåller exempelvis lösenordet för level
+2.
+Forumet finns på vår hemsida http://forum.smashthestack.org/ men du får nog snabbare och bättre hjälp på vår IRC.
+Aslr är inaktiverad och de flesta nivåer har en exekveringsstack.
+
+Översatt av Proxy!

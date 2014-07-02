@@ -1,0 +1,33 @@
+ssh level1@io.smashthestack.org
+password: level1
+
+level1@io:/levels$ gdb level01 
+GNU gdb (GDB) 7.4.1-debian
+Copyright (C) 2012 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later
+<http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show
+copying"
+and "show warranty" for details.
+This GDB was configured as "i486-linux-gnu".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from /levels/level01...(no debugging symbols found)...done.
+(gdb) disass main
+Dump of assembler code for function main:
+   0x08048080 <+0>:    push   $0x8049128
+   0x08048085 <+5>:    call   0x804810f <puts>
+   0x0804808a <+10>:   call   0x804809f <fscanf>
+   0x0804808f <+15>:   cmp    $0x10f,%eax
+   0x08048094 <+20>:   je     0x80480dc <YouWin>
+   0x0804809a <+26>:   call   0x8048103 <exit>
+(gdb) print 0x10f
+$3 = 271
+(gdb) quit
+level1@io:/levels$ ./level01 
+Enter the 3 digit passcode to enter: 271
+Congrats you found it, now read the password for level2 from
+/home/level2/.pass
+sh-4.2$ cat /home/level2/.pass
+hgvbmkQIHavkGg5wyk
