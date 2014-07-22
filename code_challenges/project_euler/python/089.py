@@ -1,4 +1,4 @@
-http://projecteuler.net/problem=089
+"""http://projecteuler.net/problem=089
 
 Roman numerals
 
@@ -20,3 +20,27 @@ The 11K text file, roman.txt (right click and 'Save Link/Target As...'), contain
 Find the number of characters saved by writing each of these in their minimal form.
 
 Note: You can assume that all the Roman numerals in the file contain no more than four consecutive identical units.
+
+Solution by jontsai <hello@jontsai.com>
+"""
+from utils import *
+
+EXPECTED_ANSWER = 743
+
+filename = 'roman.txt'
+file = open(filename, 'r')
+
+total_savings = 0
+
+for line in file.readlines():
+    roman_str = line.strip()
+    value = roman_value(roman_str)
+    minimal_roman = roman(value)
+    savings = len(roman_str) - len(minimal_roman)
+#    value2 = roman_value(minimal_roman)
+#    print roman_str, value, minimal_roman, value2, savings, value == value2
+    total_savings += savings
+
+answer = total_savings
+
+print 'Expected: %s, Answer: %s' % (EXPECTED_ANSWER, answer)

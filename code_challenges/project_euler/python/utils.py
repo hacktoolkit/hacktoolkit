@@ -824,3 +824,72 @@ def arithmetic_series_subset(num_list):
                     subset = [n1, n2, n3]
                     break
     return subset
+
+ROMAN_NUMERALS = {
+    # core Roman numerals
+    1000 : 'M',
+    500  : 'D',
+    100  : 'C',
+    50   : 'L',
+    10   : 'X',
+    5    : 'V',
+    1    : 'I',
+    # special cases
+    900  : 'CM',
+    400  : 'CD',
+    90   : 'XC',
+    40   : 'XL',
+    9    : 'IX',
+    4    : 'IV',
+}
+
+ROMAN_VALUES = sorted(ROMAN_NUMERALS.keys(), reverse=True)
+
+ROMAN_NUMERAL_VALUES = dict([(roman_numeral, value,) for (value, roman_numeral,) in ROMAN_NUMERALS.items()])
+
+def roman(n):
+    """Find the Roman numeral string representing `n`
+
+    Algorithm depends on a pre-constructed list of roman values in descending order
+
+    Greedy, so will find the optimal string
+    """
+    roman_str = ''
+    index = 0
+    while n > 0 and index < len(ROMAN_VALUES):
+        roman_value = ROMAN_VALUES[index]
+        roman_numeral = ROMAN_NUMERALS[roman_value]
+        if roman_value <= n:
+            n -= roman_value
+            roman_str += roman_numeral
+        else:
+            index += 1
+    return roman_str
+
+def roman_value(roman_str):
+    """Given a Roman numeral string, find its value
+    """
+    index = 0
+    total = 0
+    while index < len(roman_str):
+        numeral = roman_str[index]
+        value = ROMAN_NUMERAL_VALUES.get(numeral, 0)
+        if index + 1 < len(roman_str):
+            # determine whether the next two form a subtractive pair
+            next_numeral = roman_str[index + 1]
+            next_value = ROMAN_NUMERAL_VALUES.get(next_numeral, 0)
+            if next_value > value:
+                # look at the subtractive pair
+                numeral = roman_str[index:index + 2]
+                value = ROMAN_NUMERAL_VALUES.get(numeral, 0)
+                total += value
+                index += 2
+            else:
+                # not a subtractive pair
+                total += value
+                index += 1
+        else:
+            # last numeral
+            total += value
+            index += 1
+    return total
