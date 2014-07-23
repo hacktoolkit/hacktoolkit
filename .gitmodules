@@ -49,3 +49,6 @@
 [submodule "django/django-htk"]
 	path = django/django-htk
 	url = git@github.com:hacktoolkit/django-htk.git
+[submodule "android/TipCalculator"]
+	path = android/TipCalculator
+	url = git@github.com:hacktoolkit/htk-android-TipCalculator.git
