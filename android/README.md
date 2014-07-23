@@ -6,3 +6,4 @@ Android Hacktoolkit
 ## Sample Apps
 
 * [Simple Todo List](https://github.com/hacktoolkit/htk-android-SimpleTodo)
+* [Tip Calculator](https://github.com/hacktoolkit/htk-android-TipCalculator)
