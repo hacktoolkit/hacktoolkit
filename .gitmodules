@@ -52,3 +52,15 @@
 [submodule "android/TipCalculator"]
 	path = android/TipCalculator
 	url = git@github.com:hacktoolkit/htk-android-TipCalculator.git
+[submodule "ios/hacktoolkit-ios_lib"]
+	path = ios/hacktoolkit-ios_lib
+	url = https://github.com/hacktoolkit/hacktoolkit-ios_lib
+[submodule "ios/Yelp"]
+	path = ios/Yelp
+	url = https://github.com/hacktoolkit/htk-ios-Yelp
+[submodule "ios/TipCalculator"]
+	path = ios/TipCalculator
+	url = https://github.com/hacktoolkit/htk-ios-TipCalculator
+[submodule "ios/RottenTomatoes"]
+	path = ios/RottenTomatoes
+	url = https://github.com/hacktoolkit/htk-ios-RottenTomatoes
