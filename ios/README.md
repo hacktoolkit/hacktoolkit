@@ -6,5 +6,8 @@ iOS Hacktoolkit
 ## Sample Apps
 
 * [Tip Calculator](https://github.com/hacktoolkit/htk-ios-TipCalculator)
-* [Rotten Tomatoes](https://github.com/hacktoolkit/htk-ios-RottenTomatoes)
-* [Yelp](https://github.com/hacktoolkit/htk-ios-Yelp)
+* [Rotten Tomatoes Client](https://github.com/hacktoolkit/htk-ios-RottenTomatoes)
+* [Yelp Client](https://github.com/hacktoolkit/htk-ios-Yelp)
+* [Twitter Client](https://github.com/hacktoolkit/htk-ios-Twitter)
+* [Chat Client](https://github.com/hacktoolkit/htk-ios-ChatClient)
+* [GitHub Browser](https://github.com/hacktoolkit/GitHubBrowser-iOS)
