@@ -1,4 +1,0 @@
-Rails Hacktoolkit
-=================
-
-Placeholder
