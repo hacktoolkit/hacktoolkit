@@ -64,3 +64,6 @@
 [submodule "ios/RottenTomatoes"]
 	path = ios/RottenTomatoes
 	url = https://github.com/hacktoolkit/htk-ios-RottenTomatoes
+[submodule "code_challenges"]
+	path = code_challenges
+	url = git@github.com:hacktoolkit/code_challenges.git
