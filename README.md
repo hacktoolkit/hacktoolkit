@@ -1,6 +1,8 @@
 hacktoolkit
 ===========
 
+[![Join the chat at https://gitter.im/hacktoolkit/hacktoolkit](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/hacktoolkit/hacktoolkit?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://travis-ci.org/hacktoolkit/hacktoolkit.png?branch=master)](https://travis-ci.org/hacktoolkit/hacktoolkit)
 
 Hacktoolkit is the ONE open source project to rule them all (we try to, at least).
