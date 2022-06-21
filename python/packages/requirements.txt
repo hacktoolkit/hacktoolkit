@@ -18,7 +18,7 @@ modulegraph==0.9.1
 numpy==1.6.1
 oauthlib==0.6.0
 paramiko==1.11.1
-protobuf==2.5.0
+protobuf==3.15.0
 py2app==0.6.3
 pyOpenSSL==0.13
 pyapns==0.4.0
