@@ -20,7 +20,7 @@ oauthlib==0.6.0
 paramiko==1.11.1
 protobuf==3.15.0
 py2app==0.6.3
-pyOpenSSL==0.13
+pyOpenSSL==17.5.0
 pyapns==0.4.0
 pygeoip==0.2.7
 pyobjc-core==2.3.2a0
