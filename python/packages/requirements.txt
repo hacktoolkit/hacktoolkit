@@ -1,4 +1,4 @@
-Django==1.5.4
+Django==2.2.28
 Fabric==1.8.0
 PyRSS2Gen==1.0.0
 South==0.8.2
