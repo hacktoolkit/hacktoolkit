@@ -11,7 +11,7 @@ django-grappelli==2.4.6
 django-redis==3.3
 django-redis-status==1.0.0
 django-storages==1.1.8
-gunicorn==18.0
+gunicorn==19.5.0
 macholib==1.4.2
 meld3==0.6.10
 modulegraph==0.9.1
